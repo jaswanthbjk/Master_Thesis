@@ -1,7 +1,7 @@
 # Papers
 
-- A Wholistic View of Continual Learning with Deep Neural Networks: Forgotten Lessons and the Bridge to Active and Open World Learning [[paper]](https://arxiv.org/pdf/2009.01797.pdf)
+- Robust Out-of-distribution Detection for Neural Networks [[link]](https://arxiv.org/abs/2003.09711)
 
-- Uncertainty-guided Continual Learning with Bayesian Neural Networks [[paper]](https://arxiv.org/pdf/1906.02425.pdf)
+- Out-of-Distribution Detection for Automotive Perception [[link]](https://arxiv.org/abs/2011.01413)
 
-- Overcoming catastrophic forgetting in neural networks [[paper]](https://arxiv.org/pdf/1612.00796.pdf)
+- Out-of-Distribution Detection Using an Ensemble of Self Supervised Leave-out Classifiers [[link]](https://arxiv.org/abs/1809.03576)
