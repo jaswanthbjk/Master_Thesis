@@ -8,7 +8,7 @@
 ### Octavio Arriaga, DFKI-Bremen 
 
 #### Proposal
-![Document](./Proposal/BandlamudiJ_MTProposal.pdf)
+:point_right: ![Document](./Proposal/BandlamudiJ_MTProposal.pdf)
 
 
 Repository to keep track of progress in Thesis
