@@ -3,6 +3,7 @@ from detectron2.utils.logger import setup_logger
 setup_logger()
 
 # import some common libraries
+import argparse
 import os
 import cv2
 import glob
@@ -14,19 +15,29 @@ from detectron2.config import get_cfg
 
 from pascal_voc_writer import Writer
 
-image_folder_path = '/scratch/jbandl2s/acdc/rgb_anon/'
-weathers = ['fog', 'night', 'rain', 'snow']
-sources = ['train_ref']
+description = 'Annotating images using a state-of-Art Object detector'
+parser = argparse.ArgumentParser(description=description)
 
-image_file_paths = []
+parser.add_argument('-p', '--path', default='./rgb_annon/', type=str,
+                    help='Path to dataset to be annotated')
+parser.add_argument('-w', '--weathers', default=[], type=list,
+                    help='Weathers to be considered from fog,night,rain,snow')
+parser.add_argument('-s', '--sources', default='train', type=str,
+                    help='source folder for images')
+parser.add_argument('-d', '--dataset', default='acdc', type=str,
+                    help='source folder for images')
 
-for weather in weathers:
-    for source in sources:
-        for folder in os.listdir(os.path.join(image_folder_path, weather,
-                                              source)):
-            image_file_paths += glob.glob(os.path.join(image_folder_path,
-                                                       weather, source,
-                                                       folder) + '/*.png')
+args = parser.parse_args()
+image_folder_path = args.path
+if not args.weathers:
+    weathers = ['fog', 'night', 'rain', 'snow']
+else:
+    weathers = args.weathers
+
+if args.sources == 'train':
+    sources = ['train_ref']
+else:
+    sources = ['test_ref']
 
 mask_to_class = {9: 'Traffic_light',
                  11: 'Traffic_sign',
@@ -39,6 +50,16 @@ mask_to_class = {9: 'Traffic_light',
                  3: 'Motorcycle',
                  1: 'Bicycle'}
 object_of_interest = list(mask_to_class.keys())
+
+image_file_paths = []
+
+for weather in weathers:
+    for source in sources:
+        for folder in os.listdir(os.path.join(image_folder_path, weather,
+                                              source)):
+            image_file_paths += glob.glob(os.path.join(image_folder_path,
+                                                       weather, source,
+                                                       folder) + '/*.png')
 
 
 def perform_detection(image_path, cfg, thresh=0.45):
@@ -69,4 +90,5 @@ for path_count in range(len(image_file_paths)):
                          boxes[i][1].item(), boxes[i][2].item(),
                          boxes[i][3].item())
     label_path = path.replace('png', 'xml')
-    writer.save(path)
+    print(label_path)
+    writer.save(label_path)
