@@ -74,3 +74,25 @@ def darknet53(inputs, training, data_format):
     route_3 = inputs
 
     return route_1, route_2, route_3
+
+
+def yolo_neck(inputs, filters, training, data_format):
+    inputs = conv_block(inputs, filters=filters, kernel_size=1,
+                        data_format=data_format, training=training)
+    inputs = conv_block(inputs, filters=2*filters, kernel_size=3,
+                        data_format=data_format, training=training)
+
+    inputs = conv_block(inputs, filters=filters, kernel_size=1,
+                        data_format=data_format, training=training)
+    inputs = conv_block(inputs, filters=2 * filters, kernel_size=3,
+                        data_format=data_format, training=training)
+
+    inputs = conv_block(inputs, filters=filters, kernel_size=1,
+                        data_format=data_format, training=training)
+
+    route = inputs
+
+    inputs = conv_block(inputs, filters=2 * filters, kernel_size=3,
+                        data_format=data_format, training=training)
+
+    return route, inputs
