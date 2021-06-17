@@ -140,6 +140,7 @@ def yolo_detection_branch(inputs, number_of_classes, anchors, image_size,
 
     classes = tf.nn.sigmoid(classes)
 
-    detections = tf.concat([box_centers, box_shapes, confidence, classes], axis=-1)
+    detections = tf.concat([box_centers, box_shapes, confidence, classes],
+                           axis=-1)
 
     return detections
