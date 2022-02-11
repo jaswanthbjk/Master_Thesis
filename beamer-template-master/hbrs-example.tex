@@ -1,0 +1,63 @@
+\documentclass[aspectratio=169]{beamer}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{ragged2e}  % `\justifying` text
+\usepackage{booktabs}  % Tables
+\usepackage{tabularx}
+\usepackage{tikz}      % Diagrams
+\usetikzlibrary{calc, shapes, backgrounds}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{url}       % `\url
+\usepackage{listings}  % Code listings
+\usepackage[T1]{fontenc}
+
+
+\usepackage{theme/beamerthemehbrs}
+
+\author[Jaswanth]{Jaswanth Bandlamudi \newline \newline \underline{Supervisors} \newline \vfill Prof. Dr. Paul G Pl\"{o}ger\\Prof. Dr. Nico Hochgeschwender \\ Prof. Dr. Matias Valdenegro Toro \\ M.Sc. Octavio Arriaga}
+\title{Benchmarking Out-of-Distribution Detection in 2D Object Detection}
+\subtitle{Thesis Defense}
+\institute[HBRS]{Hochschule Bonn-Rhein-Sieg}
+% \date{\today}
+\subject{Test beamer}
+
+\thirdpartylogo{images/DFKI.jpeg}
+
+
+\begin{document}
+{
+\begin{frame}
+\titlepage
+\end{frame}
+}
+
+\begin{frame}{Introduction}
+\begin{itemize}
+    \item Deep Neural Networks, current best performers in 
+    \begin{itemize}
+        \item Classification
+        \item Object Detection
+        \item Segmentation
+    \end{itemize} 
+
+    \item Trained with \textcolor{red}{\textit{closed world assumption}}, test data $\sim$ train data
+    \item Deployed in open world $\implies$ Out-of-Distribution(OOD) examples
+    \item Applications
+        \begin{itemize}
+            \item \textcolor{green}{Product recommendations}, recoverable
+            \item \textcolor{yellow}{Time series prediction}, partially reversible
+            \item \textcolor{red}{Autonomous driving / Medical diagnosis}, irreversiable and catastrophic
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

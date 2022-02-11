@@ -1,0 +1,46 @@
+%!TEX root = ../report.tex
+
+\begin{document}
+    \justifying
+    \chapter{Conclusions}
+    Environment perception is a very important enabler for intelligent agents to operate autonomously without any human intervention. Autonomous Driving is one such application the is majorly being researched in both academia and industry. To ensure the safe operation of autonomous vehicles, the perception algorithms should be able to detect the samples that are not seen during training. The main focus of this work is to investigate the possibilities to perform \acrlong{ood} (\acrshort{ood}) detection in the context of 2D Object Detection using image data. 
+    
+    \section{Contributions}
+    Our major contributions in this work are:
+    \begin{itemize}
+        \item A review of state-of-the-art methods for \acrshort{ood} detection on object classification and also discussed their abilities to adapt to the task of object detection is performed.
+        \item We proposed a new benchmark dataset called Out-of-Distribution detection for Object Detection ($OD^2$) dataset to benchmark the \acrshort{ood} detection in 2D object detection to test the \acrshort{ood} abilities of proposed methods.
+        \item Four different methods namely Max Softmax, ODIN, Mahalanobis distance based \acrshort{ood} detector, and uncertainty based \acrshort{ood} detector are chosen to perform \acrshort{ood} detection.
+        \item To solve the task of object detection we trained a Single Shot multi-box Object Detector (SSD300) is trained on \acrshort{bdd} dataset. To improve the performance of the SSD300 model on \acrshort{bdd} dataset the scale and aspect ratios of the prior boxes are tuned.
+        \item We explored the abilities of Max Softmax, ODIN, and Mahalanobis distance-based \acrshort{ood} detectors. From these three methods, we observed that ODIN outperformed the Max-Softmax based \acrshort{ood} detectors. Because of the large computational requirement to calculate covariance matrix we could not successfully model Mahalanobis distance-based \acrshort{ood} detector.
+        \item To perform uncertainty quantification, we modelled a \acrshort{bnn} based \acrshort{ssd} network and a Sub-Ensemble model of \acrshort{ssd} object detector network. These Bayesian and Sub-Ensemble are modeled and trained.
+        \item We used entropy to quantify uncertainty in the classification head of object detector and box deviation to quantify uncertainty in the regression head of object detectors.
+        \item We performed extensive experimentation on all the three available \acrshort{ood} detectors for object detection purposes. We also performed studies on the class-specific behavior of the uncertainty quantification metrics.
+    \end{itemize}
+        
+    
+    We expect that the proposed $OD^2$ benchmark will further motivate other researchers to consider \acrshort{ood} performance during the development of object detection and other perception algorithms for autonomous driving, which we believe is an important component of future road safety.
+
+    \section{Lessons Learned}
+    From the extensive experimentation and evaluations we learnt that:
+    \begin{itemize}
+        \item The object detector performance is highly dependent on the prior knowledge tuned into the network based on the dataset. 
+        \item Deep learning-based object detectors struggle when deployed in open environments, where the occurrence of novel classes is highly plausible.
+        \item The \acrshort{ood} detection methods proposed for classification did not directly transfer their performance into the task of object detection. The \acrshort{ood} methods heavily relied on the softmax layer in the classification head, this sort of reliance is not robust in the case of object detector networks.
+        \item Uncertainty quantification methods proved to be robust in detecting such novel unseen objects proving the importance of their usage in safety-critical applications.
+        \item Sub-Ensemble-based uncertainty quantification with box deviation as a metric had out-performed all other methods in \acrshort{ood} detection on the SSD model.
+        \item After performing class-wise \acrshort{ood} detection studies, it can be inferred that entropy struggled in detecting samples that are ambiguous due to their semantic appearance.
+        \item The \acrshort{ood} detection methods proposed in this work did not work as expected on the \acrshort{bdd-c} data in the $OD^2$ benchmarking dataset proposed.
+    \end{itemize}
+
+    \section{Future Work}
+    The problem of \acrshort{ood} in the case of object detection is explored in this work. From the evaluations performed in this experiment, we suggest the following directions for further exploration:
+    \begin{itemize}
+        \item One area which plagued the concept of \acrshort{ood} in object detection is the presence of background class. The addition of this class automatically makes all the \acrshort{ood} samples to be classified as background due to the training strategy. An object detection method without the usage of background class would be a great contribution to the safe deployment of object detection models in safety-critical applications.
+        \item Another area of improvement is exploring Two-stage networks for object detection purposes. The region proposal network used in these methods makes them effective for small object detection. So the \acrshort{ood} analysis can be effective.
+        \item Exploring the effects of uncertainty calibration methods \cite{GuoCalibration2017} on \acrshort{ood} detection is still a open-ended question.
+        \item In this work, entropy and box-deviation are treated as two independent metrics. But combining both of these metrics to obtain a single novelty score might result in a better representation of \acrshort{ood} detection ability.
+        \item Uncertainty calculated in this work is called predictive uncertainty and is not dis-entangled. This might have resulted in some fine information loss. As the semantic variation results in epistemic uncertainty and the quality of the image affects aleatoric uncertainty. Hence, we believe disentangling the uncertainty might result in better metrics for \acrshort{ood} detection. 
+        \item Though we believe a strong benchmark in the form of $OD^2$ dataset is proposed, we believe it can be further modified and extended to include more class-agnostic tasks.
+    \end{itemize}
+\end{document}
