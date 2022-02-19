@@ -21,7 +21,6 @@
 \usepackage{subcaption}
 \usepackage[sort]{natbib}
 
-
 \usepackage{theme/beamerthemehbrs}
 
 \author[Jaswanth]{Jaswanth Bandlamudi \newline \newline \underline{Supervisors} \newline \vfill Prof. Dr. Paul G Pl\"{o}ger\\Prof. Dr. Nico Hochgeschwender \\ Prof. Dr. Matias Valdenegro Toro \\ M.Sc. Octavio Arriaga}
@@ -35,6 +34,8 @@
 
 
 \begin{document}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.25}
 {
 \begin{frame}
 \titlepage
@@ -72,7 +73,7 @@
         
         \begin{figure}
             \centering
-            \includegraphics[scale=0.225]{images/OOD_vs_Non-OOD.jpg}
+            \includegraphics[scale=0.215]{images/OOD_vs_Non-OOD.jpg}
             \caption[\acrlong{ood} detection problem setting]{Class differentiation in generalized OOD detection framework}
             \label{fig:OOD_classes}
         \end{figure}
@@ -104,25 +105,49 @@
         \item Produce a \textbf{\textit{Novelty Score (NS)}}. 
         \item NS can be a distance metric, a class-dependent probabilistic value, an entropy value, or a descriptive statistic value
         \item OOD detection can be posed as a binary classification problem.
-
     \end{itemize}
         
-    $ X=
-        \begin{cases}
-            \text{ID}, & \text{if}\ NS \geq \delta \\
-            \text{OOD}, & \text{otherwise} 
-        \end{cases}
-        $
+    
     
 % \end{frame}
 
 % \begin{frame}{Novelty Score - Behavior}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.15]{images/Slide2.jpg}
-        \caption[Novelty Score behavior]{Expected behavior of novelty score based on the nature of the OOD input}
-        \label{fig:OD2_features}
-    \end{figure}
+    
+    % \begin{minipage}[t]{0.5\textwidth}
+    %     $ X=
+    %     \begin{cases}
+    %         \text{ID}, & \text{if}\ NS \geq \delta \\
+    %         \text{OOD}, & \text{otherwise} 
+    %     \end{cases}
+    %     $
+    % \end{minipage} %%%
+    % \begin{minipage}[t]{0.5\textwidth}
+    %     \begin{figure}[H]
+    %         \centering
+    %         \includegraphics[scale=0.15]{images/Slide2.jpg}
+    %         \caption[Novelty Score behavior]{Expected behavior of novelty score based on the nature of the OOD input}
+    %         \label{fig:OD2_features}
+    %     \end{figure}
+    
+    % \end{minipage}
+
+    \begin{equation}
+        \vcenter{\hbox{
+            \begin{minipage}{5cm}
+                \centering
+                \includegraphics[scale=0.15]{images/Slide2.jpg}
+                \captionof{figure}{Expected behavior of NS from OOD detector.}
+            \end{minipage}}}
+        \qquad\qquad
+        \begin{aligned}
+            X=
+                \begin{cases}
+                    \text{ID}, & \text{if}\ NS \geq \delta \\
+                    \text{OOD}, & \text{otherwise} 
+                \end{cases}
+        \end{aligned}
+    \end{equation}
+    
 \end{frame}
 
 \begin{frame}{Previous works}
@@ -138,20 +163,36 @@
                 Uncertainty based methods   & \begin{tabular}[c]{@{}l@{}}\citet{Malinin2018},  \citet{Lakshminarayanan2017}, \\  \citet{VanAmersfoort2020} \\ \end{tabular}                       
             \end{tabular}
     \end{table}
-\begin{itemize}
-    \item Works only for classification problem
-    \item Not directly adaptable to object detection problem   
-\end{itemize}
-    
+    \begin{itemize}
+        \item Works only for classification problem
+        \item Not directly adaptable to object detection problem   
+    \end{itemize}    
+\end{frame}
 
-    
+\begin{frame}{Methodology}
+    In this work
+    \begin{itemize}
+        \item Single-Shot Detector (SSD) is used to solve the object detection problem.
+        \item For OOD detection we decided to use
+        \begin{enumerate}
+            \item Max-Softmax score based OOD detection
+            \item ODIN
+            \item Mahalanobis distance based OOD detection
+            \item Uncertainty based OOD detection
+                \begin{itemize}
+                    \item Bayesian Neural Network
+                    \item Sub-Ensemble
+                \end{itemize} 
+        \end{enumerate}
+        \item A new benchmark dataset \textbf{Out of Distribution for Object Detection} ($OD^2$) dataset
+    \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}[allowframebreaks]
     \frametitle{References}
-    \bibliographystyle{abbrvnat}
+    \bibliographystyle{unsrtnat}
     \bibliography{bibliography.bib}
 \end{frame}
 \end{document}
