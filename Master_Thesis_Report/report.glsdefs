@@ -1,0 +1,930 @@
+\ifglsentryexists{ood}{}%
+{%
+\gls@defglossaryentry{ood}%
+{%
+name={OOD},%
+sort={OOD},%
+type={acronym},%
+first={Out Of Distribution\glsspace (OOD)},%
+firstplural={Out Of Distributions\glsspace (OODs)},%
+text={OOD},%
+plural={OODs},%
+description={Out Of Distribution},%
+descriptionplural={Out Of Distribution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Out Of Distribution},%
+longplural={Out Of Distributions},%
+short={OOD},%
+shortplural={OODs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{id}{}%
+{%
+\gls@defglossaryentry{id}%
+{%
+name={ID},%
+sort={ID},%
+type={acronym},%
+first={In Distribution\glsspace (ID)},%
+firstplural={In Distributions\glsspace (IDs)},%
+text={ID},%
+plural={IDs},%
+description={In Distribution},%
+descriptionplural={In Distribution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={In Distribution},%
+longplural={In Distributions},%
+short={ID},%
+shortplural={IDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ml}{}%
+{%
+\gls@defglossaryentry{ml}%
+{%
+name={ML},%
+sort={ML},%
+type={acronym},%
+first={Machine Learning\glsspace (ML)},%
+firstplural={Machine Learnings\glsspace (MLs)},%
+text={ML},%
+plural={MLs},%
+description={Machine Learning},%
+descriptionplural={Machine Learning\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Machine Learning},%
+longplural={Machine Learnings},%
+short={ML},%
+shortplural={MLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nn}{}%
+{%
+\gls@defglossaryentry{nn}%
+{%
+name={NNs},%
+sort={NNs},%
+type={acronym},%
+first={Neural Networks\glsspace (NNs)},%
+firstplural={Neural Networkss\glsspace (NNss)},%
+text={NNs},%
+plural={NNss},%
+description={Neural Networks},%
+descriptionplural={Neural Networks\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Neural Networks},%
+longplural={Neural Networkss},%
+short={NNs},%
+shortplural={NNss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ann}{}%
+{%
+\gls@defglossaryentry{ann}%
+{%
+name={ANNs},%
+sort={ANNs},%
+type={acronym},%
+first={Artificial Neural Networks\glsspace (ANNs)},%
+firstplural={Artificial Neural Networkss\glsspace (ANNss)},%
+text={ANNs},%
+plural={ANNss},%
+description={Artificial Neural Networks},%
+descriptionplural={Artificial Neural Networks\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Artificial Neural Networks},%
+longplural={Artificial Neural Networkss},%
+short={ANNs},%
+shortplural={ANNss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dnn}{}%
+{%
+\gls@defglossaryentry{dnn}%
+{%
+name={DNNs},%
+sort={DNNs},%
+type={acronym},%
+first={Deep Neural Networks\glsspace (DNNs)},%
+firstplural={Deep Neural Networkss\glsspace (DNNss)},%
+text={DNNs},%
+plural={DNNss},%
+description={Deep Neural Networks},%
+descriptionplural={Deep Neural Networks\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Deep Neural Networks},%
+longplural={Deep Neural Networkss},%
+short={DNNs},%
+shortplural={DNNss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cnn}{}%
+{%
+\gls@defglossaryentry{cnn}%
+{%
+name={CNNs},%
+sort={CNNs},%
+type={acronym},%
+first={Convolutional Neural Networks\glsspace (CNNs)},%
+firstplural={Convolutional Neural Networkss\glsspace (CNNss)},%
+text={CNNs},%
+plural={CNNss},%
+description={Convolutional Neural Networks},%
+descriptionplural={Convolutional Neural Networks\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Convolutional Neural Networks},%
+longplural={Convolutional Neural Networkss},%
+short={CNNs},%
+shortplural={CNNss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bnn}{}%
+{%
+\gls@defglossaryentry{bnn}%
+{%
+name={BNNs},%
+sort={BNNs},%
+type={acronym},%
+first={Bayesian Neural Networks\glsspace (BNNs)},%
+firstplural={Bayesian Neural Networkss\glsspace (BNNss)},%
+text={BNNs},%
+plural={BNNss},%
+description={Bayesian Neural Networks},%
+descriptionplural={Bayesian Neural Networks\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bayesian Neural Networks},%
+longplural={Bayesian Neural Networkss},%
+short={BNNs},%
+shortplural={BNNss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{val}{}%
+{%
+\gls@defglossaryentry{val}%
+{%
+name={Val},%
+sort={Val},%
+type={acronym},%
+first={Validation\glsspace (Val)},%
+firstplural={Validations\glsspace (Vals)},%
+text={Val},%
+plural={Vals},%
+description={Validation},%
+descriptionplural={Validation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Validation},%
+longplural={Validations},%
+short={Val},%
+shortplural={Vals},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bdd}{}%
+{%
+\gls@defglossaryentry{bdd}%
+{%
+name={BDD100K},%
+sort={BDD100K},%
+type={acronym},%
+first={Berkley Deep Drive\glsspace (BDD100K)},%
+firstplural={Berkley Deep Drives\glsspace (BDD100Ks)},%
+text={BDD100K},%
+plural={BDD100Ks},%
+description={Berkley Deep Drive},%
+descriptionplural={Berkley Deep Drive\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Berkley Deep Drive},%
+longplural={Berkley Deep Drives},%
+short={BDD100K},%
+shortplural={BDD100Ks},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{coco}{}%
+{%
+\gls@defglossaryentry{coco}%
+{%
+name={COCO},%
+sort={COCO},%
+type={acronym},%
+first={Common Object in Context\glsspace (COCO)},%
+firstplural={Common Object in Contexts\glsspace (COCOs)},%
+text={COCO},%
+plural={COCOs},%
+description={Common Object in Context},%
+descriptionplural={Common Object in Context\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Common Object in Context},%
+longplural={Common Object in Contexts},%
+short={COCO},%
+shortplural={COCOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bdd-c}{}%
+{%
+\gls@defglossaryentry{bdd-c}%
+{%
+name={BDD100K-Climate},%
+sort={BDD100K-Climate},%
+type={acronym},%
+first={Berkley Deep Drive - Climate GAN\glsspace (BDD100K-Climate)},%
+firstplural={Berkley Deep Drive - Climate GANs\glsspace (BDD100K-Climates)},%
+text={BDD100K-Climate},%
+plural={BDD100K-Climates},%
+description={Berkley Deep Drive - Climate GAN},%
+descriptionplural={Berkley Deep Drive - Climate GAN\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Berkley Deep Drive - Climate GAN},%
+longplural={Berkley Deep Drive - Climate GANs},%
+short={BDD100K-Climate},%
+shortplural={BDD100K-Climates},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{idd}{}%
+{%
+\gls@defglossaryentry{idd}%
+{%
+name={IDD},%
+sort={IDD},%
+type={acronym},%
+first={Indian Driving Dataset\glsspace (IDD)},%
+firstplural={Indian Driving Datasets\glsspace (IDDs)},%
+text={IDD},%
+plural={IDDs},%
+description={Indian Driving Dataset},%
+descriptionplural={Indian Driving Dataset\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Indian Driving Dataset},%
+longplural={Indian Driving Datasets},%
+short={IDD},%
+shortplural={IDDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ssd}{}%
+{%
+\gls@defglossaryentry{ssd}%
+{%
+name={SSD},%
+sort={SSD},%
+type={acronym},%
+first={Single-Shot Detector\glsspace (SSD)},%
+firstplural={Single-Shot Detectors\glsspace (SSDs)},%
+text={SSD},%
+plural={SSDs},%
+description={Single-Shot Detector},%
+descriptionplural={Single-Shot Detector\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Single-Shot Detector},%
+longplural={Single-Shot Detectors},%
+short={SSD},%
+shortplural={SSDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rcnn}{}%
+{%
+\gls@defglossaryentry{rcnn}%
+{%
+name={RCNN},%
+sort={RCNN},%
+type={acronym},%
+first={Region based Convolution Neural network\glsspace (RCNN)},%
+firstplural={Region based Convolution Neural networks\glsspace (RCNNs)},%
+text={RCNN},%
+plural={RCNNs},%
+description={Region based Convolution Neural network},%
+descriptionplural={Region based Convolution Neural network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Region based Convolution Neural network},%
+longplural={Region based Convolution Neural networks},%
+short={RCNN},%
+shortplural={RCNNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{yolo}{}%
+{%
+\gls@defglossaryentry{yolo}%
+{%
+name={YOLO},%
+sort={YOLO},%
+type={acronym},%
+first={You Only Look Once\glsspace (YOLO)},%
+firstplural={You Only Look Onces\glsspace (YOLOs)},%
+text={YOLO},%
+plural={YOLOs},%
+description={You Only Look Once},%
+descriptionplural={You Only Look Once\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={You Only Look Once},%
+longplural={You Only Look Onces},%
+short={YOLO},%
+shortplural={YOLOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{av}{}%
+{%
+\gls@defglossaryentry{av}%
+{%
+name={AV},%
+sort={AV},%
+type={acronym},%
+first={Autonomous Vehicle\glsspace (AV)},%
+firstplural={Autonomous Vehicles\glsspace (AVs)},%
+text={AV},%
+plural={AVs},%
+description={Autonomous Vehicle},%
+descriptionplural={Autonomous Vehicle\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Autonomous Vehicle},%
+longplural={Autonomous Vehicles},%
+short={AV},%
+shortplural={AVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ap}{}%
+{%
+\gls@defglossaryentry{ap}%
+{%
+name={AP},%
+sort={AP},%
+type={acronym},%
+first={Average Precision\glsspace (AP)},%
+firstplural={Average Precisions\glsspace (APs)},%
+text={AP},%
+plural={APs},%
+description={Average Precision},%
+descriptionplural={Average Precision\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Precision},%
+longplural={Average Precisions},%
+short={AP},%
+shortplural={APs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{map}{}%
+{%
+\gls@defglossaryentry{map}%
+{%
+name={mAP},%
+sort={mAP},%
+type={acronym},%
+first={mean Average Precision\glsspace (mAP)},%
+firstplural={mean Average Precisions\glsspace (mAPs)},%
+text={mAP},%
+plural={mAPs},%
+description={mean Average Precision},%
+descriptionplural={mean Average Precision\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={mean Average Precision},%
+longplural={mean Average Precisions},%
+short={mAP},%
+shortplural={mAPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pr}{}%
+{%
+\gls@defglossaryentry{pr}%
+{%
+name={PR},%
+sort={PR},%
+type={acronym},%
+first={Precision-Recall\glsspace (PR)},%
+firstplural={Precision-Recalls\glsspace (PRs)},%
+text={PR},%
+plural={PRs},%
+description={Precision-Recall},%
+descriptionplural={Precision-Recall\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Precision-Recall},%
+longplural={Precision-Recalls},%
+short={PR},%
+shortplural={PRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{roc}{}%
+{%
+\gls@defglossaryentry{roc}%
+{%
+name={ROC},%
+sort={ROC},%
+type={acronym},%
+first={Receiver-Operating Curve\glsspace (ROC)},%
+firstplural={Receiver-Operating Curves\glsspace (ROCs)},%
+text={ROC},%
+plural={ROCs},%
+description={Receiver-Operating Curve},%
+descriptionplural={Receiver-Operating Curve\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Receiver-Operating Curve},%
+longplural={Receiver-Operating Curves},%
+short={ROC},%
+shortplural={ROCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{auroc}{}%
+{%
+\gls@defglossaryentry{auroc}%
+{%
+name={AUROC},%
+sort={AUROC},%
+type={acronym},%
+first={Area Under the Receiver-Operating characteristic Curve\glsspace (AUROC)},%
+firstplural={Area Under the Receiver-Operating characteristic Curves\glsspace (AUROCs)},%
+text={AUROC},%
+plural={AUROCs},%
+description={Area Under the Receiver-Operating characteristic Curve},%
+descriptionplural={Area Under the Receiver-Operating characteristic Curve\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Area Under the Receiver-Operating characteristic Curve},%
+longplural={Area Under the Receiver-Operating characteristic Curves},%
+short={AUROC},%
+shortplural={AUROCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{iou}{}%
+{%
+\gls@defglossaryentry{iou}%
+{%
+name={IoU},%
+sort={IoU},%
+type={acronym},%
+first={Intersection over Union\glsspace (IoU)},%
+firstplural={Intersection over Unions\glsspace (IoUs)},%
+text={IoU},%
+plural={IoUs},%
+description={Intersection over Union},%
+descriptionplural={Intersection over Union\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intersection over Union},%
+longplural={Intersection over Unions},%
+short={IoU},%
+shortplural={IoUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{tpr}{}%
+{%
+\gls@defglossaryentry{tpr}%
+{%
+name={TPR},%
+sort={TPR},%
+type={acronym},%
+first={True Positive Rate\glsspace (TPR)},%
+firstplural={True Positive Rates\glsspace (TPRs)},%
+text={TPR},%
+plural={TPRs},%
+description={True Positive Rate},%
+descriptionplural={True Positive Rate\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={True Positive Rate},%
+longplural={True Positive Rates},%
+short={TPR},%
+shortplural={TPRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{fpr}{}%
+{%
+\gls@defglossaryentry{fpr}%
+{%
+name={FPR},%
+sort={FPR},%
+type={acronym},%
+first={False Positive Rate\glsspace (FPR)},%
+firstplural={False Positive Rates\glsspace (FPRs)},%
+text={FPR},%
+plural={FPRs},%
+description={False Positive Rate},%
+descriptionplural={False Positive Rate\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={False Positive Rate},%
+longplural={False Positive Rates},%
+short={FPR},%
+shortplural={FPRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nms}{}%
+{%
+\gls@defglossaryentry{nms}%
+{%
+name={NMS},%
+sort={NMS},%
+type={acronym},%
+first={Non-Maximum Supression\glsspace (NMS)},%
+firstplural={Non-Maximum Supressions\glsspace (NMSs)},%
+text={NMS},%
+plural={NMSs},%
+description={Non-Maximum Supression},%
+descriptionplural={Non-Maximum Supression\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Non-Maximum Supression},%
+longplural={Non-Maximum Supressions},%
+short={NMS},%
+shortplural={NMSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{paz}{}%
+{%
+\gls@defglossaryentry{paz}%
+{%
+name={PAZ},%
+sort={PAZ},%
+type={acronym},%
+first={Perception for Autonomous Systems\glsspace (PAZ)},%
+firstplural={Perception for Autonomous Systemss\glsspace (PAZs)},%
+text={PAZ},%
+plural={PAZs},%
+description={Perception for Autonomous Systems},%
+descriptionplural={Perception for Autonomous Systems\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Perception for Autonomous Systems},%
+longplural={Perception for Autonomous Systemss},%
+short={PAZ},%
+shortplural={PAZs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{api}{}%
+{%
+\gls@defglossaryentry{api}%
+{%
+name={APIs},%
+sort={APIs},%
+type={acronym},%
+first={Application Programming Interfaces\glsspace (APIs)},%
+firstplural={Application Programming Interfacess\glsspace (APIss)},%
+text={APIs},%
+plural={APIss},%
+description={Application Programming Interfaces},%
+descriptionplural={Application Programming Interfaces\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Application Programming Interfaces},%
+longplural={Application Programming Interfacess},%
+short={APIs},%
+shortplural={APIss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cpu}{}%
+{%
+\gls@defglossaryentry{cpu}%
+{%
+name={CPUs},%
+sort={CPUs},%
+type={acronym},%
+first={Central Processing Units\glsspace (CPUs)},%
+firstplural={Central Processing Unitss\glsspace (CPUss)},%
+text={CPUs},%
+plural={CPUss},%
+description={Central Processing Units},%
+descriptionplural={Central Processing Units\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Central Processing Units},%
+longplural={Central Processing Unitss},%
+short={CPUs},%
+shortplural={CPUss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gpu}{}%
+{%
+\gls@defglossaryentry{gpu}%
+{%
+name={GPUs},%
+sort={GPUs},%
+type={acronym},%
+first={Graphical Processing Units\glsspace (GPUs)},%
+firstplural={Graphical Processing Unitss\glsspace (GPUss)},%
+text={GPUs},%
+plural={GPUss},%
+description={Graphical Processing Units},%
+descriptionplural={Graphical Processing Units\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Graphical Processing Units},%
+longplural={Graphical Processing Unitss},%
+short={GPUs},%
+shortplural={GPUss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{tpu}{}%
+{%
+\gls@defglossaryentry{tpu}%
+{%
+name={TPUs},%
+sort={TPUs},%
+type={acronym},%
+first={Tensor Processing Units\glsspace (TPUs)},%
+firstplural={Tensor Processing Unitss\glsspace (TPUss)},%
+text={TPUs},%
+plural={TPUss},%
+description={Tensor Processing Units},%
+descriptionplural={Tensor Processing Units\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Tensor Processing Units},%
+longplural={Tensor Processing Unitss},%
+short={TPUs},%
+shortplural={TPUss},%
+counter={page},%
+parent={},%
+%
+}%
+}%

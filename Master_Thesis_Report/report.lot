@@ -1,0 +1,14 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Table showing the number of default boxes for each multiple feature map layer. Also, observe that the first and last layers have reduced number of default boxes to increase inference speeds\relax }}{7}{table.caption.12}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Comparison of various autonomous driving datasets available with image data\relax }}{25}{table.3.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Table showing various type of images to address the \acrshort {ood} cases presented in Section \ref {ood_cases}. The table also show the sources of the images that are collected from along with the expected behavior of the novelty score for each \acrshort {ood} class of dataset\relax }}{38}{table.caption.28}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Average Precision values of each class in BDD100K dataset using SSD300 model with and without tuned prior boxes\relax }}{46}{table.caption.33}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Average Precision values of each class in BDD100K dataset using Bayesian-SSD300 and SubEnsemble-SSD300 models. We observed an increase in performance of the object detector models compared to values reported in Table \ref {map_basic}.\relax }}{56}{table.caption.41}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces \acrshort {auroc} scores representing the metrics ability obtained from different uncertainty quantification models\relax }}{69}{table.caption.57}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Uncertainty quantification metrics calculated using Bayesian and Sub-Ensemble versions of SSD300 model. The scores suggest that uncertainty based \acrshort {ood} detectors are not effective in detecting \acrshort {ood} samples.\relax }}{74}{table.caption.63}%
+\addvspace {10\p@ }
