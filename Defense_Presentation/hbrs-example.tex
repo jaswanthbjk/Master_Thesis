@@ -1,5 +1,5 @@
 \documentclass[10pt, aspectratio=169]{beamer}
-
+\AtBeginEnvironment{table}{\setlength\belowcaptionskip{0pt}}
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -17,9 +17,15 @@
 \usepackage{url}       % `\url
 \usepackage{listings}  % Code listings
 \usepackage[T1]{fontenc}
-\usepackage[font=tiny,skip=0pt]{caption}
+% \usepackage{caption}
+% \usepackage[font=footnotesize]{caption}
+% \captionsetup{skip=0pt,belowskip=0pt}
 \usepackage{subcaption}
 \usepackage[sort]{natbib}
+\usepackage{adjustbox}
+\usepackage{multicol}
+
+% \setlength{\intextsep}{10pt plus 2pt minus 2pt}
 
 \usepackage{theme/beamerthemehbrs}
 
@@ -41,6 +47,8 @@
 \titlepage
 \end{frame}
 }
+
+\setlength\abovecaptionskip{-5pt}
 
 \begin{frame}{Introduction}
 \begin{itemize}
@@ -93,8 +101,8 @@
     Current Object Detection model performance on OOD data
     \begin{figure}[!htbp]
         \centering
-      \subcaptionbox{False Positive detection\label{fig:1}}{\includegraphics[scale=0.5]{images/False_Positive.png}}%\hspace{1em}
-      \subcaptionbox{False Negative detection\label{fig:2}}{\includegraphics[scale=0.5]{images/False_Negative.png}}
+      \subcaptionbox{\label{fig:1}}{\includegraphics[scale=0.5]{images/False_Positive.png}}%\hspace{1em}
+      \subcaptionbox{\label{fig:2}}{\includegraphics[scale=0.5]{images/False_Negative.png}}
       \caption[Sample False Positive and False Negative detections]{Examples of failures in object dedtection}
       \label{fig:3}
     \end{figure}
@@ -136,7 +144,7 @@
             \begin{minipage}{5cm}
                 \centering
                 \includegraphics[scale=0.15]{images/Slide2.jpg}
-                \captionof{figure}{Expected behavior of NS from OOD detector.}
+                \captionof{figure}{Expected behavior of OOD detector.}
             \end{minipage}}}
         \qquad\qquad
         \begin{aligned}
@@ -147,7 +155,7 @@
                 \end{cases}
         \end{aligned}
     \end{equation}
-    
+
 \end{frame}
 
 \begin{frame}{Previous works}
@@ -172,22 +180,133 @@
 \begin{frame}{Methodology}
     In this work
     \begin{itemize}
+        \item Proposed new benchmark dataset \textbf{Out of Distribution for Object Detection} ($OD^2$) dataset
         \item Single-Shot Detector (SSD) is used to solve the object detection problem.
         \item For OOD detection we decided to use
         \begin{enumerate}
-            \item Max-Softmax score based OOD detection
-            \item ODIN
-            \item Mahalanobis distance based OOD detection
-            \item Uncertainty based OOD detection
+            \item Max-Softmax score based OOD detection \citep{hendrycks17baseline}
+            \item ODIN \citep{liang2017enhancing}
+            \item Mahalanobis distance based OOD detection \citep{Lee2018}
+            \item Uncertainty based OOD detection \citep{Malinin2018, Lakshminarayanan2017}
                 \begin{itemize}
                     \item Bayesian Neural Network
                     \item Sub-Ensemble
                 \end{itemize} 
         \end{enumerate}
-        \item A new benchmark dataset \textbf{Out of Distribution for Object Detection} ($OD^2$) dataset
     \end{itemize}
 \end{frame}
 
+\begin{frame}{$OD^2$ Dataset}
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.5}
+        \caption{Table showing various type of images to address the OOD cases}
+        \begin{adjustbox}{width=1\textwidth}
+            \begin{tabular}{lllll}
+            \hline
+            \textbf{Purpose} & \textbf{Dataset Source} & \textbf{Classes} & \textbf{Novelty Score Behavior} & \textbf{Task} \\ \hline
+            In-Distribution & BDD100K \citep{bdd100k} & \begin{tabular}[c]{@{}l@{}}Pedestrian, Rider, Car, Truck, Bus, \\ Motorcycle, Bicycle, Traffic sign\end{tabular} & Low Novelty score  & \begin{tabular}[c]{@{}l@{}}Object detector \\ performance \end{tabular} \\ \hline
+            \begin{tabular}[c]{@{}l@{}}Low light and \\ bad image quality\end{tabular} & \begin{tabular}[c]{@{}l@{}}BDD100K (non-clear weather) \\ and Climate-GAN \citep{climategan} \\generated Smog images\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pedestrian, Rider, Car, Truck, Bus, \\ Motorcycle, Bicycle, Traffic sign\end{tabular} & Medium Novelty Score   & Detector Robustness\\ \hline
+            \begin{tabular}[c]{@{}l@{}}Classes with \\ semantic-variance\end{tabular}  & IDD \citep{Varma2019IDDAD} & Trucks, Motorcycles, Traffic Sign & High Novelty Score     & OOD detection\\ \hline
+            Novel Classes  & IDD & Auto-Rickshaws  & High Novelty Score     & \begin{tabular}[c]{@{}l@{}}Multi class \\ novelty detection \end{tabular} \\ \hline
+            \begin{tabular}[c]{@{}l@{}}Out-of-Domain \\ images\end{tabular} & \begin{tabular}[c]{@{}l@{}}Climate-GAN generated \\ Flood and Fire images\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pedestrian, Rider, Car, Truck, Bus, \\ Motorcycle, Bicycle, Traffic sign\end{tabular} & High Novelty Score & \begin{tabular}[c]{@{}l@{}}Out-Of-Domain \\ detection \end{tabular}\\ \hline
+            \end{tabular}
+        \end{adjustbox}
+        \label{dataset_summary}
+    \end{table}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Single Shot multi-box Detector (SSD) model}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[scale=0.45]{images/SSD.png}
+        \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+        \label{fig:Fr-RCNN}
+    \end{figure}
+    \smallskip
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item Single network for detection and classification
+            \item No Fully-Connected layers
+            \item Low input resolution
+        \end{itemize}
+    \end{multicols}
+% \end{frame}
+
+% \begin{frame}{Single Shot multi-box Detector (SSD) model}
+    \begin{multicols}{2} % two columns
+        \begin{itemize}
+            \item Default boxes
+            \item Matching strategy is used,
+                \begin{itemize}
+                    \item $ IoU_{default box}^{ground truth}$ > 0.5
+                    \item overlapped objects and simple learning 
+                \end{itemize}
+                
+            \item Processing of features from multiple layers
+                \begin{itemize}
+                    \item Deep feature maps
+                    \item Shallow feature maps
+                \end{itemize}
+        \end{itemize}
+
+        \begin{itemize}
+            \item Loss
+            $$L(x, c, l, g)=\frac{1}{N}\left(L_{\text {conf }}(x, c)+\alpha L_{\text {loc }}(x, l, g)\right)$$
+            \begin{itemize}
+                \item $L_{conf}$ is Softmax Loss
+                \item $L_{loc}$ is Smooth $L_{1}$ Loss 
+            \end{itemize}
+            \item Filter boxes with low confidence and NMS with 0.45 IOU
+            \item Take top 200 detections
+            
+        \end{itemize}
+    \end{multicols}
+\end{frame}
+
+\begin{frame}{SSD Object Detection Results}
+
+    \begin{figure}%
+        \centering
+        % \subfloat[]{{\includegraphics[height=3.5cm, width=6cm]{images/9.png} }}%
+        \includegraphics[width=6cm, height=3.5cm]{images/9.png}
+        % \qquad
+        \includegraphics[width=6cm, height=3.5cm]{images/tuned_9.png}
+        % \subfloat[]{{\includegraphics[height=3.5cm, width=6cm]{images/tuned_9.png} }}%
+        \caption{Matched prior boxes and ground truth boxes}%
+        \label{fig:example}%
+    \end{figure}
+
+    % \begin{figure}[H]
+    %     \centering
+    %     \begin{minipage}{.5\textwidth}
+    %       \centering
+    %       \includegraphics[width=6cm, height=3.5cm]{images/9.png}
+    %     \end{minipage}%
+    %     \begin{minipage}{.5\textwidth}
+    %       \centering
+    %       \includegraphics[width=6cm, height=3.5cm]{images/tuned_9.png}
+    %     \end{minipage}
+    %     \caption{Matched prior boxes and ground truth boxes}
+    % \end{figure}
+
+    \begin{table}[]
+        % \renewcommand{\arraystretch}{1.5}
+        \caption{Average Precision values using SSD300 model with and without tuned prior boxes}
+        \resizebox{\textwidth}{!}{
+    \scriptsize \begin{tabular}{cllllllllll}
+    
+                                  &                         & \multicolumn{9}{c}{\textbf{Agents}}  \\ \hline
+                                  & \multicolumn{1}{l}{\textbf{Models}}         & \multicolumn{1}{l}{\textbf{Pedestrian}} & \multicolumn{1}{l}{\textbf{Rider}} & \multicolumn{1}{l}{\textbf{Car}} & \multicolumn{1}{l}{\textbf{Truck}} & \multicolumn{1}{l}{\textbf{Bus}} & \multicolumn{1}{l}{\textbf{Motorcycle}} & \multicolumn{1}{l}{\textbf{Bicycle}} &\multicolumn{1}{l}{\textbf{Traffic Sign}} & \textbf{mean} \\ \hline
+     & \multicolumn{1}{l}{\textbf{SSD300}}         & \multicolumn{1}{l}{0.006}               & \multicolumn{1}{l}{0.004}          & \multicolumn{1}{l}{0.095}        & \multicolumn{1}{l}{0.083}          & \multicolumn{1}{l}{0.15}         & \multicolumn{1}{l}{0.045}               & \multicolumn{1}{l}{0.092}            & \multicolumn{1}{l}{0.001}       &     0.059     \\ \cline{1-11} 
+                                  & \multicolumn{1}{l}{\textbf{SSD300 - Tuned}} & \multicolumn{1}{l}{0.165}               & \multicolumn{1}{l}{0.135}          & \multicolumn{1}{l}{0.479}        & \multicolumn{1}{l}{0.389}          & \multicolumn{1}{l}{0.389}        & \multicolumn{1}{l}{0.163}               & \multicolumn{1}{l}{0.213}            & \multicolumn{1}{l}{0.186}    &     0.265        \\ \hline
+    \end{tabular}
+            }
+            \label{map_basic}
+        \end{table}
+
+
+\end{frame}
 
 
 \begin{frame}[allowframebreaks]
