@@ -1,0 +1,83 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Challenges and Difficulties}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Problem Statement}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Background}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}SSD: Single Shot multi-box Detector model}{5}{section.2.1}%
+\contentsline {subsubsection}{Matching Strategy}{6}{figure.caption.10}%
+\contentsline {subsubsection}{Default box selection}{7}{figure.caption.10}%
+\contentsline {subsubsection}{Scales}{7}{figure.caption.10}%
+\contentsline {subsubsection}{Aspect ratios}{7}{equation.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.1}Loss Function}{8}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Uncertainty Quantification in Deep Neural Networks}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Bayesian Neural Networks}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Deep Ensembles}{11}{subsection.2.2.2}%
+\contentsline {subsubsection}{Deep Sub-Ensembles}{12}{Item.8}%
+\contentsline {chapter}{\numberline {3}Related Work}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Object Detection}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Region based (Two Stage) frameworks}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Unified (Single Stage) frameworks}{14}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Object-Detection Metrics}{15}{subsection.3.1.3}%
+\contentsline {subsubsection}{Intersection over Union}{15}{subsection.3.1.3}%
+\contentsline {subsubsection}{Precision and Recall}{15}{equation.3.1.1}%
+\contentsline {subsubsection}{Average Precision}{16}{equation.3.1.3}%
+\contentsline {subsubsection}{Mean Average Precision}{16}{equation.3.1.5}%
+\contentsline {section}{\numberline {3.2}Out-Of-Distribution Detection}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Metric based methods}{17}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Inconsistency based methods}{18}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Generative methods}{18}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Uncertainty based methods}{18}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}\acrlong {ood} methods - Deep Dive}{19}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Max Softmax Probability}{19}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}ODIN}{19}{subsection.3.3.2}%
+\contentsline {subsubsection}{Temperature Scaling}{20}{subsection.3.3.2}%
+\contentsline {subsubsection}{Input Preprocessing}{21}{equation.3.3.11}%
+\contentsline {subsection}{\numberline {3.3.3}Mahalanobis distance-based OOD Detector}{22}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Datasets}{24}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Benchmarking}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Datasets}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Berkley Deep Drive (BDD100K) Dataset}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Indian Driving Dataset}{29}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}\acrshort {bdd}-Weather Dataset}{33}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Performance Metrics}{36}{subsection.4.1.4}%
+\contentsline {subsubsection}{Area Under Receiver Operating characteristic Curve}{36}{subsection.4.1.4}%
+\contentsline {subsubsection}{Probability and Entropy}{36}{subsection.4.1.4}%
+\contentsline {subsubsection}{Box Deviation}{36}{equation.4.1.2}%
+\contentsline {section}{\numberline {4.2}Out-of-Distribution for Object Detection ($OD^{2}$) Dataset Summary}{37}{section.4.2}%
+\contentsline {subsubsection}{Task Description}{37}{Item.21}%
+\contentsline {chapter}{\numberline {5}Experimental Setup}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Object Detection Model}{39}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}\acrlong {paz}}{39}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Tensorflow}{40}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Compute Platform}{40}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Training}{40}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Out Of Distribution Detection }{41}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}ODIN}{41}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Mahalanobis Distance based \acrshort {ood} Detector}{41}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Bayesian-SSD Object Detector}{43}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Sub-Ensemble based SSD Object Detector}{43}{subsection.5.2.4}%
+\contentsline {chapter}{\numberline {6}Experiments}{45}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Training and Evaluating an \acrshort {ssd} Object Detector using \acrshort {bdd} Dataset}{45}{section.6.1}%
+\contentsline {subsubsection}{Results}{46}{figure.caption.32}%
+\contentsline {subsubsection}{Observations}{46}{figure.caption.34}%
+\contentsline {subsubsection}{Tuning the Prior boxes}{46}{figure.caption.34}%
+\contentsline {subsubsection}{Observations}{53}{figure.caption.38}%
+\contentsline {section}{\numberline {6.2}\acrlong {ood} Detection}{53}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Max Softmax}{53}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Softmax-based ODIN}{53}{subsection.6.2.2}%
+\contentsline {subsubsection}{Hyperparameter Optimization}{54}{subsection.6.2.2}%
+\contentsline {subsubsection}{Observations}{54}{figure.caption.40}%
+\contentsline {section}{\numberline {6.3}Uncertainty based \acrlong {ood} Detection}{55}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Training Bayesian and Sub-Ensemble based SSD Object Detector}{55}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Quantification of Uncertainty in SSD Object Detector}{58}{subsection.6.3.2}%
+\contentsline {subsubsection}{Probability}{58}{subsection.6.3.2}%
+\contentsline {subsubsection}{Entropy}{60}{figure.caption.46}%
+\contentsline {subsubsection}{Box Deviation}{61}{figure.caption.48}%
+\contentsline {subsection}{\numberline {6.3.3}Out-of-Distribution Detection quantification using Uncertainty Quantification methods}{68}{subsection.6.3.3}%
+\contentsline {subsubsection}{Observations}{70}{figure.caption.58}%
+\contentsline {subsection}{\numberline {6.3.4}\acrlong {ood} Detection with \acrshort {bdd}-Weather dataset}{74}{subsection.6.3.4}%
+\contentsline {subsubsection}{Observations}{75}{figure.caption.68}%
+\contentsline {chapter}{\numberline {7}Conclusions}{79}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Contributions}{79}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Lessons Learned}{80}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Work}{80}{section.7.3}%

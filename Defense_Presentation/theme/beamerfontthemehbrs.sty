@@ -1,0 +1,29 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerfontthemehbrs}[2017/02/12]
+
+\mode<presentation>
+
+%% Fonts
+\usepackage[scaled]{helvet}
+
+\usefonttheme{professionalfonts}
+\usefonttheme{default}
+
+\setbeamerfont{normal text}{size=\small}
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{subtitle}{parent=normal text, size=\large, series=\mdseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\small, shape=\itshape, series=\mdseries}
+\setbeamerfont{description item}{series=\bfseries}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{date in title}{family=\sffamily, size=\small}
+% \setbeamerfont{caption}{size=\small}
+\setbeamerfont{section in toc}{size=\normalsize}
+\setbeamerfont{subsection in toc}{size=\small}
+
+\renewcommand<>{\emph}[1]{{\color{hbrsblue}{\only#2{\bfseries}#1}}}
+
+\mode
+<all>
+\endinput

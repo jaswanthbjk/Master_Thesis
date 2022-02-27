@@ -1,0 +1,1407 @@
+@techreport{Oberdiek,
+abstract = {Figure 1: Embedding space of unknown and badly segmented objects based on ResNet152 features. Darker regions symbolize higher global density. Contour lines are regions of highest density [13] of gaussian kernel density estimates of the data conditioned to the classes depicted on the thumbnails. Bandwidth selection for the gaussian kernel density estimates is done using Scott's rule [31] and we select $\alpha$ = 0.2 for the highest density regions. Dimensionality reduction has been performed using PCA down to 50 dimensions followed by t-SNE [34] with perplexity of 30, early exaggeration of 12 and learning rate of 200. Abstract When deploying deep learning technology in self-driving cars, deep neural networks are constantly exposed to domain shifts. These include, e.g., changes in weather conditions , time of day, and long-term temporal shift. In this work we utilize a deep neural network trained on the Cityscapes dataset containing urban street scenes and infer images from a different dataset, the A2D2 dataset, containing also countryside and highway images. We present a novel pipeline for semantic segmenation that detects out-of-distribution (OOD) segments by means of the deep neu-ral network's prediction and performs image retrieval after feature extraction and dimensionality reduction on image patches. In our experiments we demonstrate that the deployed OOD approach is suitable for detecting out-of-distribution concepts. Furthermore, we evaluate the image patch retrieval qualitatively as well as quantitatively by means of the semi-compatible A2D2 ground truth and obtain mAP values of up to 52.2%.},
+author = {Oberdiek, Philipp and Rottmann, Matthias and Fink, Gernot A},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Oberdiek, Rottmann, Fink - Unknown - Detection and Retrieval of Out-of-Distribution Objects in Semantic Segmentation.pdf:pdf},
+title = {{Detection and Retrieval of Out-of-Distribution Objects in Semantic Segmentation}}
+}
+@article{Schwaiger2020,
+abstract = {Reliable information about the uncertainty of predictions from deep neural networks could greatly facilitate their utilization in safety-critical applications. Current approaches for uncertainty quantification usually focus on in-distribution data, where a high uncertainty should be assigned to incorrect predictions. In contrast, we focus on out-of-distribution data where a network cannot make correct predictions and therefore should always report high uncertainty. In this paper, we compare several state-of-the-art uncertainty quantification methods for deep neural networks regarding their ability to detect novel inputs. We evaluate them on image classification tasks with regard to metrics reflecting requirements important for safety-critical applications. Our results show that a portion of out-of-distribution inputs can be detected with reasonable loss in overall accuracy. However, current uncertainty quantification approaches alone are not sufficient for an overall reliable out-of-distribution detection.},
+author = {Schwaiger, Adrian and Sinhamahapatra, Poulami and Gansloser, Jens and Roscher, Karsten},
+issn = {16130073},
+journal = {CEUR Workshop Proceedings},
+title = {{Is uncertainty quantification in deep learning sufficient for out-of-distribution detection?}},
+volume = {2640},
+year = {2020}
+}
+@techreport{Liu2020,
+abstract = {Bayesian neural networks (BNN) and deep ensembles are principled approaches to estimate the predictive uncertainty of a deep learning model. However their practicality in real-time, industrial-scale applications are limited due to their heavy memory and inference cost. This motivates us to study principled approaches to high-quality uncertainty estimation that require only a single deep neural network (DNN). By formalizing the uncertainty quantification as a minimax learning problem, we first identify input distance awareness, i.e., the model's ability to quantify the distance of a testing example from the training data in the input space, as a necessary condition for a DNN to achieve high-quality (i.e., minimax optimal) uncertainty estimation. We then propose Spectral-normalized Neural Gaussian Process (SNGP), a simple method that improves the distance-awareness ability of modern DNNs, by adding a weight normalization step during training and replacing the output layer. On a suite of vision and language understanding tasks and on modern architectures (Wide-ResNet and BERT), SNGP is competitive with deep ensembles in prediction, calibration and out-of-domain detection, and outperforms the other single-model approaches.},
+archivePrefix = {arXiv},
+arxivId = {2006.10108},
+author = {Liu, Jeremiah Zhe and Lin, Zi and Padhy, Shreyas and Tran, Dustin and Bedrax-Weiss, Tania and Lakshminarayanan, Balaji},
+booktitle = {arXiv},
+eprint = {2006.10108},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Liu et al. - 2020 - Simple and principled uncertainty estimation with deterministic deep learning via distance awareness.pdf:pdf},
+issn = {23318422},
+title = {{Simple and principled uncertainty estimation with deterministic deep learning via distance awareness}},
+year = {2020}
+}
+@techreport{Hsu2020,
+abstract = {Deep neural networks have attained remarkable performance when applied to data that comes from the same distribution as that of the training set, but can significantly degrade otherwise. Therefore, detecting whether an example is out-of-distribution (OoD) is crucial to enable a system that can reject such samples or alert users. Recent works have made significant progress on OoD benchmarks consisting of small image datasets. However, many recent methods based on neural networks rely on training or tuning with both in-distribution and out-of-distribution data. The latter is generally hard to define a-priori, and its selection can easily bias the learning. We base our work on a popular method ODIN, proposing two strategies for freeing it from the needs of tuning with OoD data, while improving its OoD detection performance. We specifically propose to decompose confidence scoring as well as a modified input pre-processing method. We show that both of these significantly help in detection performance. Our further analysis on a larger scale image dataset shows that the two types of distribution shifts, specifically semantic shift and non-semantic shift, present a significant difference in the difficulty of the problem, providing an analysis of when ODIN-like strategies do or do not work.},
+archivePrefix = {arXiv},
+arxivId = {2002.11297},
+author = {Hsu, Yen Chang and Shen, Yilin and Jin, Hongxia and Kira, Zsolt},
+booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+eprint = {2002.11297},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Hsu et al. - 2020 - Generalized ODIN Detecting Out-of-Distribution Image without Learning from Out-of-Distribution Data.pdf:pdf},
+issn = {10636919},
+pages = {10948--10957},
+title = {{Generalized ODIN: Detecting Out-of-Distribution Image without Learning from Out-of-Distribution Data}},
+year = {2020}
+}
+@inproceedings{8906748,
+abstract = {Several areas have been improved with Deep Learning during the past years. For non-safety related products adoption of AI and ML is not an issue, whereas in safety critical applications, robustness of such approaches is still an issue. A common challenge for Deep Neural Networks (DNN) occur when exposed to out-of-distribution samples that are previously unseen, where DNNs can yield high confidence predictions despite no prior knowledge of the input. In this paper we analyse two supervisors on two well-known DNNs with varied setups of training and find that the outlier detection performance improves with the quality of the training procedure. We analyse the performance of the supervisor after each epoch during the training cycle, to investigate supervisor performance as the accuracy converges. Understanding the relationship between training results and supervisor performance is valuable to improve robustness of the model and indicates where more work has to be done to create generalized models for safety critical applications.},
+author = {Henriksson, Jens and Berger, Christian and Borg, Markus and Tornberg, Lars and Sathyamoorthy, Sankar Raman and Englund, Cristofer},
+booktitle = {Proceedings - 45th Euromicro Conference on Software Engineering and Advanced Applications, SEAA 2019},
+isbn = {9781728132853},
+keywords = {automotive-perception,deep-neural-networks,out-of-distribution,robustness},
+month = {aug},
+pages = {113--120},
+title = {{Performance Analysis of Out-of-Distribution Detection on Various Trained Neural Networks}},
+year = {2019}
+}
+@techreport{Lee2018,
+abstract = {Detecting test samples drawn sufficiently far away from the training distribution statistically or adversarially is a fundamental requirement for deploying a good classifier in many real-world machine learning applications. However, deep neural networks with the softmax classifier are known to produce highly overconfident posterior distributions even for such abnormal samples. In this paper, we propose a simple yet effective method for detecting any abnormal samples, which is applicable to any pre-trained softmax neural classifier. We obtain the class conditional Gaussian distributions with respect to (low- and upper-level) features of the deep models under Gaussian discriminant analysis, which result in a confidence score based on the Mahalanobis distance. While most prior methods have been evaluated for detecting either out-of-distribution or adversarial samples, but not both, the proposed method achieves the state-of-the-art performances for both cases in our experiments. Moreover, we found that our proposed method is more robust in harsh cases, e.g., when the training dataset has noisy labels or small number of samples. Finally, we show that the proposed method enjoys broader usage by applying it to class-incremental learning: whenever out-of-distribution samples are detected, our classification rule can incorporate new classes well without further training deep models.},
+archivePrefix = {arXiv},
+arxivId = {1807.03888},
+author = {Lee, Kimin and Lee, Kibok and Lee, Honglak and Shin, Jinwoo},
+booktitle = {Advances in Neural Information Processing Systems},
+eprint = {1807.03888},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Lee et al. - 2018 - A simple unified framework for detecting out-of-distribution samples and adversarial attacks.pdf:pdf},
+isbn = {1807.03888v2},
+issn = {10495258},
+pages = {7167--7177},
+title = {{A simple unified framework for detecting out-of-distribution samples and adversarial attacks}},
+volume = {2018-Decem},
+year = {2018}
+}
+@misc{unknown,
+abstract = {Deep Learning (DL) is vulnerable to out-of-distribution and adversarial examples resulting in incorrect outputs. To make DL more robust, several posthoc anomaly detection techniques to detect (and discard) these anomalous samples have been proposed in the recent past. This survey tries to provide a structured and comprehensive overview of the research on anomaly detection for DL based applications. We provide a taxonomy for existing techniques based on their underlying assumptions and adopted approaches. We discuss various techniques in each of the categories and provide the relative strengths and weaknesses of the approaches. Our goal in this survey is to provide an easier yet better understanding of the techniques belonging to different categories in which research has been done on this topic. Finally, we highlight the unsolved research challenges while applying anomaly detection techniques in DL systems and present some high-impact future research directions.},
+archivePrefix = {arXiv},
+arxivId = {2003.06979},
+author = {Bulusu, Saikiran and Kailkhura, Bhavya and Li, Bo and Varshney, Pramod K. and Song, Dawn},
+booktitle = {arXiv},
+eprint = {2003.06979},
+issn = {23318422},
+title = {{Anomalous instance detection in deep learning: A survey}},
+year = {2020}
+}
+@techreport{Lust2020,
+abstract = {Deep Neural Networks (DNNs) achieve state-of-the-art performance on numerous applications. However, it is difficult to tell beforehand if a DNN receiving an input will deliver the correct output since their decision criteria are usually nontransparent. A DNN delivers the correct output if the input is within the area enclosed by its generalization envelope. In this case, the information contained in the input sample is processed reasonably by the network. It is of large practical importance to assess at inference time if a DNN generalizes correctly. Currently, the approaches to achieve this goal are investigated in different problem setups rather independently from one another, leading to three main research and literature fields: predictive uncertainty, out-of-distribution detection and adversarial example detection. This survey connects the three fields within the larger framework of investigating the generalization performance of machine learning methods and in particular DNNs. We underline the common ground, point at the most promising approaches and give a structured overview of the methods that provide at inference time means to establish if the current input is within the generalization envelope of a DNN.},
+archivePrefix = {arXiv},
+arxivId = {2008.09381},
+author = {Lust, Julia and Condurache, Alexandru P.},
+booktitle = {arXiv},
+eprint = {2008.09381},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Lust, Condurache - 2020 - A survey on assessing the generalization envelope of deep neural networks at inference time for image classifi.pdf:pdf},
+issn = {23318422},
+title = {{A survey on assessing the generalization envelope of deep neural networks at inference time for image classification}},
+year = {2020}
+}
+@techreport{Chen2020,
+abstract = {Detecting anomalous inputs is critical for safely deploying deep learning models in the real world. Existing approaches for detecting out-of-distribution (OOD) examples work well when evaluated on natural samples drawn from a sufficiently different distribution than the training data distribution. However, in this paper, we show that existing detection mechanisms can be extremely brittle when evaluating on inputs with minimal adversarial perturbations which don't change their semantics. Formally, we extensively study the problem of Robust Out-of-Distribution Detection on common OOD detection approaches, and show that state-of-the-art OOD detectors can be easily fooled by adding small perturbations to the inputs. To counteract these threats, we propose an effective algorithm called ALOE, which performs robust training by exposing the model to both adversarially crafted inlier and outlier examples. Our method can be flexibly combined with, and render existing methods robust. On common benchmark datasets, we show that ALOE substantially improves the robustness of state-of-the-art OOD detection, with 58.4% AUROC improvement on CIFAR-10 and 46.59% improvement on CIFAR-100. Finally, we provide theoretical analysis for our method, further justifying the empirical results above.},
+archivePrefix = {arXiv},
+arxivId = {2003.09711},
+author = {Chen, Jiefeng and Li, Yixuan and Wu, Xi and Liang, Yingyu and Jha, Somesh},
+booktitle = {arXiv},
+eprint = {2003.09711},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Chen et al. - 2020 - Robust out-of-distribution detection for neural networks.pdf:pdf},
+issn = {23318422},
+title = {{Robust out-of-distribution detection for neural networks}},
+year = {2020}
+}
+@techreport{Liang2017,
+abstract = {We consider the problem of detecting out-of-distribution images in neural networks. We propose ODIN, a simple and effective method that does not require any change to a pre-trained neural network. Our method is based on the observation that using temperature scaling and adding small perturbations to the input can separate the softmax score distributions between in- and out-of-distribution images, allowing for more effective detection. We show in a series of experiments that ODIN is compatible with diverse network architectures and datasets. It consistently outperforms the baseline approach (Hendrycks & Gimpel, 2017) by a large margin, establishing a new state-of-the-art performance on this task. For example, ODIN reduces the false positive rate from the baseline 34.7% to 4.3% on the DenseNet (applied to CIFAR-10 and Tiny-ImageNet) when the true positive rate is 95%.},
+archivePrefix = {arXiv},
+arxivId = {1706.02690},
+author = {Liang, Shiyu and Srikant, R. and Li, Yixuan},
+booktitle = {arXiv},
+eprint = {1706.02690},
+issn = {23318422},
+title = {{Enhancing the reliability of out-of-distribution image detection in neural networks}},
+year = {2017}
+}
+@techreport{Mukhoti,
+abstract = {We show that a single softmax neural net with minimal changes can beat the uncertainty predictions of Deep Ensembles and other more complex single-forward-pass uncertainty approaches. Soft-max neural nets cannot capture epistemic uncertainty reliably because for OoD points they extrapolate arbitrarily and suffer from feature collapse. This results in arbitrary softmax entropies for OoD points which can have high entropy, low, or anything in between. We study why, and show that with the right inductive biases, softmax neural nets trained with maximum likelihood reliably capture epistemic uncertainty through the feature-space density. This density is obtained using Gaussian Discriminant Analysis, but it cannot disentangle uncertainties. We show that it is necessary to combine this density with the softmax entropy to disentangle aleatoric and epistemic uncertainty-crucial e.g. for active learning. We examine the quality of epistemic uncertainty on active learning and OoD detection, where we obtain SOTA ∼ 0.98 AUROC on CIFAR-10 vs SVHN.},
+archivePrefix = {arXiv},
+arxivId = {2102.11582v1},
+author = {Mukhoti, Jishnu and Kirsch, Andreas and {Van Amersfoort}, Joost and Torr, Philip H S and Gal, Yarin},
+eprint = {2102.11582v1},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Mukhoti et al. - Unknown - Deterministic Neural Networks with Appropriate Inductive Biases Capture Epistemic and Aleatoric Uncertainty.pdf:pdf},
+title = {{Deterministic Neural Networks with Appropriate Inductive Biases Capture Epistemic and Aleatoric Uncertainty}}
+}
+@techreport{VanAmersfoort2020,
+abstract = {We propose a method for training a deterministic deep model that can find and reject out of distribution data points at test time with a single forward pass. Our approach, deterministic uncertainty quantification (DUQ), builds upon ideas of RBF networks. We scale training in these with a novel loss function and centroid updating scheme. By enforcing detectability of changes in the input using a gradient penalty, we are able to reliably detect out of distribution data. Our uncertainty quantification scales well to large datasets, and using a single model, we improve upon Deep Ensembles on notable difficult dataset pairs such as FashionMNIST vs. MNIST, and CIFAR-10 vs. SVHN, while maintaining competitive accuracy.},
+archivePrefix = {arXiv},
+arxivId = {2003.02037v2},
+author = {{Van Amersfoort}, Joost and Smith, Lewis and Teh, Yee Whye and Gal, Yarin},
+booktitle = {arXiv},
+eprint = {2003.02037v2},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Van Amersfoort et al. - 2020 - Simple and scalable epistemic uncertainty estimation using a single deep deterministic neural network.pdf:pdf},
+issn = {23318422},
+title = {{Simple and scalable epistemic uncertainty estimation using a single deep deterministic neural network}},
+year = {2020}
+}
+@techreport{Vyas2018,
+abstract = {As deep learning methods form a critical part in commercially important applications such as autonomous driving and medical diagnostics, it is important to reliably detect out-of-distribution (OOD) inputs while employing these algorithms. In this work, we propose an OOD detection algorithm which comprises of an ensemble of classifiers. We train each classifier in a self-supervised manner by leaving out a random subset of training data as OOD data and the rest as in-distribution (ID) data. We propose a novel margin-based loss over the softmax output which seeks to maintain at least a margin m between the average entropy of the OOD and in-distribution samples. In conjunction with the standard cross-entropy loss, we minimize the novel loss to train an ensemble of classifiers. We also propose a novel method to combine the outputs of the ensemble of classifiers to obtain OOD detection score and class prediction. Overall, our method convincingly outperforms Hendrycks et al. [7] and the current state-of-the-art ODIN [13] on several OOD detection benchmarks.},
+archivePrefix = {arXiv},
+arxivId = {1809.03576},
+author = {Vyas, Apoorv and Jammalamadaka, Nataraj and Zhu, Xia and Das, Dipankar and Kaul, Bharat and Willke, Theodore L.},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+eprint = {1809.03576},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Vyas et al. - 2018 - Out-of-distribution detection using an ensemble of self supervised leave-out classifiers.pdf:pdf},
+isbn = {9783030012366},
+issn = {16113349},
+keywords = {Anomaly detection,Out-of-distribution},
+pages = {560--574},
+title = {{Out-of-distribution detection using an ensemble of self supervised leave-out classifiers}},
+volume = {11212 LNCS},
+year = {2018}
+}
+
+@article{Voulodimos,
+author = {Voulodimos, Athanasios and Doulamis, Nikolaos and Doulamis, Anastasios and Protopapadakis, Eftychios and Andina, Diego},
+title = {Deep Learning for Computer Vision: A Brief Review},
+year = {2018},
+issue_date = {2018},
+publisher = {Hindawi Limited},
+address = {London, GBR},
+volume = {2018},
+abstract = {Over the last years deep learning methods have been shown to outperform previous state-of-the-art machine learning techniques in several fields, with computer vision being one of the most prominent cases. This review paper provides a brief overview of some of the most significant deep learning schemes used in computer vision problems, that is, Convolutional Neural Networks, Deep Boltzmann Machines and Deep Belief Networks, and Stacked Denoising Autoencoders. A brief account of their history, structure, advantages, and limitations is given, followed by a description of their applications in various computer vision tasks, such as object detection, face recognition, action and activity recognition, and human pose estimation. Finally, a brief overview is given of future directions in designing deep learning schemes for computer vision problems and the challenges involved therein.},
+journal = {Intell. Neuroscience},
+month = jan,
+numpages = {13}
+}
+@INPROCEEDINGS{klosowski,
+  author={P. {Kłosowski}},
+  booktitle={2018 Signal Processing: Algorithms, Architectures, Arrangements, and Applications (SPA)}, 
+  title={Deep Learning for Natural Language Processing and Language Modelling}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={223-228}}
+@ARTICLE{Han,  author={Z. {Han} and J. {Zhao} and H. {Leung} and K. F. {Ma} and W. {Wang}},  journal={IEEE Sensors Journal},   title={A Review of Deep Learning Models for Time Series Prediction},   year={2021},  volume={21},  number={6},  pages={7833-7848}}
+
+@article{goodfellow2014explaining,
+  abstract = {Several machine learning models, including neural networks, consistently
+misclassify adversarial examples---inputs formed by applying small but
+intentionally worst-case perturbations to examples from the dataset, such that
+the perturbed input results in the model outputting an incorrect answer with
+high confidence. Early attempts at explaining this phenomenon focused on
+nonlinearity and overfitting. We argue instead that the primary cause of neural
+networks' vulnerability to adversarial perturbation is their linear nature.
+This explanation is supported by new quantitative results while giving the
+first explanation of the most intriguing fact about them: their generalization
+across architectures and training sets. Moreover, this view yields a simple and
+fast method of generating adversarial examples. Using this approach to provide
+examples for adversarial training, we reduce the test set error of a maxout
+network on the MNIST dataset.},
+  added-at = {2019-09-26T15:53:30.000+0200},
+  author = {Goodfellow, Ian J. and Shlens, Jonathon and Szegedy, Christian},
+  description = {[1412.6572] Explaining and Harnessing Adversarial Examples},
+  interhash = {cfd4056e0a17212d539d2ef112c60daf},
+  intrahash = {5070a3a883e98c134cff9375e6f6b756},
+  keywords = {adversarial robustness},
+  note = {cite arxiv:1412.6572},
+  timestamp = {2019-09-26T15:53:30.000+0200},
+  title = {Explaining and Harnessing Adversarial Examples},
+  year = 2014
+}
+
+@INPROCEEDINGS{DNNFooled,  author={Nguyen, Anh and Yosinski, Jason and Clune, Jeff},  booktitle={2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},   title={Deep neural networks are easily fooled: High confidence predictions for unrecognizable images},   year={2015},  volume={},  number={},  pages={427-436}}
+
+@ARTICLE{DeepODReview,
+  author={Zhao, Zhong-Qiu and Zheng, Peng and Xu, Shou-Tao and Wu, Xindong},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Object Detection With Deep Learning: A Review}, 
+  year={2019},
+  volume={30},
+  number={11},
+  pages={3212-3232}}
+  
+@InProceedings{COCO_Dataset,
+author="Lin, Tsung-Yi
+and Maire, Michael
+and Belongie, Serge
+and Hays, James
+and Perona, Pietro
+and Ramanan, Deva
+and Doll{\'a}r, Piotr
+and Zitnick, C. Lawrence",
+editor="Fleet, David
+and Pajdla, Tomas
+and Schiele, Bernt
+and Tuytelaars, Tinne",
+title="Microsoft COCO: Common Objects in Context",
+booktitle="Computer Vision -- ECCV 2014",
+year="2014",
+publisher="Springer International Publishing",
+address="Cham",
+pages="740--755",
+abstract="We present a new dataset with the goal of advancing the state-of-the-art in object recognition by placing the question of object recognition in the context of the broader question of scene understanding. This is achieved by gathering images of complex everyday scenes containing common objects in their natural context. Objects are labeled using per-instance segmentations to aid in precise object localization. Our dataset contains photos of 91 objects types that would be easily recognizable by a 4 year old. With a total of 2.5 million labeled instances in 328k images, the creation of our dataset drew upon extensive crowd worker involvement via novel user interfaces for category detection, instance spotting and instance segmentation. We present a detailed statistical analysis of the dataset in comparison to PASCAL, ImageNet, and SUN. Finally, we provide baseline performance analysis for bounding box and segmentation detection results using a Deformable Parts Model.",
+isbn="978-3-319-10602-1"
+}
+
+@article{Varma2019IDDAD,
+  title={IDD: A Dataset for Exploring Problems of Autonomous Navigation in Unconstrained Environments},
+  author={G. Varma and A. Subramanian and A. Namboodiri and Manmohan Chandraker and C. V. Jawahar},
+  journal={2019 IEEE Winter Conference on Applications of Computer Vision (WACV)},
+  year={2019},
+  pages={1743-1751}
+}
+
+@misc{Gustavo2019, title={Tesla Autopilot Confuses Boy In Orange Shirt For A Cone In Brazil}, url={https://insideevs.com/news/388253/tesla-autopilot-confuses-boy-for-cone/}, journal={insideevs}, author={Ruffo, Gustavo Henrique}, year={2019}, month={Dec}}
+
+@article{hendrycks17baseline,
+  author    = {Dan Hendrycks and Kevin Gimpel},
+  title     = {A Baseline for Detecting Misclassified and Out-of-Distribution Examples in Neural Networks},
+  journal = {Proceedings of International Conference on Learning Representations},
+  year = {2017},
+}
+
+@article{liang2017enhancing,
+  title={Enhancing the reliability of out-of-distribution image detection in neural networks},
+  author={Liang, Shiyu and Li, Yixuan and Srikant, Rayadurgam},
+  journal={arXiv preprint arXiv:1706.02690},
+  year={2017}
+}
+
+@article{Huang2017DenselyCC,
+  title={Densely Connected Convolutional Networks},
+  author={Gao Huang and Zhuang Liu and Kilian Q. Weinberger},
+  journal={2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2017},
+  pages={2261-2269}
+}
+
+@inproceedings{Lee2018ASU,
+  title={A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks},
+  author={Kimin Lee and Kibok Lee and H. Lee and Jinwoo Shin},
+  booktitle={NeurIPS},
+  year={2018}
+}
+
+@InProceedings{Cao2020,
+abstract = {Motivation: Deep learning models deployed for use on medical tasks can be equipped with Out-of-Distribution Detection (OoDD) methods in order to avoid erroneous predictions. However it is unclear which OoDD method should be used in practice. Specific Problem: Systems trained for one particular domain of images cannot be expected to perform accurately on images of a different domain. These images should be flagged by an OoDD method prior to diagnosis. Our approach: This paper defines 3 categories of OoD examples and benchmarks popular OoDD methods in three domains of medical imaging: chest X-ray, fundus imaging, and histology slides. Results: Our experiments show that despite methods yielding good results on some categories of out-of-distribution samples, they fail to recognize images close to the training distribution. Conclusion: We find a simple binary classifier on the feature representation has the best accuracy and AUPRC on average. Users of diagnostic tools which employ these OoDD methods should still remain vigilant that images very close to the training distribution yet not in it could yield unexpected results.},
+archivePrefix = {arXiv},
+arxivId = {2007.04250v2},
+author = {Cao, Tianshi and Huang, Chin-Wei and {Yu-Tung Hui}, David and {Paul Cohen}, Joseph},
+booktitle = {Journal of Machine Learning for Biomedical Imaging},
+eprint = {2007.04250v2},
+mendeley-groups = {OOD detection},
+pages = {1--48},
+title = {{A Benchmark of Medical Out of Distribution Detection}},
+volume = {1},
+year = {2020}
+}
+
+@InProceedings{KITTI2012,
+  author    = {A Geiger and P Lenz and R Urtasun},
+  title     = {{Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite}},
+  booktitle = {{Conference on Computer Vision and Pattern Recognition (CVPR)}},
+  year      = {2012},
+}
+
+@InProceedings{Malinin2018,
+abstract = {Estimating how uncertain an AI system is in its predictions is important to improve the safety of such systems. Uncertainty in predictive can result from uncertainty in model parameters, irreducible data uncertainty and uncertainty due to distributional mismatch between the test and training data distributions. Different actions might be taken depending on the source of the uncertainty so it is important to be able to distinguish between them. Recently, baseline tasks and metrics have been defined and several practical methods to estimate uncertainty developed. These methods, however, attempt to model uncertainty due to distributional mismatch either implicitly through model uncertainty or as data uncertainty. This work proposes a new framework for modeling predictive uncertainty called Prior Networks (PNs) which explicitly models distributional uncertainty. PNs do this by parameterizing a prior distribution over predictive distributions. This work focuses on uncertainty for classification and evaluates PNs on the tasks of identifying out-of-distribution (OOD) samples and detecting misclassification on the MNIST and CIFAR-10 datasets, where they are found to outperform previous methods. Experiments on synthetic and MNIST and CIFAR-10 data show that unlike previous non-Bayesian methods PNs are able to distinguish between data and distributional uncertainty.},
+archivePrefix = {arXiv},
+arxivId = {1802.10501},
+author = {Malinin, Andrey and Gales, Mark},
+booktitle = {Advances in Neural Information Processing Systems},
+eprint = {1802.10501},
+issn = {10495258},
+mendeley-groups = {OOD detection},
+pages = {7047--7058},
+title = {{Predictive uncertainty estimation via prior networks}},
+volume = {2018-December},
+year = {2018}
+}
+
+@INPROCEEDINGS{Girshick2014,
+archivePrefix = {arXiv},
+arxivId = {1311.2524},
+author = {Girshick, Ross and Donahue, Jeff and Darrell, Trevor and Malik, Jitendra},
+booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+eprint = {1311.2524},
+isbn = {9781479951178},
+issn = {10636919},
+mendeley-groups = {OOD detection},
+pages = {580--587},
+title = {{Rich feature hierarchies for accurate object detection and semantic segmentation}},
+
+year = {2014}
+}
+
+@INPROCEEDINGS{Girshick2015,
+abstract = {This paper proposes a Fast Region-based Convolutional Network method (Fast R-CNN) for object detection. Fast R-CNN builds on previous work to efficiently classify object proposals using deep convolutional networks. Compared to previous work, Fast R-CNN employs several innovations to improve training and testing speed while also increasing detection accuracy. Fast R-CNN trains the very deep VGG16 network 9x faster than R-CNN, is 213x faster at test-time, and achieves a higher mAP on PASCAL VOC 2012. Compared to SPPnet, Fast R-CNN trains VGG16 3x faster, tests 10x faster, and is more accurate. Fast R-CNN is implemented in Python and C++ (using Caffe) and is available under the open-source MIT License at https://github.com/rbgirshick/fast-rcnn.},
+archivePrefix = {arXiv},
+arxivId = {1504.08083},
+author = {Girshick, Ross},
+booktitle = {Proceedings of the IEEE International Conference on Computer Vision},
+eprint = {1504.08083},
+isbn = {9781467383912},
+issn = {15505499},
+pages = {1440--1448},
+title = {{Fast R-CNN}},
+volume = {2015 International Conference on Computer Vision, ICCV 2015},
+year = {2015}
+}
+
+@InProceedings{Ren2017,
+abstract = {State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like SPPnet [1] and Fast R-CNN [2] have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (RPN) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An RPN is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The RPN is trained end-to-end to generate high-quality region proposals, which are used by Fast R-CNN for detection. We further merge RPN and Fast R-CNN into a single network by sharing their convolutional features - using the recently popular terminology of neural networks with 'attention' mechanisms, the RPN component tells the unified network where to look. For the very deep VGG-16 model [3], our detection system has a frame rate of 5 fps (including all steps) on a GPU, while achieving state-of-the-art object detection accuracy on PASCAL VOC 2007, 2012, and MS COCO datasets with only 300 proposals per image. In ILSVRC and COCO 2015 competitions, Faster R-CNN and RPN are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.},
+archivePrefix = {arXiv},
+arxivId = {1506.01497},
+author = {Ren, Shaoqing and He, Kaiming and Girshick, Ross and Sun, Jian},
+booktitle = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+eprint = {1506.01497},
+issn = {01628828},
+keywords = {Object detection,convolutional neural network,region proposal},
+mendeley-groups = {OOD detection},
+number = {6},
+pages = {1137--1149},
+pmid = {27295650},
+title = {{Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks}},
+volume = {39},
+year = {2017}
+}
+
+@InProceedings{Redmon2016,
+abstract = {We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and class probabilities directly from full images in one evaluation. Since the whole detection pipeline is a single network, it can be optimized end-to-end directly on detection performance. Our unified architecture is extremely fast. Our base YOLO model processes images in real-time at 45 frames per second. A smaller version of the network, Fast YOLO, processes an astounding 155 frames per second while still achieving double the mAP of other real-time detectors. Compared to state-of-the-art detection systems, YOLO makes more localization errors but is less likely to predict false positives on background. Finally, YOLO learns very general representations of objects. It outperforms other detection methods, including DPM and R-CNN, when generalizing from natural images to other domains like artwork.},
+archivePrefix = {arXiv},
+arxivId = {1506.02640},
+author = {Redmon, Joseph and Divvala, Santosh and Girshick, Ross and Farhadi, Ali},
+booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+eprint = {1506.02640},
+isbn = {9781467388504},
+issn = {10636919},
+mendeley-groups = {OOD detection},
+pages = {779--788},
+title = {{You only look once: Unified, real-time object detection}},
+volume = {2016-December},
+year = {2016}
+}
+
+@INPROCEEDINGS{DPM,
+  author={Yan, Junjie and Lei, Zhen and Wen, Longyin and Li, Stan Z.},
+  booktitle={2014 IEEE Conference on Computer Vision and Pattern Recognition}, 
+  title={The Fastest Deformable Part Model for Object Detection}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={2497-2504}}
+
+@InProceedings{Bochkovskiy2020,
+abstract = {There are a huge number of features which are said to improve Convolutional Neural Network (CNN) accuracy. Practical testing of combinations of such features on large datasets, and theoretical justification of the result, is required. Some features operate on certain models exclusively and for certain problems exclusively, or only for small-scale datasets; while some features, such as batch-normalization and residual-connections, are applicable to the majority of models, tasks, and datasets. We assume that such universal features include Weighted-Residual-Connections (WRC), Cross-Stage-Partial-connections (CSP), Cross mini-Batch Normalization (CmBN), Self-adversarial-training (SAT) and Mish-activation. We use new features: WRC, CSP, CmBN, SAT, Mish activation, Mosaic data augmentation, CmBN, DropBlock regularization, and CIoU loss, and combine some of them to achieve state-of-the-art results: 43.5% AP (65.7% AP50) for the MS COCO dataset at a real-time speed of ∼65 FPS on Tesla V100. Source code is at https://github.com/AlexeyAB/darknet.},
+archivePrefix = {arXiv},
+arxivId = {2004.10934},
+author = {Bochkovskiy, Alexey and Wang, Chien Yao and Liao, Hong Yuan Mark},
+booktitle = {arXiv},
+eprint = {2004.10934},
+issn = {23318422},
+mendeley-groups = {OOD detection},
+title = {{YOLOv4: Optimal Speed and Accuracy of Object Detection}},
+year = {2020}
+}
+
+@InProceedings{Tan2020,
+abstract = {Model efficiency has become increasingly important in computer vision. In this paper, we systematically study neural network architecture design choices for object detection and propose several key optimizations to improve efficiency. First, we propose a weighted bi-directional feature pyramid network (BiFPN), which allows easy and fast multi-scale feature fusion; Second, we propose a compound scaling method that uniformly scales the resolution, depth, and width for all backbone, feature network, and box/class prediction networks at the same time. Based on these optimizations and EfficientNet backbones, we have developed a new family of object detectors, called EfficientDet, which consistently achieve much better efficiency than prior art across a wide spectrum of resource constraints. In particular, with single-model and single-scale, our EfficientDetD7 achieves state-of-the-art 52.2 AP on COCO test-dev with 52M parameters and 325B FLOPs1, being 4x - 9x smaller and using 13x - 42x fewer FLOPs than previous detector. Code is available at https://github.com/google/automl/tree/master/efficientdet.},
+archivePrefix = {arXiv},
+arxivId = {1911.09070},
+author = {Tan, Mingxing and Pang, Ruoming and Le, Quoc V.},
+booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+eprint = {1911.09070},
+issn = {10636919},
+mendeley-groups = {OOD detection},
+pages = {10778--10787},
+title = {{EfficientDet: Scalable and efficient object detection}},
+year = {2020}
+}
+
+@InProceedings{Liu2018,
+abstract = {The way that information propagates in neural networks is of great importance. In this paper, we propose Path Aggregation Network (PANet) aiming at boosting information flow in proposal-based instance segmentation framework. Specifically, we enhance the entire feature hierarchy with accurate localization signals in lower layers by bottom-up path augmentation, which shortens the information path between lower layers and topmost feature. We present adaptive feature pooling, which links feature grid and all feature levels to make useful information in each level propagate directly to following proposal subnetworks. A complementary branch capturing different views for each proposal is created to further improve mask prediction. These improvements are simple to implement, with subtle extra computational overhead. Yet they are useful and make our PANet reach the 1st place in the COCO 2017 Challenge Instance Segmentation task and the 2nd place in Object Detection task without large-batch training. PANet is also state-of-the-art on MVD and Cityscapes.},
+archivePrefix = {arXiv},
+arxivId = {1803.01534},
+author = {Liu, Shu and Qi, Lu and Qin, Haifang and Shi, Jianping and Jia, Jiaya},
+booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+isbn = {9781538664209},
+issn = {10636919},
+mendeley-groups = {OOD detection},
+pages = {8759--8768},
+title = {{Path Aggregation Network for Instance Segmentation}},
+year = {2018}
+}
+
+@InProceedings{Devries,
+abstract = {Modern neural networks are very powerful pre-dictive models, but they are often incapable of recognizing when their predictions may be wrong. Closely related to this is the task of out-of-distribution detection, where a network must determine whether or not an input is outside of the set on which it is expected to safely perform. To jointly address these issues, we propose a method of learning confidence estimates for neu-ral networks that is simple to implement and produces intuitively interpretable outputs. We demonstrate that on the task of out-of-distribution detection , our technique surpasses recently proposed techniques which construct confidence based on},
+archivePrefix = {arXiv},
+arxivId = {1802.04865v1},
+author = {Devries, Terrance and Taylor, Graham W},
+eprint = {1802.04865v1},
+mendeley-groups = {OOD detection},
+title = {{Learning Confidence for Out-of-Distribution Detection in Neural Networks}},
+year = {2018}
+}
+
+@InProceedings{Oberdiek2018,
+abstract = {We study the quantification of uncertainty of Convolutional Neural Networks (CNNs) based on gradient metrics. Unlike the classical softmax entropy, such metrics gather information from all layers of the CNN. We show for the EMNIST digits data set that for several such metrics we achieve the same meta classification accuracy – i.e. the task of classifying predictions as correct or incorrect without knowing the actual label – as for entropy thresholding. We apply meta classification to unknown concepts (out-of-distribution samples) – EMNIST/Omniglot letters, CIFAR10 and noise – and demonstrate that meta classification rates for unknown concepts can be increased when using entropy together with several gradient based metrics as input quantities for a meta classifier. Meta classifiers only trained on the uncertainty metrics of known concepts, i.e. EMNIST digits, usually do not perform equally well for all unknown concepts. If we however allow the meta classifier to be trained on uncertainty metrics for some out-of-distribution samples, meta classification for concepts remote from EMNIST digits (then termed known unknowns) can be improved considerably.},
+archivePrefix = {arXiv},
+arxivId = {1805.08440},
+author = {Oberdiek, Philipp and Rottmann, Matthias and Gottschalk, Hanno},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+eprint = {1805.08440},
+isbn = {9783319999777},
+issn = {16113349},
+keywords = {Deep learning,Meta classification,Uncertainty quantification},
+mendeley-groups = {OOD detection},
+pages = {113--125},
+title = {{Classification uncertainty of deep neural networks based on gradient information}},
+volume = {11081 LNAI},
+year = {2018}
+}
+
+@InProceedings{Hendrycks2018,
+abstract = {It is important to detect anomalous inputs when deploying machine learning systems. The use of larger and more complex inputs in deep learning magnifies the difficulty of distinguishing between anomalous and in-distribution examples. At the same time, diverse image and text data are available in enormous quantities. We propose leveraging these data to improve deep anomaly detection by training anomaly detectors against an auxiliary dataset of outliers, an approach we call Outlier Exposure (OE). This enables anomaly detectors to generalize and detect unseen anomalies. In extensive experiments on natural language processing and small- and large-scale vision tasks, we find that Outlier Exposure significantly improves detection performance. We also observe that cutting-edge generative models trained on CIFAR-10 may assign higher likelihoods to SVHN images than to CIFAR-10 images; we use OE to mitigate this issue. We also analyze the flexibility and robustness of Outlier Exposure, and identify characteristics of the auxiliary dataset that improve performance.},
+archivePrefix = {arXiv},
+arxivId = {1812.04606},
+author = {Hendrycks, Dan and Mazeika, Mantas and Dietterich, Thomas},
+booktitle = {arXiv},
+eprint = {1812.04606},
+issn = {23318422},
+mendeley-groups = {OOD detection},
+title = {{Deep anomaly detection with outlier exposure}},
+year = {2018}
+}
+
+@InProceedings{Hendrycks2017,
+abstract = {We consider the two related problems of detecting if an example is misclassified or out-of-distribution. We present a simple baseline that utilizes probabilities from softmax distributions. Correctly classified examples tend to have greater maximum softmax probabilities than erroneously classified and out-of-distribution examples, allowing for their detection. We assess performance by defining several tasks in computer vision, natural language processing, and automatic speech recognition, showing the effectiveness of this baseline across all. We then show the baseline can sometimes be surpassed, demonstrating the room for future research on these underexplored detection tasks.},
+archivePrefix = {arXiv},
+arxivId = {1610.02136},
+author = {Hendrycks, Dan and Gimpel, Kevin},
+booktitle = {5th International Conference on Learning Representations, ICLR 2017 - Conference Track Proceedings},
+eprint = {1610.02136},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Hendrycks, Gimpel - Unknown - A BASELINE FOR DETECTING MISCLASSIFIED AND OUT-OF-DISTRIBUTION EXAMPLES IN NEURAL NETWORKS.pdf:pdf},
+isbn = {1610.02136v3},
+mendeley-groups = {OOD detection},
+title = {{A baseline for detecting misclassified and out-of-distribution examples in neural networks}},
+year = {2017}
+}
+
+@InProceedings{Ren2019,
+abstract = {Discriminative neural networks offer little or no performance guarantees when deployed on data not generated by the same process as the training distribution. On such out-of-distribution (OOD) inputs, the prediction may not only be erroneous, but confidently so, limiting the safe deployment of classifiers in real-world applications. One such challenging application is bacteria identification based on genomic sequences, which holds the promise of early detection of diseases, but requires a model that can output low confidence predictions on OOD genomic sequences from new bacteria that were not present in the training data. We introduce a genomics dataset for OOD detection that allows other researchers to benchmark progress on this important problem. We investigate deep generative model based approaches for OOD detection and observe that the likelihood score is heavily affected by population level background statistics. We propose a likelihood ratio method for deep generative models which effectively corrects for these confounding background statistics. We benchmark the OOD detection performance of the proposed method against existing approaches on the genomics dataset and show that our method achieves state-of-the-art performance. We demonstrate the generality of the proposed method by showing that it significantly improves OOD detection when applied to deep generative models of images.},
+archivePrefix = {arXiv},
+arxivId = {1906.02845},
+author = {Ren, Jie and Liu, Peter J. and Fertig, Emily and Snoek, Jasper and Poplin, Ryan and DePristo, Mark A. and Dillon, Joshua V. and Lakshminarayanan, Balaji},
+booktitle = {arXiv},
+eprint = {1906.02845},
+issn = {23318422},
+mendeley-groups = {OOD detection},
+title = {{Likelihood ratios for out-of-distribution detection}},
+year = {2019}
+}
+
+@InProceedings{VanDenOord2016,
+abstract = {This work explores conditional image generation with a new image density model based on the PixelCNN architecture. The model can be conditioned on any vector, including descriptive labels or tags, or latent embeddings created by other networks. When conditioned on class labels from the ImageNet database, the model is able to generate diverse, realistic scenes representing distinct animals, objects, landscapes and structures. When conditioned on an embedding produced by a convolutional network given a single image of an unseen face, it generates a variety of new portraits of the same person with different facial expressions, poses and lighting conditions. We also show that conditional PixelCNN can serve as a powerful decoder in an image autoencoder. Additionally, the gated convolutional layers in the proposed model improve the log-likelihood of PixelCNN to match the state-of-the-art performance of PixelRNN on ImageNet, with greatly reduced computational cost.},
+archivePrefix = {arXiv},
+arxivId = {1606.05328},
+author = {{Van Den Oord}, A{\"{a}}ron and Kalchbrenner, Nal and Vinyals, Oriol and Espeholt, Lasse and Graves, Alex and Kavukcuoglu, Koray},
+booktitle = {Advances in Neural Information Processing Systems},
+eprint = {1606.05328},
+issn = {10495258},
+mendeley-groups = {OOD detection},
+pages = {4797--4805},
+title = {{Conditional image generation with PixelCNN decoders}},
+year = {2016}
+}
+
+@InProceedings{Lakshminarayanan2017,
+abstract = {Deep neural networks (NNs) are powerful black box predictors that have recently achieved impressive performance on a wide spectrum of tasks. Quantifying predictive uncertainty in NNs is a challenging and yet unsolved problem. Bayesian NNs, which learn a distribution over weights, are currently the state-of-the-art for estimating predictive uncertainty; however these require significant modifications to the training procedure and are computationally expensive compared to standard (non-Bayesian) NNs. We propose an alternative to Bayesian NNs that is simple to implement, readily parallelizable, requires very little hyperparameter tuning, and yields high quality predictive uncertainty estimates. Through a series of experiments on classification and regression benchmarks, we demonstrate that our method produces well-calibrated uncertainty estimates which are as good or better than approximate Bayesian NNs. To assess robustness to dataset shift, we evaluate the predictive uncertainty on test examples from known and unknown distributions, and show that our method is able to express higher uncertainty on out-of-distribution examples. We demonstrate the scalability of our method by evaluating predictive uncertainty estimates on ImageNet.},
+archivePrefix = {arXiv},
+arxivId = {1612.01474},
+author = {Lakshminarayanan, Balaji and Pritzel, Alexander and Blundell, Charles},
+booktitle = {Advances in Neural Information Processing Systems},
+eprint = {1612.01474},
+issn = {10495258},
+mendeley-groups = {OOD detection},
+pages = {6403--6414},
+title = {{Simple and scalable predictive uncertainty estimation using deep ensembles}},
+volume = {2017-December},
+year = {2017}
+}
+
+@article{MacKay1992,
+author = {MacKay, David J. C.},
+title = {A Practical Bayesian Framework for Backpropagation Networks},
+year = {1992},
+issue_date = {May 1992},
+publisher = {MIT Press},
+address = {Cambridge, MA, USA},
+volume = {4},
+number = {3},
+issn = {0899-7667},
+journal = {Neural Comput.},
+month = may,
+pages = {448–472},
+numpages = {25}
+}
+
+@phdthesis{MacKayThesis1992,
+    title    = {Bayesian methods for adaptive models},
+    school   = {California Institute of Technology},
+    author   = {MacKay, David J.C.},
+    year     = {1992}
+}
+
+@book{Radford1996,
+author = {Neal, Radford M.},
+title = {Bayesian Learning for Neural Networks},
+year = {1996},
+isbn = {0387947248},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+abstract = {From the Publisher:Artificial "neural networks" are now widely used as flexible models for regression classification applications, but questions remain regarding what these models mean, and how they can safely be used when training data is limited. Bayesian Learning for Neural Networks shows that Bayesian methods allow complex neural network models to be used without fear of the "overfitting" that can occur with traditional neural network learning methods. Insight into the nature of these complex Bayesian models is provided by a theoretical investigation of the priors over functions that underlie them. Use of these models in practice is made possible using Markov chain Monte Carlo techniques. Both the theoretical and computational aspects of this work are of wider statistical interest, as they contribute to a better understanding of how Bayesian methods can be applied to complex problems. Presupposing only the basic knowledge of probability and statistics, this book should be of interest to many researchers in statistics, engineering, and artificial intelligence. Software for Unix systems that implements the methods described is freely available over the Internet.}
+}
+
+@MastersThesis{JimThesis1992,
+    title    = {Out-of-distribution detection for computational pathology with multi-head ensembles},
+    school   = {University of Amsterdam},
+    author   = {Jim Winkens},
+    year     = {2019}
+}
+
+@INPROCEEDINGS{Feng2018,
+  author={Feng, Di and Rosenbaum, Lars and Dietmayer, Klaus},
+  booktitle={2018 21st International Conference on Intelligent Transportation Systems (ITSC)}, 
+  title={Towards Safe Autonomous Driving: Capture Uncertainty in the Deep Neural Network For Lidar 3D Vehicle Detection}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={3266-3273}}
+  
+@INPROCEEDINGS{Feng2019,
+  author={Feng, Di and Rosenbaum, Lars and Timm, Fabian and Dietmayer, Klaus},
+  booktitle={2019 IEEE Intelligent Vehicles Symposium (IV)}, 
+  title={Leveraging Heteroscedastic Aleatoric Uncertainties for Robust Real-Time LiDAR 3D Object Detection}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={1280-1287}}
+  
+@INPROCEEDINGS{DiFeng2019,
+abstract = {Reliable uncertainty estimation is crucial for perception systems in safe autonomous driving. Recently, many methods have been proposed to model uncertainties in deep learning-based object detectors. However, the estimated probabilities are often uncalibrated, which may lead to severe problems in safety-critical scenarios. In this work, we identify such uncertainty miscalibration problems in a probabilistic LiDAR 3D object detection network, and propose three practical methods to significantly reduce errors in uncertainty calibration. Extensive experiments on several datasets show that our methods produce well-calibrated uncertainties, and generalize well between different datasets.},
+archivePrefix = {arXiv},
+arxivId = {1909.12358},
+author = {{Di Feng} and Rosenbaum, Lars and Gl{\"{a}}ser, Claudius and Timm, Fabian and Dietmayer, Klaus},
+booktitle = {arXiv},
+eprint = {1909.12358},
+issn = {23318422},
+mendeley-groups = {OOD detection},
+title = {{Can we trust you? On calibration of a probabilistic object detector for autonomous driving}},
+year = {2019}
+}
+
+@INPROCEEDINGS{DiFeng2019_1,
+abstract = {Reliable uncertainty estimation is crucial for perception systems in safe autonomous driving. Recently, many methods have been proposed to model uncertainties in deep learning-based object detectors. However, the estimated probabilities are often uncalibrated, which may lead to severe problems in safety-critical scenarios. In this work, we identify such uncertainty miscalibration problems in a probabilistic LiDAR 3D object detection network, and propose three practical methods to significantly reduce errors in uncertainty calibration. Extensive experiments on several datasets show that our methods produce well-calibrated uncertainties, and generalize well between different datasets.},
+archivePrefix = {arXiv},
+arxivId = {1909.12358},
+author = {{Di Feng} and Rosenbaum, Lars and Gl{\"{a}}ser, Claudius and Timm, Fabian and Dietmayer, Klaus},
+booktitle = {arXiv},
+eprint = {1909.12358},
+issn = {23318422},
+mendeley-groups = {OOD detection},
+title = {{Can we trust you? On calibration of a probabilistic object detector for autonomous driving}},
+year = {2019}
+}
+
+@INPROCEEDINGS{DiFeng2019_2,
+abstract = {Reliable uncertainty estimation is crucial for perception systems in safe autonomous driving. Recently, many methods have been proposed to model uncertainties in deep learning-based object detectors. However, the estimated probabilities are often uncalibrated, which may lead to severe problems in safety-critical scenarios. In this work, we identify such uncertainty miscalibration problems in a probabilistic LiDAR 3D object detection network, and propose three practical methods to significantly reduce errors in uncertainty calibration. Extensive experiments on several datasets show that our methods produce well-calibrated uncertainties, and generalize well between different datasets.},
+archivePrefix = {arXiv},
+arxivId = {1909.12358},
+author = {{Di Feng} and Rosenbaum, Lars and Gl{\"{a}}ser, Claudius and Timm, Fabian and Dietmayer, Klaus},
+booktitle = {arXiv},
+eprint = {1909.12358},
+issn = {23318422},
+mendeley-groups = {OOD detection},
+title = {{Can we trust you? On calibration of a probabilistic object detector for autonomous driving}},
+year = {2019}
+}
+
+@INPROCEEDINGS{Schubert2020,
+abstract = {In object detection with deep neural networks, the box-wise objectness score tends to be overconfident, sometimes even indicating high confidence in presence of inaccurate predictions. Hence, the reliability of the prediction and therefore reliable uncertainties are of highest interest. In this work, we present a post processing method that for any given neural network provides predictive uncertainty estimates and quality estimates. These estimates are learned by a post processing model that receives as input a handcrafted set of transparent metrics in form of a structured dataset. Therefrom, we learn two tasks for predicted bounding boxes. We discriminate between true positives (IoU ≥ 0.5) and false positives (IoU < 0.5) which we term meta classification, and we predict IoU values directly which we term meta regression. The probabilities of the meta classification model aim at learning the probabilities of success and failure and therefore provide a modelled predictive uncertainty estimate. On the other hand, meta regression gives rise to a quality estimate. In numerical experiments, we use the publicly available YOLOv3 network and the Faster-RCNN network and evaluate meta classification and regression performance on the Kitti, Pascal VOC and COCO datasets. We demonstrate that our metrics are indeed well correlated with the IoU. For meta classification we obtain classification accuracies of up to 98.92% and AUROCs of up to 99.93%. For meta regression we obtain an R2 value of up to 91.78%. These results yield significant improvements compared to other network's objectness score and other baseline approaches. Therefore, we obtain more reliable uncertainty and quality estimates which is particularly interesting in the absence of ground truth.},
+archivePrefix = {arXiv},
+arxivId = {2010.01695},
+author = {Schubert, Marius and Kahl, Karsten and Rottmann, Matthias},
+booktitle = {arXiv},
+eprint = {2010.01695},
+mendeley-groups = {OOD detection},
+title = {{MetaDetect: Uncertainty quantification and prediction quality estimates for object detection}},
+year = {2020}
+}
+
+@INPROCEEDINGS{Lee2020,
+abstract = {Since many safety-critical systems such as surgical robots and autonomous driving cars are in unstable environments with sensor noise or incomplete data, it is desirable for object detectors to take the confidence of the localization prediction into account. Recent attempts to estimate localization uncertainty for object detection focus only anchor-based method that captures the uncertainty of different characteristics such as location (center point) and scale (width, height). Also, anchor-based methods need to adjust sensitive anchor-box settings. Therefore, we propose a new object detector called Gaussian-FCOS that estimates the localization uncertainty based on an anchor-free detector that captures the uncertainty of similar property with four directions of box offsets (left, right, top, bottom) and avoids the anchor tuning. For this purpose, we design a new loss function, uncertainty loss, to measure how uncertain the estimated object location is by modeling the uncertainty as a Gaussian distribution. Then, the detection score is calibrated through the estimated uncertainty. Experiments on challenging COCO datasets demonstrate that the proposed new loss function not only enables the network to estimate the uncertainty but produces a synergy effect with regression loss. In addition, our Gaussian-FCOS reduces false positives with the estimated localization uncertainty and finds more missing-objects, boosting both Average Precision (AP) and Recall (AR). We hope Gaussian-FCOS serve as a baseline for the reliability-required task.},
+archivePrefix = {arXiv},
+arxivId = {2006.15607},
+author = {Lee, Youngwan and Hwang, Joong Won and Kim, Hyung Il and Yun, Kimin and Park, Jongyoul},
+booktitle = {arXiv},
+eprint = {2006.15607},
+issn = {23318422},
+mendeley-groups = {OOD detection},
+title = {{Localization uncertainty estimation for anchor-free object detection}},
+year = {2020}
+}
+
+@techreport{Kraus2019,
+abstract = {Environment perception is the task for intelligent vehicles on which all subsequent steps rely. A key part of perception is to safely detect other road users such as vehicles, pedestrians, and cyclists. With modern deep learning techniques huge progress was made over the last years in this field. However such deep learning based object detection models cannot predict how certain they are in their predictions, potentially hampering the performance of later steps such as tracking or sensor fusion. We present a viable approaches to estimate uncertainty in an one-stage object detector, while improving the detection performance of the baseline approach. The proposed model is evaluated on a large scale automotive pedestrian dataset. Experimental results show that the uncertainty outputted by our system is coupled with detection accuracy and the occlusion level of pedestrians.},
+archivePrefix = {arXiv},
+arxivId = {1905.10296},
+author = {Kraus, Florian and Dietmayer, Klaus},
+booktitle = {2019 IEEE Intelligent Transportation Systems Conference, ITSC 2019},
+eprint = {1905.10296},
+isbn = {9781538670248},
+mendeley-groups = {OOD detection},
+pages = {53--60},
+title = {{Uncertainty Estimation in One-Stage Object Detection}},
+year = {2019}
+}
+
+@inproceedings{hall2020probability,
+  title={Probabilistic Object Detection: Definition and Evaluation},
+  author={Hall, David and Dayoub, Feras and Skinner, John and Zhang, Haoyang and Miller, Dimity and Corke, Peter and Carneiro, Gustavo and Angelova, Anelia and S{\"u}nderhauf, Niko},
+  booktitle={IEEE Winter Conference on Applications of Computer Vision (WACV)},
+  year={2020}}
+
+@inproceedings{szegedy2013,
+author = {Szegedy, Christian and Toshev, Alexander and Erhan, Dumitru},
+year = {2013},
+month = {01},
+pages = {1-9},
+title = {Deep Neural Networks for Object Detection}
+}
+
+@INPROCEEDINGS {Sermanet2015,
+author = {C. Szegedy and Wei Liu and Yangqing Jia and P. Sermanet and S. Reed and D. Anguelov and D. Erhan and V. Vanhoucke and A. Rabinovich},
+booktitle = {2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+title = {Going deeper with convolutions},
+year = {2015},
+volume = {},
+issn = {1063-6919},
+pages = {1-9},
+keywords = {},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {jun}
+}
+
+@article{sermanet2013overfeat,
+  title={Overfeat: Integrated recognition, localization and detection using convolutional networks},
+  author={Sermanet, Pierre and Eigen, David and Zhang, Xiang and Mathieu, Micha{\"e}l and Fergus, Rob and LeCun, Yann},
+  journal={arXiv preprint arXiv:1312.6229},
+  year={2013}
+}
+
+@inproceedings{AlexNet2012,
+author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E.},
+title = {ImageNet Classification with Deep Convolutional Neural Networks},
+year = {2012},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+booktitle = {Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 1},
+pages = {1097–1105},
+numpages = {9},
+location = {Lake Tahoe, Nevada},
+series = {NIPS'12}
+}
+
+@article{uijlings2013,
+author = {Uijlings, Jasper and Sande, K. and Gevers, T. and Smeulders, A.W.M.},
+year = {2013},
+month = {09},
+pages = {154-171},
+title = {Selective Search for Object Recognition},
+volume = {104},
+journal = {International Journal of Computer Vision},
+}
+
+@article{geyer2020a2d2,
+
+title={{A2D2: Audi Autonomous Driving Dataset}},
+
+author={Jakob Geyer and Yohannes Kassahun and Mentar Mahmudi and Xavier Ricou and Rupesh Durgesh and Andrew S. Chung and Lorenz Hauswald and Viet Hoang Pham and Maximilian M{\"u}hlegg and Sebastian Dorn and Tiffany Fernandez and Martin J{\"a}nicke and Sudesh Mirashi and Chiragkumar Savani and Martin Sturm and Oleksandr Vorobiov and Martin Oelker and Sebastian Garreis and Peter Schuberth},
+
+year={2020},
+
+eprint={2004.06320},
+
+archivePrefix={arXiv},
+
+primaryClass={cs.CV},
+
+url = {https://www.a2d2.audi}
+
+}
+
+@INPROCEEDINGS{astar-3d,
+   Author = {Quang-Hieu Pham, Pierre Sevestre, Ramanpreet Singh Pahwa, Huijing Zhan, Chun Ho Pang, Yuda Chen, Armin Mustafa, Vijay Chandrasekhar, Jie Lin},
+   Title = {A*3D Dataset: Towards Autonomous Driving in Challenging Environments},
+   Booktitle = {Proc. of The International Conference in Robotics and Automation (ICRA)},
+   Year = {2020}
+}
+
+@article{
+    braun2019eurocity,
+    author={Braun, Markus and Krebs, Sebastian and Flohr, Fabian B. and Gavrila, Dariu M.},
+    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    title={EuroCity Persons: A Novel Benchmark for Person Detection in Traffic Scenes},
+    year={2019},
+    volume={},
+    number={},
+    pages={1-1},
+    keywords={Proposals;Benchmark testing;Object detection;
+            Feature extraction;Urban areas;Deep learning;
+            Training;Object detection;benchmarking},
+    ISSN={0162-8828},
+    month={}
+}
+
+@inproceedings{sun2020scalability, 
+title={Scalability in perception for autonomous driving: Waymo open dataset}, 
+author={Sun, Pei and Kretzschmar, Henrik and Dotiwalla, Xerxes and Chouard, Aurelien and Patnaik, Vijaysai and Tsui, Paul and Guo, James and Zhou, Yin and Chai, Yuning and Caine, Benjamin and others}, 
+booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages={2446--2454}, year={2020} }
+
+@misc{l5dataset,
+title = {Level 5 Perception Dataset 2020},
+author = {Kesten, R. and Usman, M. and Houston, J. and Pandya, T. and Nadhamuni, K. and Ferreira, A. and Yuan, M. and Low, B. and Jain, A. and Ondruska, P. and Omari, S. and Shah, S. and Kulkarni, A. and Kazakova, A. and Tao, C. and Platinsky, L. and Jiang, W. and Shet, V.},
+year = {2019},
+howpublished = {\url{https://level-5.global/level5/data/}}
+}
+
+@INPROCEEDINGS { Argoverse,
+  author = {Ming-Fang Chang and John W Lambert and Patsorn Sangkloy and Jagjeet Singh
+       and Slawomir Bak and Andrew Hartnett and De Wang and Peter Carr
+       and Simon Lucey and Deva Ramanan and James Hays},
+  title = {Argoverse: 3D Tracking and Forecasting with Rich Maps},
+  booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year = {2019}
+}
+
+@article{nuscenes2019,
+  title={nuScenes: A multimodal dataset for autonomous driving},
+  author={Holger Caesar and Varun Bankiti and Alex H. Lang and Sourabh Vora and 
+          Venice Erin Liong and Qiang Xu and Anush Krishnan and Yu Pan and 
+          Giancarlo Baldan and Oscar Beijbom},
+  journal={arXiv preprint arXiv:1903.11027},
+  year={2019}
+}
+
+@article{wang2019apolloscape,
+  title={The apolloscape open dataset for autonomous driving and its application},
+  author={Wang, Peng and Huang, Xinyu and Cheng, Xinjing and Zhou, Dingfu and Geng, Qichuan and Yang, Ruigang},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  year={2019},
+  publisher={IEEE}
+}
+
+@InProceedings{bdd100k,
+    author = {Yu, Fisher and Chen, Haofeng and Wang, Xin and Xian, Wenqi and Chen,
+              Yingying and Liu, Fangchen and Madhavan, Vashisht and Darrell, Trevor},
+    title = {BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning},
+    booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month = {June},
+    year = {2020}
+}
+
+@inproceedings{Cordts2016Cityscapes,
+title={The Cityscapes Dataset for Semantic Urban Scene Understanding},
+author={Cordts, Marius and Omran, Mohamed and Ramos, Sebastian and Rehfeld, Timo and Enzweiler, Markus and Benenson, Rodrigo and Franke, Uwe and Roth, Stefan and Schiele, Bernt},
+booktitle={Proc. of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+year={2016}
+}
+
+@inproceedings{hwang2015multispectral,
+	Author = {Soonmin Hwang and Jaesik Park and Namil Kim and Yukyung Choi and In So Kweon},
+	Title = {Multispectral Pedestrian Detection: Benchmark Dataset and Baselines},
+	Booktitle = {Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	Year = {2015}
+}
+
+@misc{pitropov2020canadian,
+    title={Canadian Adverse Driving Conditions Dataset},
+    author={Matthew Pitropov and Danson Garcia and Jason Rebello and Michael Smart and Carlos Wang and Krzysztof Czarnecki and Steven Waslander},
+    year={2020},
+    eprint={2001.10117},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+
+@misc{hesai, title={PandaSet Open Datasets}, url={https://scale.com/open-datasets/pandaset}, journal={Scale}, author={Hesai}}. 
+
+@article{Hinton2015DistillingTK,
+  title={Distilling the Knowledge in a Neural Network},
+  author={Geoffrey E. Hinton and Oriol Vinyals and Jeffrey Dean},
+  journal={ArXiv},
+  year={2015},
+  volume={abs/1503.02531}
+}
+
+@inproceedings{GuoCalibration2017,
+author = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q.},
+title = {On Calibration of Modern Neural Networks},
+year = {2017},
+publisher = {JMLR.org},
+booktitle = {Proceedings of the 34th International Conference on Machine Learning - Volume 70},
+pages = {1321–1330},
+numpages = {10},
+location = {Sydney, NSW, Australia},
+series = {ICML'17}
+}
+
+@inproceedings{Goodfellow2015,
+  author    = {Ian J. Goodfellow and
+               Jonathon Shlens and
+               Christian Szegedy},
+  editor    = {Yoshua Bengio and
+               Yann LeCun},
+  title     = {Explaining and Harnessing Adversarial Examples},
+  booktitle = {3rd International Conference on Learning Representations, {ICLR} 2015,
+               San Diego, CA, USA, May 7-9, 2015, Conference Track Proceedings},
+  year      = {2015},
+}
+
+@misc{climategan,
+      title={ClimateGAN: Raising Climate Change Awareness by Generating Images of Floods}, 
+      author={Victor Schmidt and Alexandra Sasha Luccioni and Mélisande Teng and Tianyu Zhang and Alexia Reynaud and Sunand Raghupathi and Gautier Cosne and Adrien Juraver and Vahe Vardanyan and Alex Hernandez-Garcia and Yoshua Bengio},
+      year={2021},
+      eprint={2110.02871},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+
+@inproceedings{park2019SPADE,
+  title={Semantic Image Synthesis with Spatially-Adaptive Normalization},
+  author={Park, Taesung and Liu, Ming-Yu and Wang, Ting-Chun and Zhu, Jun-Yan},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  year={2019}
+}
+
+@inproceedings{GAN,
+ author = {Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {Z. Ghahramani and M. Welling and C. Cortes and N. Lawrence and K. Q. Weinberger},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {Generative Adversarial Nets},
+ volume = {27},
+ year = {2014}
+}
+
+@article{CIFAR,
+  title={Cifar-10 (canadian institute for advanced research)},
+  author={Krizhevsky, Alex and Nair, Vinod and Hinton, Geoffrey},
+  journal={URL http://www. cs. toronto. edu/kriz/cifar. html},
+  volume={5},
+  pages={4},
+  year={2010}
+}
+
+@Article{Grigorescu2020,
+  author   = {Grigorescu, Sorin and Trasnea, Bogdan and Cocias, Tiberiu and Macesanu, Gigel},
+  journal  = {Journal of Field Robotics},
+  title    = {A survey of deep learning techniques for autonomous driving},
+  year     = {2020},
+  number   = {3},
+  pages    = {362-386},
+  volume   = {37},
+  abstract = {Abstract The last decade witnessed increasingly rapid progress in self-driving vehicle technology, mainly backed up by advances in the area of deep learning and artificial intelligence (AI). The objective of this paper is to survey the current state-of-the-art on deep learning technologies used in autonomous driving. We start by presenting AI-based self-driving architectures, convolutional and recurrent neural networks, as well as the deep reinforcement learning paradigm. These methodologies form a base for the surveyed driving scene perception, path planning, behavior arbitration, and motion control algorithms. We investigate both the modular perception-planning-action pipeline, where each module is built using deep learning methods, as well as End2End systems, which directly map sensory information to steering commands. Additionally, we tackle current challenges encountered in designing AI architectures for autonomous driving, such as their safety, training data sources, and computational hardware. The comparison presented in this survey helps gain insight into the strengths and limitations of deep learning and AI approaches for autonomous driving and assist with design choices.},
+  keywords = {AI for self-driving vehicles, artificial intelligence, autonomous driving, deep learning for autonomous driving},
+}
+
+@inproceedings{Kendall2017,
+author = {Kendall, Alex and Gal, Yarin},
+title = {What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?},
+year = {2017},
+isbn = {9781510860964},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {There are two major types of uncertainty one can model. Aleatoric uncertainty captures noise inherent in the observations. On the other hand, epistemic uncertainty accounts for uncertainty in the model - uncertainty which can be explained away given enough data. Traditionally it has been difficult to model epistemic uncertainty in computer vision, but with new Bayesian deep learning tools this is now possible. We study the benefits of modeling epistemic vs. aleatoric uncertainty in Bayesian deep learning models for vision tasks. For this we present a Bayesian deep learning framework combining input-dependent aleatoric uncertainty together with epistemic uncertainty. We study models under the framework with per-pixel semantic segmentation and depth regression tasks. Further, our explicit uncertainty formulation leads to new loss functions for these tasks, which can be interpreted as learned attenuation. This makes the loss more robust to noisy data, also giving new state-of-the-art results on segmentation and depth regression benchmarks.},
+booktitle = {Proceedings of the 31st International Conference on Neural Information Processing Systems},
+pages = {5580–5590},
+numpages = {11},
+location = {Long Beach, California, USA},
+series = {NIPS'17}
+}
+
+@ARTICLE {Scheirer2013,
+author = {W. J. Scheirer and A. de Rezende Rocha and A. Sapkota and T. E. Boult},
+journal = {IEEE Transactions on Pattern Analysis & Machine Intelligence},
+title = {Toward Open Set Recognition},
+year = {2013},
+volume = {35},
+number = {07},
+issn = {1939-3539},
+pages = {1757-1772},
+keywords = {training;testing;support vector machines;training data;face recognition;face;object recognition},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {jul}
+}
+
+@article{Scheirer2014ProbabilityMF,
+  title={Probability Models for Open Set Recognition},
+  author={Walter J. Scheirer and Lalit P. Jain and Terrance E. Boult},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2014},
+  volume={36},
+  pages={2317-2324}
+}
+
+@article{Lopes2019ImprovingRW,
+  title={Improving Robustness Without Sacrificing Accuracy with Patch Gaussian Augmentation},
+  author={Raphael Gontijo Lopes and Dong Yin and Ben Poole and Justin Gilmer and Ekin Dogus Cubuk},
+  journal={ArXiv},
+  year={2019},
+  volume={abs/1906.02611}
+}
+
+@book{Goodfellow-et-al-2016,
+    title={Deep Learning},
+    author={Ian Goodfellow and Yoshua Bengio and Aaron Courville},
+    publisher={MIT Press},
+    note={\url{http://www.deeplearningbook.org}},
+    year={2016}
+}
+
+@book{jaynes_2003, 
+      place={Cambridge}, 
+      title={Probability Theory: The Logic of Science}, 
+      publisher={Cambridge University Press}, 
+      author={Jaynes, E. T.}, 
+      editor={Bretthorst, G. LarryEditor}, year={2003}}
+
+@PhdThesis{gal2016uncertainty,
+  title={Uncertainty in Deep Learning},
+  author={Gal, Yarin},
+  year={2016},
+  school={University of Cambridge}
+}
+
+@article{russell2002artificial,
+  title={Artificial intelligence: a modern approach},
+  author={Russell, Stuart and Norvig, Peter},
+  year={2002}
+}
+
+@misc{arriaga2020perception,
+      title={Perception for Autonomous Systems (PAZ)}, 
+      author={Octavio Arriaga and Matias Valdenegro-Toro and Mohandass Muthuraja and Sushma Devaramani and Frank Kirchner},
+      year={2020},
+      eprint={2010.14541},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+
+@article{Huang2017,
+abstract = {The goal of this paper is to serve as a guide for selecting a detection architecture that achieves the right speed/memory/accuracy balance for a given application and platform. To this end, we investigate various ways to trade accuracy for speed and memory usage in modern convolutional object detection systems. A number of successful systems have been proposed in recent years, but apples-toapples comparisons are difficult due to different base feature extractors (e.g., VGG, Residual Networks), different default image resolutions, as well as different hardware and software platforms. We present a unified implementation of the Faster R-CNN [30], R-FCN [6] and SSD [25] systems, which we view as "meta-architectures" and trace out the speed/accuracy trade-off curve created by using alternative feature extractors and varying other critical parameters such as image size within each of these meta-architectures. On one extreme end of this spectrum where speed and memory are critical, we present a detector that achieves real time speeds and can be deployed on a mobile device. On the opposite end in which accuracy is critical, we present a detector that achieves state-of-the-art performance measured on the COCO detection task.},
+archivePrefix = {arXiv},
+arxivId = {1611.10012},
+author = {Huang, Jonathan and Rathod, Vivek and Sun, Chen and Zhu, Menglong and Korattikara, Anoop and Fathi, Alireza and Fischer, Ian and Wojna, Zbigniew and Song, Yang and Guadarrama, Sergio and Murphy, Kevin},
+eprint = {1611.10012},
+isbn = {9781538604571},
+journal = {Proceedings - 30th IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2017},
+mendeley-groups = {OOD detection},
+pages = {3296--3305},
+title = {{Speed/accuracy trade-offs for modern convolutional object detectors}},
+volume = {2017-January},
+year = {2017}
+}
+
+@misc{wu2019detectron2,
+  author =       {Yuxin Wu and Alexander Kirillov and Francisco Massa and
+                  Wan-Yen Lo and Ross Girshick},
+  title =        {Detectron2},
+  howpublished = {\url{https://github.com/facebookresearch/detectron2}},
+  year =         {2019}
+}
+
+@techreport{Abadi2016,
+abstract = {TensorFlow is an interface for expressing machine learning algorithms, and an implementation for executing such algorithms. A computation expressed using TensorFlow can be executed with little or no change on a wide variety of heterogeneous systems, ranging from mobile devices such as phones and tablets up to large-scale distributed systems of hundreds of machines and thousands of computational devices such as GPU cards. The system is flexible and can be used to express a wide variety of algorithms, including training and inference algorithms for deep neural network models, and it has been used for conducting research and for deploying machine learning systems into production across more than a dozen areas of computer science and other fields, including speech recognition, computer vision, robotics, information retrieval, natural language processing, geographic information extraction, and computational drug discovery. This paper describes the TensorFlow interface and an implementation of that interface that we have built at Google. The TensorFlow API and a reference implementation were released as an open-source package under the Apache 2.0 license in November, 2015 and are available at www.tensorflow.org.},
+archivePrefix = {arXiv},
+arxivId = {1603.04467},
+author = {Abadi, Mart{\'{i}}n and Agarwal, Ashish and Barham, Paul and Brevdo, Eugene and Chen, Zhifeng and Citro, Craig and Corrado, Greg S. and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and Ghemawat, Sanjay and Goodfellow, Ian and Harp, Andrew and Irving, Geoffrey and Isard, Michael and Jia, Yangqing and Jozefowicz, Rafal and Kaiser, Lukasz and Kudlur, Manjunath and Levenberg, Josh and Mane, Dan and Monga, Rajat and Moore, Sherry and Murray, Derek and Olah, Chris and Schuster, Mike and Shlens, Jonathon and Steiner, Benoit and Sutskever, Ilya and Talwar, Kunal and Tucker, Paul and Vanhoucke, Vincent and Vasudevan, Vijay and Viegas, Fernanda and Vinyals, Oriol and Warden, Pete and Wattenberg, Martin and Wicke, Martin and Yu, Yuan and Zheng, Xiaoqiang},
+eprint = {1603.04467},
+title = {{TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems}},
+year = {2016}
+}
+
+@article{opencv,
+    author = {Bradski, G.},
+    citeulike-article-id = {2236121},
+    journal = {Dr. Dobb's Journal of Software Tools},
+    posted-at = {2008-01-15 19:21:54},
+    priority = {4},
+    title = {{The OpenCV Library}},
+    year = {2000}
+}
+
+@ARTICLE{numpy,
+  author={van der Walt, Stefan and Colbert, S. Chris and Varoquaux, Gael},
+  journal={Computing in Science   Engineering}, 
+  title={The NumPy Array: A Structure for Efficient Numerical Computation}, 
+  year={2011},
+  volume={13},
+  number={2},
+  pages={22-30}}
+  
+
+@Article{Hunter2007,
+  Author    = {Hunter, J. D.},
+  Title     = {Matplotlib: A 2D graphics environment},
+  Journal   = {Computing in Science \& Engineering},
+  Volume    = {9},
+  Number    = {3},
+  Pages     = {90--95},
+  abstract  = {Matplotlib is a 2D graphics package used for Python for
+  application development, interactive scripting, and publication-quality
+  image generation across user interfaces and operating systems.},
+  publisher = {IEEE COMPUTER SOC},
+  year      = 2007
+}
+
+@article{scikit-learn,
+ title={Scikit-learn: Machine Learning in {P}ython},
+ author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+         and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+         and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+         Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+ journal={Journal of Machine Learning Research},
+ volume={12},
+ pages={2825--2830},
+ year={2011}
+}
+
+@article{Waskom2021,
+    url = {https://doi.org/10.21105/joss.03021},
+    year = {2021},
+    publisher = {The Open Journal},
+    volume = {6},
+    number = {60},
+    pages = {3021},
+    author = {Michael L. Waskom},
+    title = {seaborn: statistical data visualization},
+    journal = {Journal of Open Source Software}
+ }
+ 
+@online{chollet2015,
+  title={Keras},
+  author={Chollet, Francois and others},
+  year={2015},
+  publisher={GitHub},
+  url={https://github.com/fchollet/keras},
+}
+
+@article{ruder2016overview,
+  title={An overview of gradient descent optimization algorithms},
+  author={Ruder, Sebastian},
+  journal={arXiv preprint arXiv:1609.04747},
+  year={2016}
+}
+
+@article{shridhar2019comprehensive,
+  title={A Comprehensive guide to Bayesian Convolutional Neural Network with Variational Inference},
+  author={Shridhar, Kumar and Laumann, Felix and Liwicki, Marcus},
+  journal={arXiv preprint arXiv:1901.02731},
+  year={2019}
+}
+
+@InCollection{Graves2011,
+  author    = {Graves, Alex},
+  title     = {Practical Variational Inference for Neural Networks},
+  booktitle = {Advances in Neural Information Processing Systems 24},
+  publisher = {Curran Associates, Inc.},
+  year      = {2011},
+  editor    = {J. Shawe-Taylor and R. S. Zemel and P. L. Bartlett and F. Pereira and K. Q. Weinberger},
+  pages     = {2348--2356},
+}
+
+@article{Robert2015,
+abstract = {This short note is a self-contained and basic introduction to the Metropolis-Hastings algorithm, this ubiquitous tool used for producing dependent simulations from an arbitrary distribution. The document illustrates the principles of the methodology on simple examples with R codes and provides references to the recent extensions of the method.},
+archivePrefix = {arXiv},
+arxivId = {1504.01896},
+author = {Robert, Christian P.},
+eprint = {1504.01896},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Robert - 2014 - The Metropolis-Hastings Algorithm.pdf:pdf},
+journal = {Wiley StatsRef: Statistics Reference Online},
+keywords = {Bayesian inference,Gibbs sampler,Hamiltonian Monte Carlo,Langevin diffusion,MCMC methods,Markov chains,Metropolis-Hastings algorithm,intractable density},
+pages = {1--15},
+title = {{ The M etropolis– H astings Algorithm }},
+year = {2015}
+}
+
+@inbook{mcmc,
+author = {Jerrum, Mark and Sinclair, Alistair},
+title = {The Markov Chain Monte Carlo Method: An Approach to Approximate Counting and Integration},
+year = {1996},
+isbn = {0534949681},
+publisher = {PWS Publishing Co.},
+address = {USA},
+booktitle = {Approximation Algorithms for NP-Hard Problems},
+pages = {482–520},
+numpages = {39}
+}
+
+@Book{Kullback1959,
+  title     = {{Information Theory and Statistics}},
+  publisher = {Dover Publications},
+  year      = {1959},
+  author    = {Solomon Kullback and Richard Leibler},
+  editor    = {{}},
+}
+
+@Article{WBAW1991,
+  author  = {{Wray L. Buntine and Andreas S. Weigend}},
+  title   = {{Bayesian Back-Propagation}},
+  journal = {{Complex Systems}},
+  year    = {1991},
+  volume  = {5},
+  pages   = {603},
+}
+
+@InProceedings{Blundell2015,
+  author    = {Blundell, Charles and Cornebise, Julien and Kavukcuoglu, Koray and Wierstra, Daan},
+  title     = {Weight Uncertainty in Neural Networks},
+  booktitle = {Proceedings of the 32nd International Conference on International Conference on Machine Learning - Volume 37},
+  year      = {2015},
+  series    = {ICML’15},
+  pages     = {1613–1622},
+  publisher = {JMLR.org},
+  location  = {Lille, France},
+  numpages  = {10},
+}
+
+@InCollection{Kingma2015,
+  author    = {Kingma, Durk P and Salimans, Tim and Welling, Max},
+  title     = {Variational Dropout and the Local Reparameterization Trick},
+  booktitle = {Advances in Neural Information Processing Systems 28},
+  publisher = {Curran Associates, Inc.},
+  year      = {2015},
+  editor    = {C. Cortes and N. D. Lawrence and D. D. Lee and M. Sugiyama and R. Garnett},
+  pages     = {2575--2583},
+}
+
+@techreport{Zhao2018,
+abstract = {The ability to detect small objects and the speed of the object detector are very important for the application of autonomous driving, and in this paper, we propose an effective yet efficient one-stage detector, which gained the second place in the Road Object Detection competition of CVPR2018 workshop - Workshop of Autonomous Driving(WAD). The proposed detector inherits the architecture of SSD and introduces a novel Comprehensive Feature Enhancement(CFE) module into it. Experimental results on this competition dataset as well as the MSCOCO dataset demonstrate that the proposed detector (named CFENet) performs much better than the original SSD and the state-of-the-art method RefineDet especially for small objects, while keeping high efficiency close to the original SSD. Specifically, the single scale version of the proposed detector can run at the speed of 21 fps, while the multi-scale version with larger input size achieves the mAP 29.69, ranking second on the leaderboard},
+archivePrefix = {arXiv},
+arxivId = {1806.09790},
+author = {Zhao, Qijie and Sheng, Tao and Wang, Yongtao and Ni, Feng and Cai, Ling},
+eprint = {1806.09790},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Zhao et al. - Unknown - CFENet An Accurate and Efficient Single-Shot Object Detector for Autonomous Driving.pdf:pdf},
+isbn = {1024,1x1,1024},
+title = {{CFENet: An Accurate and Efficient Single-Shot Object Detector for Autonomous Driving}},
+year = {2018}
+}
+
+@article{Nguyen2020,
+abstract = {Small object detection is an interesting topic in computer vision. With the rapid development in deep learning, it has drawn attention of several researchers with innovations in approaches to join a race. These innovations proposed comprise region proposals, divided grid cell, multiscale feature maps, and new loss function. As a result, performance of object detection has recently had significant improvements. However, most of the state-of-the-art detectors, both in one-stage and two-stage approaches, have struggled with detecting small objects. In this study, we evaluate current state-of-the-art models based on deep learning in both approaches such as Fast RCNN, Faster RCNN, RetinaNet, and YOLOv3. We provide a profound assessment of the advantages and limitations of models. Specifically, we run models with different backbones on different datasets with multiscale objects to find out what types of objects are suitable for each model along with backbones. Extensive empirical evaluation was conducted on 2 standard datasets, namely, a small object dataset and a filtered dataset from PASCAL VOC 2007. Finally, comparative results and analyses are then presented.},
+author = {Nguyen, Nhat Duy and Do, Tien and Ngo, Thanh Duc and Le, Duy Dinh},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Nguyen et al. - 2020 - An Evaluation of Deep Learning Methods for Small Object Detection.pdf:pdf},
+issn = {20900155},
+journal = {Journal of Electrical and Computer Engineering},
+title = {{An Evaluation of Deep Learning Methods for Small Object Detection}},
+volume = {2020},
+year = {2020}
+}
+
+@techreport{ValdenegroToro2019,
+abstract = {Fast estimates of model uncertainty are required for many robust robotics applications. Deep Ensembles provides state of the art uncertainty without requiring Bayesian methods, but still it is computationally expensive. In this paper we propose deep sub-ensembles, an approximation to deep ensembles where the core idea is to ensemble only the layers close to the output, and not the whole model. With ResNet-20 on the CIFAR10 dataset, we obtain 1.5-2.5 speedup over a Deep Ensemble, with a small increase in error and NLL, and similarly up to 5-15 speedup with a VGG-like network on the SVHN dataset. Our results show that this idea enables a trade-off between error and uncertainty quality versus computational performance.},
+archivePrefix = {arXiv},
+arxivId = {1910.08168},
+author = {Valdenegro-Toro, Matias},
+eprint = {1910.08168},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Valdenegro-Toro - Unknown - Deep Sub-Ensembles for Fast Uncertainty Estimation in Image Classification.pdf:pdf},
+title = {{Deep Sub-Ensembles for Fast Uncertainty Estimation in Image Classification}},
+url = {http://arxiv.org/abs/1910.08168},
+year = {2019}
+}
+
+@techreport{Osband,
+abstract = {Efficient exploration remains a major challenge for reinforcement learning (RL). Common dithering strategies for exploration, such as-greedy, do not carry out temporally-extended (or deep) exploration; this can lead to exponentially larger data requirements. However, most algorithms for statistically efficient RL are not computationally tractable in complex environments. Randomized value functions offer a promising approach to efficient exploration with generalization, but existing algorithms are not compatible with nonlinearly parameterized value functions. As a first step towards addressing such contexts we develop bootstrapped DQN. We demonstrate that bootstrapped DQN can combine deep exploration with deep neural networks for exponentially faster learning than any dithering strategy. In the Arcade Learning Environment bootstrapped DQN substantially improves learning speed and cumulative performance across most games.},
+archivePrefix = {arXiv},
+arxivId = {1602.04621v3},
+author = {Osband, Ian and Blundell, Charles and Pritzel, Alexander and Roy, Benjamin Van},
+eprint = {1602.04621v3},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Osband et al. - Unknown - Deep Exploration via Bootstrapped DQN.pdf:pdf},
+title = {{Deep Exploration via Bootstrapped DQN}}
+}
+
+@techreport{Dillon2017,
+abstract = {The TensorFlow Distributions library implements a vision of probability theory adapted to the modern deep-learning paradigm of end-to-end differentiable computation. Building on two basic abstractions, it offers flexible building blocks for probabilistic computation. Distributions provide fast, numerically stable methods for generating samples and computing statistics, e.g., log density. Bijectors provide composable volume-tracking transformations with automatic caching. Together these enable modular construction of high dimensional distributions and transformations not possible with previous libraries (e.g., pixelCNNs, autoregressive flows, and reversible residual networks). They are the workhorse behind deep probabilistic programming systems like Edward and empower fast black-box inference in probabilistic models built on deep-network components. TensorFlow Distributions has proven an important part of the TensorFlow toolkit within Google and in the broader deep learning community.},
+archivePrefix = {arXiv},
+arxivId = {1711.10604},
+author = {Dillon, Joshua V. and Langmore, Ian and Tran, Dustin and Brevdo, Eugene and Vasudevan, Srinivas and Moore, Dave and Patton, Brian and Alemi, Alex and Hoffman, Matt and Saurous, Rif A.},
+eprint = {1711.10604},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Dillon et al. - 2017 - TensorFlow Distributions.pdf:pdf},
+issn = {2331-8422},
+keywords = {deep learning,probabilistic programming,probability distributions,transformations},
+title = {{TensorFlow Distributions}},
+url = {http://arxiv.org/abs/1711.10604},
+year = {2017}
+}
+
+@techreport{Gawlikowski2021,
+abstract = {Due to their increasing spread, confidence in neural network predictions became more and more important. However, basic neural networks do not deliver certainty estimates or suffer from over or under confidence. Many researchers have been working on understanding and quantifying uncertainty in a neural network's prediction. As a result, different types and sources of uncertainty have been identified and a variety of approaches to measure and quantify uncertainty in neural networks have been proposed. This work gives a comprehensive overview of uncertainty estimation in neural networks, reviews recent advances in the field, highlights current challenges, and identifies potential research opportunities. It is intended to give anyone interested in uncertainty estimation in neural networks a broad overview and introduction, without presupposing prior knowledge in this field. A comprehensive introduction to the most crucial sources of uncertainty is given and their separation into reducible model uncertainty and not reducible data uncertainty is presented. The modeling of these uncertainties based on deterministic neural networks, Bayesian neural networks, ensemble of neural networks, and test-time data augmentation approaches is introduced and different branches of these fields as well as the latest developments are discussed. For a practical application, we discuss different measures of uncertainty, approaches for the calibration of neural networks and give an overview of existing baselines and implementations. Different examples from the wide spectrum of challenges in different fields give an idea of the needs and challenges regarding uncertainties in practical applications. Additionally, the practical limitations of current methods for mission- and safety-critical real world applications are discussed and an outlook on the next steps towards a broader usage of such methods is given.},
+archivePrefix = {arXiv},
+arxivId = {2107.03342},
+author = {Gawlikowski, Jakob and Tassi, Cedrique Rovile Njieutcheu and Ali, Mohsin and Lee, Jongseok and Humt, Matthias and Feng, Jianxiang and Kruspe, Anna and Triebel, Rudolph and Jung, Peter and Roscher, Ribana and Shahzad, Muhammad and Yang, Wen and Bamler, Richard and Zhu, Xiao Xiang},
+eprint = {2107.03342},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Gawlikowski Student Member et al. - Unknown - A Survey of Uncertainty in Deep Neural Networks.pdf:pdf},
+keywords = {Calibration,Ensembles,Index Terms-Bayesian deep neural networks,Test-time augmentation,Uncertainty},
+title = {{A Survey of Uncertainty in Deep Neural Networks}},
+url = {http://arxiv.org/abs/2107.03342},
+year = {2021}
+}
+
+@techreport{LaBonte2019,
+abstract = {Deep learning has been successfully applied to the segmentation of 3D Computed Tomography (CT) scans. Establishing the credibility of these segmentations requires uncertainty quantification (UQ) to identify untrustworthy predictions. Recent UQ architectures include Monte Carlo dropout networks (MCDNs), which approximate deep Gaussian processes, and Bayesian neural networks (BNNs), which learn the distribution of the weight space. BNNs are advantageous over MCDNs for UQ but are thought to be computationally infeasible in high dimension, and neither architecture has produced interpretable geometric uncertainty maps. We propose a novel 3D Bayesian convolutional neural network (BCNN), the first deep learning method which generates statistically credible geometric uncertainty maps and scales for application to 3D data. We present experimental results on CT scans of graphite electrodes and laser-welded metals and show that our BCNN outperforms an MCDN in recent uncertainty metrics. The geometric uncertainty maps generated by our BCNN capture distributions of sigmoid values that are interpretable as confidence intervals, critical for applications that rely on deep learning for high-consequence decisions. Code available at https://github.com/sandialabs/bcnn.},
+archivePrefix = {arXiv},
+arxivId = {1910.10793},
+author = {LaBonte, Tyler and Martinez, Carianne and Roberts, Scott A.},
+eprint = {1910.10793},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Labonte, Martinez, Roberts - Unknown - We Know Where We Don't Know 3D Bayesian CNNs for Credible Geometric Uncertainty.pdf:pdf},
+keywords = {Uncertainty quantification,vari-ational inference,volumetric segmentation},
+title = {{We Know Where We Don't Know: 3D Bayesian CNNs for Credible Geometric Uncertainty}},
+url = {http://arxiv.org/abs/1910.10793},
+year = {2019}
+}
+
+@techreport{Wen2018,
+abstract = {Stochastic neural net weights are used in a variety of contexts, including regularization, Bayesian neural nets, exploration in reinforcement learning, and evolution strategies. Unfortunately, due to the large number of weights, all the examples in a mini-batch typically share the same weight perturbation, thereby limiting the variance reduction effect of large mini-batches. We introduce flipout, an efficient method for decorrelating the gradients within a mini-batch by implicitly sampling pseudo-independent weight perturbations for each example. Empirically, flipout achieves the ideal linear variance reduction for fully connected networks, convolutional networks, and RNNs. We find significant speedups in training neural networks with multiplicative Gaussian perturbations. We show that flipout is effective at regularizing LSTMs, and outperforms previous methods. Flipout also enables us to vectorize evolution strategies: in our experiments, a single GPU with flipout can handle the same throughput as at least 40 CPU cores using existing methods, equivalent to a factor-of-4 cost reduction on Amazon Web Services.},
+archivePrefix = {arXiv},
+arxivId = {1803.04386},
+author = {Wen, Yeming and Vicol, Paul and Ba, Jimmy and Tran, Dustin and Grosse, Roger},
+booktitle = {6th International Conference on Learning Representations, ICLR 2018 - Conference Track Proceedings},
+eprint = {1803.04386},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Wen et al. - Unknown - FLIPOUT EFFICIENT PSEUDO-INDEPENDENT WEIGHT PERTURBATIONS ON MINI-BATCHES.pdf:pdf},
+title = {{Flipout: Efficient pseudo-independent weight perturbations on mini-batches}},
+year = {2018}
+}
+
+@techreport{Krishnan2020,
+abstract = {Stochastic variational inference for Bayesian deep neural network (DNN) requires specifying priors and approximate posterior distributions over neural network weights. Specifying meaningful weight priors is a challenging problem, particularly for scaling variational inference to deeper architectures involving high dimensional weight space. We propose MOdel Priors with Empirical Bayes using DNN (MOPED) method to choose informed weight priors in Bayesian neural networks. We formulate a two-stage hierarchical modeling, first find the maximum likelihood estimates of weights with DNN, and then set the weight priors using empirical Bayes approach to infer the posterior with variational inference. We empirically evaluate the proposed approach on real-world tasks including image classification, video activity recognition and audio classification with varying complex neural network architectures. We also evaluate our proposed approach on diabetic retinopathy diagnosis task and benchmark with the state-of-the-art Bayesian deep learning techniques. We demonstrate MOPED method enables scalable variational inference and provides reliable uncertainty quantification.},
+archivePrefix = {arXiv},
+arxivId = {1906.05323},
+author = {Krishnan, Ranganath and Subedar, Mahesh and Tickoo, Omesh},
+booktitle = {AAAI 2020 - 34th AAAI Conference on Artificial Intelligence},
+doi = {10.1609/aaai.v34i04.5875},
+eprint = {1906.05323},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Krishnan, Subedar, Tickoo - Unknown - Specifying Weight Priors in Bayesian Deep Neural Networks with Empirical Bayes.pdf:pdf},
+isbn = {9781577358350},
+issn = {2159-5399},
+keywords = {Machine Learning},
+pages = {4477--4484},
+title = {{Specifying weight priors in bayesian deep neural networks with empirical bayes}},
+url = {www.aaai.org},
+year = {2020}
+}
+
+
+@InProceedings{xavier2010,
+  title = 	 {Understanding the difficulty of training deep feedforward neural networks},
+  author = 	 {Glorot, Xavier and Bengio, Yoshua},
+  booktitle = 	 {Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics},
+  pages = 	 {249--256},
+  year = 	 {2010},
+  volume = 	 {9},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {Chia Laguna Resort, Sardinia, Italy},
+  month = 	 {13--15 May},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf},
+  url = 	 {https://proceedings.mlr.press/v9/glorot10a.html},
+  abstract = 	 {Whereas before 2006 it appears that deep multi-layer neural networks were not successfully trained, since then several algorithms have been shown to successfully train them, with experimental results showing the superiority of deeper vs less deep architectures. All these experimental results were obtained with new initialization or training mechanisms. Our objective here is to understand better why standard gradient descent from random initialization is doing so poorly with deep neural networks, to better understand these recent relative successes and help design better algorithms in the future.  We first observe the influence of the non-linear activations functions. We find that the logistic sigmoid activation is unsuited for deep networks with random initialization because of its mean value, which can drive especially the top hidden layer into saturation. Surprisingly, we find that saturated units can move out of saturation by themselves, albeit slowly, and explaining the plateaus sometimes seen when training neural networks. We find that a new non-linearity that saturates less can often be beneficial. Finally, we study how activations and gradients vary across layers and during training, with the idea that training may be more difficult when the singular values of the Jacobian associated with each layer are far from 1.  Based on these considerations, we propose a new initialization scheme that brings substantially faster convergence.}
+}
+
+@article{Ovadia2019,
+abstract = {Modern machine learning methods including deep learning have achieved great success in predictive accuracy for supervised learning tasks, but may still fall short in giving useful estimates of their predictive uncertainty. Quantifying uncertainty is especially critical in real-world settings, which often involve input distributions that are shifted from the training distribution due to a variety of factors including sample bias and non-stationarity. In such settings, well calibrated uncertainty estimates convey information about when a model's output should (or should not) be trusted. Many probabilistic deep learning methods, including Bayesian-and non-Bayesian methods, have been proposed in the literature for quantifying predictive uncertainty, but to our knowledge there has not previously been a rigorous large-scale empirical comparison of these methods under dataset shift. We present a large-scale benchmark of existing state-of-the-art methods on classification problems and investigate the effect of dataset shift on accuracy and calibration. We find that traditional post-hoc calibration does indeed fall short, as do several other previous methods. However, some methods that marginalize over models give surprisingly strong results across a broad spectrum of tasks.},
+archivePrefix = {arXiv},
+arxivId = {1906.02530},
+author = {Ovadia, Yaniv and Fertig, Emily and Ren, Jie and Nado, Zachary and Sculley, D. and Nowozin, Sebastian and Dillon, Joshua V. and Lakshminarayanan, Balaji and Snoek, Jasper},
+eprint = {1906.02530},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Ovadia et al. - 2019 - Can You Trust Your Model's Uncertainty Evaluating Predictive Uncertainty Under Dataset Shift.pdf:pdf},
+issn = {10495258},
+journal = {Advances in Neural Information Processing Systems},
+month = {jun},
+title = {{Can you trust your model's uncertainty? evaluating predictive uncertainty under dataset shift}},
+url = {https://arxiv.org/abs/1906.02530},
+volume = {32},
+year = {2019}
+}
+
+@misc{kirsch2021pitfalls,
+title={On Pitfalls in OoD Detection: Entropy Considered Harmful},
+author={Andreas Kirsch and Jishnu Mukhoti and Joost van Amersfoort and Philip H. S. Torr and Yarin Gal},
+year={2021},
+note={Uncertainty & Robustness in Deep Learning Workshop, ICML},
+}
+
+@article{Simonyan2015,
+abstract = {In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3 × 3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16–19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.},
+archivePrefix = {arXiv},
+arxivId = {1409.1556},
+author = {Simonyan, Karen and Zisserman, Andrew},
+eprint = {1409.1556},
+file = {:home/jarvis/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Simonyan, Zisserman - 2015 - VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION.pdf:pdf},
+journal = {3rd International Conference on Learning Representations, ICLR 2015 - Conference Track Proceedings},
+keywords = {()},
+mendeley-groups = {OOD detection},
+title = {{Very deep convolutional networks for large-scale image recognition}},
+url = {http://www.robots.ox.ac.uk/},
+year = {2015}
+}
+
+@InProceedings{Liu2016SSDSS,
+author="Liu, Wei
+and Anguelov, Dragomir
+and Erhan, Dumitru
+and Szegedy, Christian
+and Reed, Scott
+and Fu, Cheng-Yang
+and Berg, Alexander C.",
+editor="Leibe, Bastian
+and Matas, Jiri
+and Sebe, Nicu
+and Welling, Max",
+title="SSD: Single Shot MultiBox Detector",
+booktitle="Computer Vision -- ECCV 2016",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="21--37",
+abstract="We present a method for detecting objects in images using a single deep neural network. Our approach, named SSD, discretizes the output space of bounding boxes into a set of default boxes over different aspect ratios and scales per feature map location. At prediction time, the network generates scores for the presence of each object category in each default box and produces adjustments to the box to better match the object shape. Additionally, the network combines predictions from multiple feature maps with different resolutions to naturally handle objects of various sizes. SSD is simple relative to methods that require object proposals because it completely eliminates proposal generation and subsequent pixel or feature resampling stages and encapsulates all computation in a single network. This makes SSD easy to train and straightforward to integrate into systems that require a detection component. Experimental results on the PASCAL VOC, COCO, and ILSVRC datasets confirm that SSD has competitive accuracy to methods that utilize an additional object proposal step and is much faster, while providing a unified framework for both training and inference. For {\$}{\$}300 {\backslash}times 300{\$}{\$}300{\texttimes}300input, SSD achieves 74.3 {\%} mAP on VOC2007 test at 59 FPS on a Nvidia Titan X and for {\$}{\$}512 {\backslash}times 512{\$}{\$}512{\texttimes}512input, SSD achieves 76.9 {\%} mAP, outperforming a comparable state of the art Faster R-CNN model. Compared to other single stage methods, SSD has much better accuracy even with a smaller input image size. Code is available at https://github.com/weiliu89/caffe/tree/ssd.",
+isbn="978-3-319-46448-0"
+}
+
+@online{chollet2015keras,
+  title={Keras},
+  author={Chollet, Francois and others},
+  year={2015},
+  publisher={GitHub},
+  url={https://github.com/fchollet/keras},
+}
+
+@article{pascalvoc,
+author = {Everingham, Mark and Gool, Luc and Williams, Christopher K. and Winn, John and Zisserman, Andrew},
+title = {The Pascal Visual Object Classes (VOC) Challenge},
+year = {2010},
+issue_date = {June      2010},
+publisher = {Kluwer Academic Publishers},
+address = {USA},
+volume = {88},
+number = {2},
+issn = {0920-5691},
+url = {https://doi.org/10.1007/s11263-009-0275-4},
+doi = {10.1007/s11263-009-0275-4},
+abstract = {The Pascal Visual Object Classes (VOC) challenge is a benchmark in visual object category recognition and detection, providing the vision and machine learning communities with a standard dataset of images and annotation, and standard evaluation procedures. Organised annually from 2005 to present, the challenge and its associated dataset has become accepted as the benchmark for object detection.This paper describes the dataset and evaluation procedure. We review the state-of-the-art in evaluated methods for both classification and detection, analyse whether the methods are statistically different, what they are learning from the images (e.g. the object or its context), and what the methods find easy or confuse. The paper concludes with lessons learnt in the three year history of the challenge, and proposes directions for future improvement and extension.},
+journal = {Int. J. Comput. Vision},
+month = {jun},
+pages = {303–338},
+numpages = {36},
+keywords = {Object detection, Database, Object recognition, Benchmark}
+}
+
+@INPROCEEDINGS{imagenet,
+  author={Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and Kai Li and Li Fei-Fei},
+  booktitle={2009 IEEE Conference on Computer Vision and Pattern Recognition}, 
+  title={ImageNet: A large-scale hierarchical image database}, 
+  year={2009},
+  volume={},
+  number={},
+  pages={248-255},
+  doi={10.1109/CVPR.2009.5206848}}
