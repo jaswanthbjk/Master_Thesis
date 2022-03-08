@@ -17,9 +17,9 @@
 \usepackage{url}       % `\url
 \usepackage{listings}  % Code listings
 \usepackage[T1]{fontenc}
-% \usepackage{caption}
-% \usepackage[font=footnotesize]{caption}
-% \captionsetup{skip=0pt,belowskip=0pt}
+\usepackage{caption}
+\usepackage[font=scriptsize]{caption}
+\captionsetup{skip=2pt,belowskip=2pt}
 \usepackage{subcaption}
 \usepackage[sort]{natbib}
 \usepackage{adjustbox}
@@ -48,7 +48,7 @@
 \end{frame}
 }
 
-\setlength\abovecaptionskip{-5pt}
+% \setlength\abovecaptionskip{-5pt}
 \section{Introduction}
 \begin{frame}{Introduction}
 \begin{itemize}
@@ -142,9 +142,9 @@
 
     \begin{equation}
         \vcenter{\hbox{
-            \begin{minipage}{5cm}
+            \begin{minipage}{7cm}
                 \centering
-                \includegraphics[scale=0.15]{images/Slide2.jpg}
+                \includegraphics[scale=0.2]{images/Slide2.jpg}
                 \captionof{figure}{Expected behavior of OOD detector.}
             \end{minipage}}}
         \qquad\qquad
@@ -325,10 +325,10 @@
                         \item Bayesian Flipout layers \citep{Wen2018}
                         \item Reparameterization trick for training \citep{Kingma2015}
                         \item Prior $P(w)$ $\sim$ $N(0, 1)$
-                        \item multiple forward passes for uncertainty quantification
+                        \item multiple forward passes for uncertainty quantification \newline \newline
                     \end{itemize}
-            \end{columns} \newpage
-        
+            \end{columns} 
+            \framebreak
             \item Sub-Ensemble Network 
             \begin{columns}
                 \column{0.38\linewidth}
@@ -362,48 +362,142 @@
 \end{frame}
 
 \section{Results}
-\begin{frame}{SSD Object Detection Results}
+\begin{frame}[allowframebreaks]{SSD Object Detection Results}
+    %\resizebox{\linewidth}{!}{
+    %}
 
-    \begin{figure}%
-        \centering
-        % \subfloat[]{{\includegraphics[height=3.5cm, width=6cm]{images/9.png} }}%
-        \includegraphics[width=6cm, height=3.5cm]{images/9.png}
-        % \qquad
-        \includegraphics[width=6cm, height=3.5cm]{images/tuned_9.png}
-        % \subfloat[]{{\includegraphics[height=3.5cm, width=6cm]{images/tuned_9.png} }}%
-        \caption{Matched prior boxes and ground truth boxes}%
-        \label{fig:example}%
-    \end{figure}
+    \begin{columns}
+        \column{0.38\linewidth}
+            \begin{table}
+                \caption{AP values for various classes using vanilla-SSD Prior boxes}
+                \begin{tabular}{ll}
+                    \hline
+                        \textbf{Class} & \textbf{score} \\ \hline
+                        Pedestrian     & 0.006              \\ \hline
+                        Rider          & 0.004              \\ \hline
+                        Car            & 0.095              \\ \hline
+                        Truck          & 0.083              \\ \hline
+                        Bus            & 0.15               \\ \hline 
+                        Motorcycle     & 0.045              \\ \hline
+                        Bicycle        & 0.092              \\ \hline
+                        Traffic Sign   & 0.001              \\ \hline
+                        \textbf{Mean}  & 0.059  \\\hline
+                \end{tabular}
+            \end{table}
+        \column{0.5\linewidth}
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[scale=0.175]{images/9.png}
+                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+            \end{figure}
+    \end{columns}
 
-    % \begin{figure}[H]
-    %     \centering
-    %     \begin{minipage}{.5\textwidth}
-    %       \centering
-    %       \includegraphics[width=6cm, height=3.5cm]{images/9.png}
-    %     \end{minipage}%
-    %     \begin{minipage}{.5\textwidth}
-    %       \centering
-    %       \includegraphics[width=6cm, height=3.5cm]{images/tuned_9.png}
-    %     \end{minipage}
-    %     \caption{Matched prior boxes and ground truth boxes}
-    % \end{figure}
+    \begin{itemize}
+        \item Poor performance, can be improved by tuning
+    \end{itemize}
 
-    \begin{table}[]
-        % \renewcommand{\arraystretch}{1.5}
-        \caption{Average Precision values using SSD300 model with and without tuned prior boxes}
-        \resizebox{\textwidth}{!}{
-    \scriptsize \begin{tabular}{cllllllllll}
-    
-                                  &                         & \multicolumn{9}{c}{\textbf{Agents}}  \\ \hline
-                                  & \multicolumn{1}{l}{\textbf{Models}}         & \multicolumn{1}{l}{\textbf{Pedestrian}} & \multicolumn{1}{l}{\textbf{Rider}} & \multicolumn{1}{l}{\textbf{Car}} & \multicolumn{1}{l}{\textbf{Truck}} & \multicolumn{1}{l}{\textbf{Bus}} & \multicolumn{1}{l}{\textbf{Motorcycle}} & \multicolumn{1}{l}{\textbf{Bicycle}} &\multicolumn{1}{l}{\textbf{Traffic Sign}} & \textbf{mean} \\ \hline
-     & \multicolumn{1}{l}{\textbf{SSD300}}         & \multicolumn{1}{l}{0.006}               & \multicolumn{1}{l}{0.004}          & \multicolumn{1}{l}{0.095}        & \multicolumn{1}{l}{0.083}          & \multicolumn{1}{l}{0.15}         & \multicolumn{1}{l}{0.045}               & \multicolumn{1}{l}{0.092}            & \multicolumn{1}{l}{0.001}       &     0.059     \\ \cline{1-11} 
-                                  & \multicolumn{1}{l}{\textbf{SSD300 - Tuned}} & \multicolumn{1}{l}{0.165}               & \multicolumn{1}{l}{0.135}          & \multicolumn{1}{l}{0.479}        & \multicolumn{1}{l}{0.389}          & \multicolumn{1}{l}{0.389}        & \multicolumn{1}{l}{0.163}               & \multicolumn{1}{l}{0.213}            & \multicolumn{1}{l}{0.186}    &     0.265        \\ \hline
-    \end{tabular}
-            }
-            \label{map_basic}
-        \end{table}
+    \begin{columns}
+        \column{0.38\linewidth}
+            \begin{table}
+                \caption{AP values for various classes using tuned Prior boxes}
+                \begin{tabular}{ll}
+                    \hline
+                        \textbf{Class} & \textbf{score} \\ \hline
+                        Pedestrian     & 0.165              \\ \hline
+                        Rider          & 0.135              \\ \hline
+                        Car            & 0.479              \\ \hline
+                        Truck          & 0.389              \\ \hline
+                        Bus            & 0.389               \\ \hline 
+                        Motorcycle     & 0.163              \\ \hline
+                        Bicycle        & 0.213              \\ \hline
+                        Traffic Sign   & 0.186              \\ \hline
+                        \textbf{Mean}  & 0.265  \\\hline
+                \end{tabular}
+            \end{table}
+        \column{0.5\linewidth}
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[scale=0.175]{images/tuned_9.png}
+                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+            \end{figure}
+    \end{columns}
+    \begin{itemize}
+        \item improved performance
+    \end{itemize}
+\end{frame}
 
+\begin{frame}{OOD Detection - MaxSoftmax}
+    \begin{columns}
+        \column{0.38\linewidth}
+            \begin{itemize}
+                \item ROC score of 48 \%
+                \item poorer than un-biased random classifier
+                \item complex scenarios, class overlap
+            \end{itemize}
+        \column{0.5\linewidth}
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[scale=0.45]{images/Max Softmax_ROC.pdf}
+                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+            \end{figure}
+    \end{columns}
+\end{frame}
 
+\begin{frame}[allowframebreaks]{OOD Detection - ODIN}
+    \begin{itemize}
+        \item gradient of loss w.r.t input image is calculated and scaled by a perturbation magnitude. 
+        \item input image is modified by subtracting the perturbation.
+    \end{itemize}
+    \begin{columns}[c]
+        % create the column with the first image, that occupies
+        % half of the slide
+            \begin{column}{.33\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.8\textwidth]{images/image_0.2_10.png}
+                \caption{Block diagram of a 1st order system.}
+            \end{figure}      
+            \end{column}
+        % create the column with the second image, that also
+        % occupies half of the slide
+            \begin{column}{.33\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.9\textwidth]{images/image_0.005_1000.png}
+                \caption{Step response of a 1st order system.}
+            \end{figure}
+            \end{column}
+
+            \begin{column}{.33\textwidth}
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=0.9\textwidth]{images/image_0.005_10.png}
+                    \caption{Step response of a 1st order system.}
+                \end{figure}
+                \end{column}
+        \end{columns}
+
+        \begin{itemize}
+            \item hyperparameters are tuned using a fraction of test images sampled from IDD dataset
+            \item Perturbation Magnitude 0.2 and Temperature of 1000
+        \end{itemize}
+
+        \framebreak
+
+        \begin{columns}
+            \column{0.38\linewidth}
+                \begin{itemize}
+                    \item ROC score of 54 \%
+                    \item improvement over max-softmax method 
+                    \item effect of perturbation is not observed in smaller objects
+                \end{itemize}
+            \column{0.5\linewidth}
+                \begin{figure}[!ht]
+                    \centering
+                    \includegraphics[scale=0.45]{images/BDD100K vs IDD_ODIN_ROC.pdf}
+                    \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+                \end{figure}
+        \end{columns}
 \end{frame}
 
 
