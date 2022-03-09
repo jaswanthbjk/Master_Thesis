@@ -500,6 +500,32 @@
         \end{columns}
 \end{frame}
 
+\begin{frame}[allowframebreaks]{OOD Detection - Mahalanobis distance}
+    \begin{itemize}
+        \item class-wise mean vectors of each class and a tied covariance matrix using the features from the penultimate layer
+        \item images with other classes masked out by the mean of the image
+    \end{itemize}
+    \begin{columns}
+        \column{0.38\linewidth}
+            \begin{itemize}
+                \item penultimate layer of the SSD is of shape (78588 × 1)
+                \item the covariance matrix is of shape (78588 × 78588)
+                \item calculating it is not possible with
+                available resources.
+            \end{itemize}
+        \column{0.5\linewidth}
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[scale=0.125]{images/rsz_1classspecific-image.png}
+                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+            \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{OOD Detection - Bayesian SSD object detector}
+    
+\end{frame}
+
 
 \begin{frame}[allowframebreaks]
     \frametitle{References}
