@@ -19,7 +19,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{caption}
 \usepackage[font=scriptsize]{caption}
-\captionsetup{skip=2pt,belowskip=2pt}
+\captionsetup{skip=0pt,belowskip=0pt}
 \usepackage{subcaption}
 \usepackage[sort]{natbib}
 \usepackage{adjustbox}
@@ -314,6 +314,21 @@
         $$\hat{\Sigma}=\frac{1}{N} \sum_{c} \sum_{i: y_{c}=c}\left(f\left(x_{i}\right)-\hat{\mu}_{c}\right)\left(f\left(x_{i}\right)-\hat{\mu}_{c}\right)^{T} $$ \newline \newline \newline
         
         \item Uncertainty based OOD detection
+        
+            \begin{itemize}
+                \item quantifies trustworthiness in the model output
+                \begin{itemize}
+                        \item<.-> epistemic uncertainty, higher in areas of low data density.
+                        \item<.-> aleatoric uncertainty, labelling and measurement noise
+                \end{itemize}
+                \item OOD data is implicitly modeled by epistemic uncertainty
+                \item To qunatify epistemic uncertainty, we used
+                \begin{itemize}
+                    \item<.-> Bayesian Neural Netowrk.
+                    \item<.-> Deep Sub-Ensembles
+                \end{itemize}
+            \end{itemize}
+            \pagebreak
         \begin{itemize}
             \item Bayesian Neural Network
             \begin{columns}
@@ -328,12 +343,12 @@
                         \item multiple forward passes for uncertainty quantification \newline \newline
                     \end{itemize}
             \end{columns} 
-            \framebreak
+            \pagebreak
             \item Sub-Ensemble Network 
             \begin{columns}
                 \column{0.38\linewidth}
                    \centering
-                   \includegraphics[scale=0.275]{images/subensembles.png}
+                   \includegraphics[scale=0.25]{images/subensembles.png}
                  \column{0.38\linewidth}
                     \begin{itemize}
                         \item Model is divided into Trunk and Task layers
@@ -508,7 +523,7 @@
     \begin{columns}
         \column{0.38\linewidth}
             \begin{itemize}
-                \item penultimate layer of the SSD is of shape (78588 × 1)
+                \item flattened penultimate layer of SSD is of shape (78588 × 1)
                 \item the covariance matrix is of shape (78588 × 78588)
                 \item calculating it is not possible with
                 available resources.
@@ -522,9 +537,148 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{OOD Detection - Bayesian SSD object detector}
+\begin{frame}[allowframebreaks]{UQ models - Performance}
+    \begin{columns}
+        \column{0.38\linewidth}
+            Layers highlights in green are chosen as 
+            \begin{itemize}
+                \setlength\itemsep{1em}
+                \item Flipout layers to model Bayesian-SSD
+                \item Task network to model Sub-Ensemble SSD
+            \end{itemize} 
+        \column{0.5\linewidth}
+            \begin{figure}
+                \includegraphics[scale=0.25]{images/SSD300_flipout.jpg}
+                \caption{modified SSD for uncertainty quantification}
+            \end{figure}
+    \end{columns}
+    \pagebreak
+    \begin{itemize}
+        \begin{columns}
+            \column{0.5\linewidth}
+            \item Bayesian SSD model
+                \begin{table}
+                    \caption{AP values for various classes using tuned Prior boxes}
+                    \begin{tabular}{ll}
+                        \hline
+                            \textbf{Class} & \textbf{score} \\ \hline
+                            Pedestrian     & 0.172            \\ \hline
+                            Rider          & 0.149              \\ \hline
+                            Car            & 0.476              \\ \hline
+                            Truck          & 0.4              \\ \hline
+                            Bus            & 0.401               \\ \hline 
+                            Motorcycle     & 0.196              \\ \hline
+                            Bicycle        & 0.232              \\ \hline
+                            Traffic Sign   & 0.184              \\ \hline
+                            \textbf{Mean}  & 0.276  \\\hline
+                    \end{tabular}
+                \end{table}
+            \column{0.5\linewidth}
+            \item Sub-Ensemble SSD model
+            \begin{table}
+                \caption{AP values for various classes using tuned Prior boxes}
+                \begin{tabular}{ll}
+                    \hline
+                        \textbf{Class} & \textbf{score} \\ \hline
+                        Pedestrian     & 0.167          \\ \hline
+                        Rider          & 0.144              \\ \hline
+                        Car            & 0.47              \\ \hline
+                        Truck          & 0.393             \\ \hline
+                        Bus            & 0.396               \\ \hline 
+                        Motorcycle     & 0.181              \\ \hline
+                        Bicycle        & 0.211              \\ \hline
+                        Traffic Sign   & 0.171              \\ \hline
+                        \textbf{Mean}  & 0.267  \\\hline
+                \end{tabular}
+            \end{table}
+        \end{columns}
+    \end{itemize}
+
+    \begin{figure}[H]
+        \captionsetup[table]{skip=0pt}
+           \centering
+       % \end{figure}
+       % \begin{figure}[H] \ContinuedFloat
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/bdd_bnn_variances_1.png}
+               \caption{Detections with variances represented as ellipses}
+           \end{subfigure}
+           %
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/all_bnn_bdd_1.png}
+               \caption{Visualizing all 8732 boxes regressed by SSD300}
+           \end{subfigure}
+           
+           \begin{center}
+               \begin{subfigure}[t]{0.275\textwidth}
+               \includegraphics[width=\textwidth]{images/Slide4.jpg}
+               \caption{Colormap}
+           \end{subfigure}
+           \end{center}
+           \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
+       \end{figure}
     
+       \begin{figure}[H]
+        \captionsetup[table]{skip=0pt}
+           \centering
+       % \end{figure}
+       % \begin{figure}[H] \ContinuedFloat
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/idd_bnn_variances_1.png}
+               \caption{Detections with variances represented as ellipses}
+           \end{subfigure}
+           %
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/all_bnn_idd_1.png}
+               \caption{Visualizing all 8732 boxes regressed by SSD300}
+           \end{subfigure}
+           \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
+       \end{figure}
+
+       \begin{figure}[H]
+        \captionsetup[table]{skip=0pt}
+           \centering
+       % \end{figure}
+       % \begin{figure}[H] \ContinuedFloat
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/bdd_bnn_variances_1.png}
+               \caption{Detections with variances represented as ellipses}
+           \end{subfigure}
+           %
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/all_bnn_bdd_1.png}
+               \caption{Visualizing all 8732 boxes regressed by SSD300}
+           \end{subfigure}
+           \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
+       \end{figure}
+    
+       \begin{figure}[H]
+        \captionsetup[table]{skip=0pt}
+           \centering
+       % \end{figure}
+       % \begin{figure}[H] \ContinuedFloat
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/idd_bnn_variances_1.png}
+               \caption{Detections with variances represented as ellipses}
+           \end{subfigure}
+           %
+           \begin{subfigure}[t]{0.495\textwidth}
+               \centering
+               \includegraphics[width=\textwidth]{images/det_images/all_bnn_idd_1.png}
+               \caption{Visualizing all 8732 boxes regressed by SSD300}
+           \end{subfigure}
+           \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
+       \end{figure}
+
 \end{frame}
+
 
 
 \begin{frame}[allowframebreaks]
