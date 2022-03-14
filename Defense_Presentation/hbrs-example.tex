@@ -89,7 +89,7 @@
         
         \begin{figure}
             \centering
-            \includegraphics[scale=0.215]{images/OOD_vs_Non-OOD.jpg}
+            \includegraphics[scale=0.2]{images/OOD_vs_Non-OOD.jpg}
             \caption[\acrlong{ood} detection problem setting]{Class differentiation in generalized OOD detection framework}
             \label{fig:OOD_classes}
         \end{figure}
@@ -152,7 +152,7 @@
         \vcenter{\hbox{
             \begin{minipage}{7cm}
                 \centering
-                \includegraphics[scale=0.2]{images/Slide2.jpg}
+                \includegraphics[scale=0.16]{images/Slide2.jpg}
                 \captionof{figure}{Expected behavior of OOD detector.}
             \end{minipage}}}
         \qquad\qquad
@@ -330,7 +330,7 @@
                         \item<.-> aleatoric uncertainty, labelling and measurement noise
                 \end{itemize}
                 \item OOD data is implicitly modeled by epistemic uncertainty
-                \item To qunatify epistemic uncertainty, we used
+                \item To quantify epistemic uncertainty, we used
                 \begin{itemize}
                     \item<.-> Bayesian Neural Netowrk.
                     \item<.-> Deep Sub-Ensembles
@@ -341,8 +341,14 @@
             \item Bayesian Neural Network
             \begin{columns}
                 \column{0.38\linewidth}
-                   \centering
-                   \includegraphics[scale=0.275]{images/BNN.pdf}
+                %    \centering
+                   \begin{figure}
+                        \centering
+                        \includegraphics[scale=0.275]{images/BNN.pdf}
+                        \caption{Bayesian Neural Network}
+                   \end{figure}
+                   
+                %    \caption{Bayesian Neural Netowrk}
                  \column{0.38\linewidth}
                     \begin{itemize}
                         \item Bayesian Flipout layers \citep{Wen2018}
@@ -355,8 +361,11 @@
             \item Sub-Ensemble Network 
             \begin{columns}
                 \column{0.38\linewidth}
-                   \centering
-                   \includegraphics[scale=0.25]{images/subensembles.png}
+                    \begin{figure}
+                        % \centering
+                        \includegraphics[scale=0.275]{images/subensembles.png}
+                        \caption{Sub-Ensemble Network}
+                    \end{figure}
                  \column{0.38\linewidth}
                     \begin{itemize}
                         \item Model is divided into Trunk and Task layers
