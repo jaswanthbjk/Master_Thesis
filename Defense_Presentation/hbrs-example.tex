@@ -20,10 +20,18 @@
 \usepackage{caption}
 \usepackage[font=scriptsize]{caption}
 \captionsetup{skip=0pt,belowskip=0pt}
+\captionsetup[table]{skip=0pt}
 \usepackage{subcaption}
 \usepackage[sort]{natbib}
 \usepackage{adjustbox}
 \usepackage{multicol}
+\usepackage{multirow}
+\usepackage{graphicx}
+\PassOptionsToPackage{demo}{graphicx}
+\usepackage{booktabs}
+\usepackage{mwe}
+\usepackage{float}
+% \usepackage{subfig}
 
 % \setlength{\intextsep}{10pt plus 2pt minus 2pt}
 
@@ -403,7 +411,7 @@
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[scale=0.175]{images/9.png}
-                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+                \caption[SSD framework]{Positively matched vanilla prior boxes with ground truth boxes.}
             \end{figure}
     \end{columns}
 
@@ -433,7 +441,7 @@
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[scale=0.175]{images/tuned_9.png}
-                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+                \caption[SSD framework]{Positively matched tuned prior boxes with ground truth boxes..}
             \end{figure}
     \end{columns}
     \begin{itemize}
@@ -453,7 +461,7 @@
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[scale=0.45]{images/Max Softmax_ROC.pdf}
-                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+                \caption[SSD framework]{AUROC curve for OOD detection using softmax scores.}
             \end{figure}
     \end{columns}
 \end{frame}
@@ -469,8 +477,8 @@
             \begin{column}{.33\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.8\textwidth]{images/image_0.2_10.png}
-                \caption{Block diagram of a 1st order system.}
+                \includegraphics[width=0.9\textwidth]{images/image_0.2_10.png}
+                \caption{magnitude=0.2, Temperature=10}
             \end{figure}      
             \end{column}
         % create the column with the second image, that also
@@ -479,7 +487,7 @@
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{images/image_0.005_1000.png}
-                \caption{Step response of a 1st order system.}
+                \caption{magnitude=0.005, Temperature=100}
             \end{figure}
             \end{column}
 
@@ -487,7 +495,7 @@
                 \begin{figure}
                     \centering
                     \includegraphics[width=0.9\textwidth]{images/image_0.005_10.png}
-                    \caption{Step response of a 1st order system.}
+                    \caption{magnitude=0.005, Temperature=10}
                 \end{figure}
                 \end{column}
         \end{columns}
@@ -510,7 +518,7 @@
                 \begin{figure}[!ht]
                     \centering
                     \includegraphics[scale=0.45]{images/BDD100K vs IDD_ODIN_ROC.pdf}
-                    \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+                    \caption[SSD framework]{AUROC curve for OOD detection using softmax scores after applying ODIN}
                 \end{figure}
         \end{columns}
 \end{frame}
@@ -532,7 +540,7 @@
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[scale=0.125]{images/rsz_1classspecific-image.png}
-                \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+                \caption[SSD framework]{Class masked images to extract class specific mean and variance}
             \end{figure}
     \end{columns}
 \end{frame}
@@ -646,13 +654,13 @@
        % \begin{figure}[H] \ContinuedFloat
            \begin{subfigure}[t]{0.495\textwidth}
                \centering
-               \includegraphics[width=\textwidth]{images/det_images/bdd_bnn_variances_1.png}
+               \includegraphics[width=\textwidth]{images/det_images/bdd_subens_entropies_0.png}
                \caption{Detections with variances represented as ellipses}
            \end{subfigure}
            %
            \begin{subfigure}[t]{0.495\textwidth}
                \centering
-               \includegraphics[width=\textwidth]{images/det_images/all_bnn_bdd_1.png}
+               \includegraphics[width=\textwidth]{images/det_images/all_subens_bdd_1.png}
                \caption{Visualizing all 8732 boxes regressed by SSD300}
            \end{subfigure}
            \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
@@ -665,21 +673,342 @@
        % \begin{figure}[H] \ContinuedFloat
            \begin{subfigure}[t]{0.495\textwidth}
                \centering
-               \includegraphics[width=\textwidth]{images/det_images/idd_bnn_variances_1.png}
+               \includegraphics[width=\textwidth]{images/det_images/idd_subens_variances_1.png}
                \caption{Detections with variances represented as ellipses}
            \end{subfigure}
            %
            \begin{subfigure}[t]{0.495\textwidth}
                \centering
-               \includegraphics[width=\textwidth]{images/det_images/all_bnn_idd_1.png}
+               \includegraphics[width=\textwidth]{images/det_images/all_subens_idd_0.png}
                \caption{Visualizing all 8732 boxes regressed by SSD300}
            \end{subfigure}
            \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
        \end{figure}
-
 \end{frame}
 
+\begin{frame}[allowframebreaks]{UQ models - OOD Detection}
+    \begin{figure}[H]
+        \captionsetup[table]{skip=0pt}
+            \centering
+            \begin{subfigure}[t]{0.495\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/distributions/BNN_bdd_vs_iid_probabilities.png}
+                \caption{Detections with variances represented as ellipses}
+            \end{subfigure}
+            %
+            \begin{subfigure}[t]{0.495\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/distributions/SubEns_bdd_vs_iid_probabilities.png}
+                \caption{Visualizing all 8732 boxes regressed by SSD300}
+            \end{subfigure}
+            \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
+    \end{figure}
 
+    \begin{figure}[H]
+        \captionsetup[table]{skip=0pt}
+            \centering
+            \begin{subfigure}[t]{0.495\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/distributions/BNN_bdd_vs_iid_entropy.png}
+                \caption{Detections with variances represented as ellipses}
+            \end{subfigure}
+            %
+            \begin{subfigure}[t]{0.495\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/distributions/SubEns_bdd_vs_iid_entropy.png}
+                \caption{Visualizing all 8732 boxes regressed by SSD300}
+            \end{subfigure}
+            \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
+    \end{figure}
+
+    \begin{figure}[H]
+        \captionsetup[table]{skip=0pt}
+            \centering
+            \begin{subfigure}[t]{0.495\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/distributions/BNN_bdd_vs_iid_deviations.png}
+                \caption{Detections with variances represented as ellipses}
+            \end{subfigure}
+            %
+            \begin{subfigure}[t]{0.495\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/distributions/SubEns_bdd_vs_iid_deviations.png}
+                \caption{Visualizing all 8732 boxes regressed by SSD300}
+            \end{subfigure}
+            \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
+    \end{figure}
+
+    \begin{table}[tbp]
+        \centering
+        \setlength\abovecaptionskip{-15pt}
+        \setlength\belowcaptionskip{0pt}
+        \caption{Previous works on OOD detection}
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{lllllllllllc}
+        \hline
+        \multirow{2}{*}{Models} &
+          \multirow{2}{*}{\textbf{Metrics}} &
+          \multicolumn{10}{l}{\textbf{Agents}} \\ \cline{3-12} 
+         &
+           &
+          Background &
+          Pedestrian &
+          Rider &
+          Car &
+          Truck &
+          Bus &
+          Motorcycle &
+          Bicycle &
+          Traffic Sign &
+          Mean \\ \hline
+        \multirow{3}{*}{Bayesian-SSD300} &
+          Probability &
+          0.45 &
+          0.14 &
+          0.75 &
+          0.45 &
+          0.37 &
+          0.38 &
+          0.49 &
+          0.23 &
+          - &
+          \multicolumn{1}{l}{0.45} \\ \cline{2-12} 
+         &
+          Entropy &
+          0.56 &
+          0.88 &
+          0.59 &
+          0.59 &
+          0.67 &
+          0.64 &
+          0.6 &
+          0.84 &
+          - &
+          0.56 \\ \cline{2-12} 
+         &
+          Box\_deviation &
+          0.64 &
+          0.93 &
+          0.82 &
+          0.76 &
+          0.69 &
+          0.7 &
+          0.62 &
+          0.85 &
+          - &
+          0.64 \\ \hline
+        \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Sub-Ensemble\\ SSD300\end{tabular}} &
+          Probability &
+          0.44 &
+          0.21 &
+          0.34 &
+          0.46 &
+          0.34 &
+          0.4 &
+          0.53 &
+          0.19 &
+          0.41 &
+          0.44 \\ \cline{2-12} 
+         &
+          Entropy &
+          0.56 &
+          0.86 &
+          0.72 &
+          0.58 &
+          0.71 &
+          0.62 &
+          0.51 &
+          0.88 &
+          0.62 &
+          \multicolumn{1}{l}{0.56} \\ \cline{2-12} 
+         &
+          Box\_deviation &
+          0.76 &
+          0.95 &
+          0.84 &
+          0.79 &
+          0.74 &
+          0.75 &
+          0.71 &
+          0.94 &
+          0.88 &
+          \multicolumn{1}{l}{0.75} \\ \hline
+        \end{tabular}%
+        }
+        \end{table}
+        \begin{columns}
+            \column{0.45\linewidth}
+                \begin{itemize}
+                    \item metrics struggled in classifying background class between ID and OOD data.
+                    \item Box deviation performed well in detecting OOD.
+                \end{itemize}
+            \column{0.45\linewidth}
+                \begin{itemize}
+                    \item performance is similar in Car, Truck, Bus, and Rider 
+                \end{itemize}
+        \end{columns}
+        \pagebreak
+
+        \begin{columns}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/BNN_variances2.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/flipout_entropies_all2.png}
+            \end{column}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/BNN_variances1.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/flipout_entropies_all1.png}
+            \end{column}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/BNN_variances3.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/flipout_entropies_all3.png}
+            \end{column}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/BNN_variances4.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/flipout_entropies_all4.png}
+            \end{column}
+        \end{columns}
+        \begin{center}
+            Performance of BNN on BDD100K weather dataset
+        \end{center}
+        
+
+        \begin{columns}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_Variance2.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_entropies_all2.png}
+            \end{column}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_Variance1.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_entropies_all1.png}
+            \end{column}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_Variance3.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_entropies_all3.png}
+            \end{column}
+            \begin{column}{.2\textwidth}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_Variance4.png}
+                \includegraphics[width=\textwidth]{images/uq_weathers/SubEns_entropies_all4.png}
+            \end{column}
+        \end{columns}
+        \begin{center}
+            Performance of Sub-Ensembles on BDD100K weather dataset
+        \end{center}
+      
+
+        % \begin{figure}
+        %     \centering
+        %     \begin{minipage}{.225\textwidth}
+        %     \centering
+        %     \includegraphics[width=\linewidth]{images/uq_weathers/sub}
+        %     \caption{A subfigure}
+        %     \end{minipage}
+        %     \begin{minipage}{.225\textwidth}
+        %     \centering
+        %     \includegraphics[width=\linewidth]{images/uq_weathers/BNN_entropies1.png}
+        %     \caption{A subfigure}
+        %     \end{minipage}
+        %     \begin{minipage}{.225\textwidth}
+        %         \centering
+        %         \includegraphics[width=\linewidth]{images/uq_weathers/BNN_entropies3.png}
+        %         \caption{A subfigure}
+        %     \end{minipage}
+        %     \begin{minipage}{.225\textwidth}
+        %         \centering
+        %         \includegraphics[width=\linewidth]{images/uq_weathers/BNN_entropies4.png}
+        %         \caption{A subfigure}
+        %     \end{minipage}
+        %     \caption{A figure with two subfigures}
+        % \end{figure}
+
+        % \begin{figure}[ht]
+        %     \captionsetup[subfigure]{labelformat=empty}
+        %     \begin{tabular}{cccc}
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_entropies2.png}} &
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_entropies1.png}} &
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_entropies3.png}} &
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_entropies4.png}}\\
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_variances2.png}} &
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_variances1.png}} &
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_variances3.png}} &
+        %         \subfloat{\includegraphics[width = 1.4in]{images/uq_weathers/BNN_variances4.png}}\\
+        %         \subfloat[Normal Weather]{\includegraphics[width = 1.4in]{images/uq_weathers/flipout_entropies_all2.png}} &
+        %         \subfloat[Flood]{\includegraphics[width = 1.4in]{images/uq_weathers/flipout_entropies_all1.png}} &
+        %         \subfloat[Smog]{\includegraphics[width = 1.4in]{images/uq_weathers/flipout_entropies_all3.png}} &
+        %         \subfloat[Wild Fire]{\includegraphics[width = 1.4in]{images/uq_weathers/flipout_entropies_all4.png}}\\
+        %     \end{tabular}
+        %     \caption[Detection on an image from \acrshort{bdd-c} dataset using \acrshort{bnn}]{Detection and entropy visualization on a randomly sampled image from the \acrshort{bdd-c} dataset using \acrshort{bnn}. We can observe that the model struggled in detecting objects as weather intensity increases. Also we can observe that there are lot less detection boxes seen compared to un-changed input image. The all boxes figure shows that majority of the boxes belong to background}
+        %     \label{Flipout_uq_det}
+        % \end{figure}
+\pagebreak
+\begin{columns}
+    \column{0.45\linewidth}
+    \begin{table}[H]
+        \centering
+        \footnotesize
+        \caption{Uncertainty quantification metrics calculated using Bayesian and Sub-Ensemble versions of SSD300 model}
+        \label{tab:my-table}
+        \begin{tabular}{llll}
+            \hline
+                      &               & \begin{tabular}[c]{@{}l@{}}Bayesian\\ SSD300\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sub-Ensemble\\ SSD300\end{tabular} \\ \hline
+            Flood     & Probability   & 0.43            & 0.5                                                           \\ \hline
+                      & Entropy       & \textbf{0.57}            & 0.5                                                           \\ \hline
+                      & Box Deviation & 0.46            & 0.5                                                           \\ \hline
+            Smog      & Probability   & 0.43            & 0.5                                                           \\ \hline
+                      & Entropy       & \textbf{0.57}            & 0.5                                                           \\ \hline
+                      & Box Deviation & 0.44            & 0.5                                                           \\ \hline
+            Wild Fire & Probability   & \textbf{0.51}            & \textbf{0.53}                                                          \\ \hline
+                      & Entropy       & 0.49            & 0.46                                                          \\ \hline
+                      & Box Deviation & 0.49            & 0.46                                                          \\ \hline
+        \end{tabular}
+    \end{table}
+    \column{0.45\linewidth}
+        \begin{itemize}
+            \item change in weather the object detection performance has deteriorated especially
+            in the case of flood images.
+            \item scores suggest that using uncertainty quantification methods performed almost similar
+            to an unbiased random classifier.
+            \item uncertainty quantification methods not being able to detect skewed datasets
+            complies with the results reported by \citet{Ovadia2019}
+        \end{itemize}
+\end{columns}
+\end{frame}
+
+\section{Contributions}
+\begin{frame}[allowframebreaks]{Contributions}
+    \begin{itemize}
+        \item Proposed a new benchmark dataset called Out-of-Distribution detection for Object Detection ($OD^2$) dataset
+        \item Max Softmax, ODIN, Mahalanobis distance based OOD detector, and uncertainty based OOD detector are modelled.
+        \item Single Shot multi-box Object Detector (SSD300) is trained on BDD100K dataset and tuned the prior boxes
+        \item we observed that ODIN outperformed the Max-Softmax based OOD detectors, could not successfully model Mahalanobis distance-based OOD detector.
+        \item BNN based and a Sub-Ensemble model of SSD object detector network are modelled and trained.
+        \pagebreak
+        \item We used entropy to quantify uncertainty in the classification head of object detector and box deviation to quantify uncertainty in the regression head of object detectors.
+        \item We performed extensive experimentation on all the three available OOD detectors for object detection purposes. We also performed studies on the class-specific behavior of the uncertainty quantification metrics.
+    \end{itemize}
+\end{frame}
+
+\section{Observations}
+\begin{frame}[allowframebreaks]{Observations}
+    \begin{itemize}
+        \item object detector performance is dependent on the prior knowledge of the dataset. 
+        \item Deep learning-based object detectors struggle when deployed in open environments.
+        \item The OOD detection methods proposed for classification did not directly transfer their performance into the task of object detection.
+        \item Sub-Ensemble-based uncertainty quantification with box deviation as a metric out-performed all other methods in OOD detection.
+        \item Entropy struggled in detecting samples that are ambiguous due to their semantic appearance.
+        \item The OOD detection methods proposed in this work did not work as expected on the BDD100K-Weather data in the $OD^2$ benchmarking dataset.
+    \end{itemize}
+\end{frame}
+
+\section{Future-work}
+\begin{frame}[allowframebreaks]{Future-work}
+    \begin{itemize}
+        \item An object detector without the usage of background class would be useful for improved OOD performance.
+        \item Exploring the effects of uncertainty calibration methods \cite{GuoCalibration2017} on OOD detection is still a open-ended question.
+        \item combining Entropy and Box-Deviation to obtain a single novelty score might result in a better representation of OOD detection ability.
+        \item Disentangling of Predictive uncertainty.
+        \item Though we believe a strong benchmark in the form of $OD^2$ dataset is proposed, we believe it can be further modified and extended to include more class-agnostic tasks.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}[allowframebreaks]
     \frametitle{References}
