@@ -68,7 +68,7 @@
     \end{itemize} 
 
     \item Trained with \textcolor{red}{\textit{closed world assumption}}, test data $\sim$ train data
-    \item Deployed in open world $\implies$ Out-of-Distribution(OOD) examples
+    \item Deployed in open world $\implies$ Out-of-Distribution(OOD) data
     \item Applications
         \begin{itemize}
             \item \textcolor{green}{Product recommendations}, recoverable
@@ -121,7 +121,7 @@
     \begin{itemize}
         \item Produce a \textbf{\textit{Novelty Score (NS)}}. 
         \item NS can be a distance metric, a class-dependent probabilistic value, an entropy value, or a descriptive statistic value
-        \item OOD detection can be posed as a binary classification problem.
+        \item OOD detection as a binary classification problem and AUROC score for comparision.
     \end{itemize}
         
     
@@ -165,6 +165,8 @@
         \end{aligned}
     \end{equation}
 
+    
+
 \end{frame}
 
 \section{Previous works}
@@ -186,6 +188,26 @@
         \item Not directly adaptable to object detection problem   
     \end{itemize}    
 \end{frame}
+\begin{frame}{Uncertainty Quantification SoTA}
+    \begin{itemize}
+        \setlength{\itemsep}{5pt}
+        \item Bayesian Neural Networks
+        \begin{enumerate}
+            \setlength{\itemsep}{5pt}
+            \item Bayes by Backprop \citep{Blundell2015}
+            \item Variatonal Dropout and Reparameterization \citep{Kingma2015}
+            \item Flipout sampling based Bayesian Neural Networks \citep{Wen2018} 
+        \end{enumerate}
+        \item Monte carlo Dropout \citep{gal2016uncertainty}
+        \item Ensemble methods
+        \begin{enumerate}
+            \setlength{\itemsep}{5pt}
+            \item Deep Ensembles \citep{Lakshminarayanan2017}
+            \item Deep Sub-Ensembles \citep{ValdenegroToro2019}
+        \end{enumerate}
+    \end{itemize}
+    
+\end{frame}
 \section{Methodology}
 % \begin{frame}{Methodology}
 %     In this work
@@ -205,7 +227,7 @@
 %         \end{enumerate}
 %     \end{itemize}
 % \end{frame}
-\begin{frame}{$OD^2$ Dataset}
+\begin{frame}{Proposed $OD^2$ benchmark}
     \begin{table}[H]
         \centering
         \renewcommand{\arraystretch}{1.5}
@@ -224,18 +246,40 @@
         \label{dataset_summary}
     \end{table}
 \end{frame}
-% \pagebreak
+\pagebreak
+\begin{frame}{Sample Images}
+    \begin{columns}[t]
+        \column{.3\textwidth}
+        \includegraphics[width=\columnwidth,height=3cm]{images/dataset_images/bdd01.jpg}
+        \includegraphics[width=\columnwidth,height=3cm]{images/dataset_images/bdd03.jpg}
+        \captionof{figure}{BDD100K (In-Distribution)}
+        \column{.3\textwidth}
+        \includegraphics[width=\columnwidth,height=3cm]{images/dataset_images/IDD02.jpg}
+        \includegraphics[width=\columnwidth,height=3cm]{images/dataset_images/IDD04.jpg}
+        \captionof{figure}{Indian Driving Dataset (OOD)}
+        \column{.3\textwidth}
+        \includegraphics[width=0.5\columnwidth,height=3cm]{images/ClimateGAN/bdd/b1c66a42-6f7d68ca_normal_1024.png}%
+        \includegraphics[width=0.5\columnwidth,height=3cm]{images/ClimateGAN/bdd/b1c66a42-6f7d68ca_flood_1024.png}
+        \includegraphics[width=0.5\columnwidth,height=3cm]{images/ClimateGAN/bdd/b1c66a42-6f7d68ca_smog_1024.png}%
+        \includegraphics[width=0.5\columnwidth,height=3cm]{images/ClimateGAN/bdd/b1c66a42-6f7d68ca_wildfire_1024.png}
+        \captionof{figure}{Climate-GAN images (OOD)}
+    \end{columns}
+\end{frame}
 \begin{frame}{Experiment methodology}
     \begin{itemize}
-        \item Object Detector: Single Shot multi-box Detector \citet{Liu2016SSDSS}
+        \setlength{\itemsep}{5pt}
+        \item Object Detector: Single Shot multi-box Detector \citep{Liu2016SSDSS}
         \item Out of Distribution detection methods:
             \begin{enumerate}
-                \item ODIN \citet{liang2017enhancing}
-                \item Mahalanobis distance based OOD detection \citet{Lee2018}
+                \setlength{\itemsep}{5pt}
+                \item Max-Softmax \citep{hendrycks17baseline}
+                \item ODIN \citep{liang2017enhancing}
+                \item Mahalanobis distance based OOD detection \citep{Lee2018}
                 \item Uncertainty-based OOD detection
                 \begin{itemize}
-                    \item Bayesian Neural Networks
-                    \item SubEnsembles
+                    \setlength{\itemsep}{5pt}
+                    \item Bayesian Neural Networks with Flipout sampling\citep{Wen2018}
+                    \item SubEnsembles \citep{ValdenegroToro2019}
                 \end{itemize}
             \end{enumerate}
     \end{itemize}
@@ -243,53 +287,44 @@
 
 \section{Results}
 \begin{frame}{SSD Performance}
-    \begin{itemize}
-        \begin{columns}
-            \column{0.5\linewidth}
-            \item SSD model with vanilla prior boxes
-                \begin{table}
-                    \caption{AP values for various classes using vanilla Prior boxes}
-                    \begin{tabular}{ll}
-                        \hline
-                            \textbf{Class} & \textbf{score} \\ \hline
-                            Pedestrian     & 0.006            \\ \hline
-                            Rider          & 0.004             \\ \hline
-                            Car            & 0.095              \\ \hline
-                            Truck          & 0.083            \\ \hline
-                            Bus            & 0.15               \\ \hline 
-                            Motorcycle     & 0.045              \\ \hline
-                            Bicycle        & 0.092              \\ \hline
-                            Traffic Sign   & 0.001              \\ \hline
-                            \textbf{Mean}  & 0.059  \\\hline
-                    \end{tabular}
-                \end{table}
-            \column{0.5\linewidth}
-            \item SSD model with tuned prior boxes
-            \begin{table}
-                \caption{AP values for various classes using tuned Prior boxes}
-                \begin{tabular}{ll}
-                    \hline
-                        \textbf{Class} & \textbf{score} \\ \hline
-                        Pedestrian     & 0.165          \\ \hline
-                        Rider          & 0.135              \\ \hline
-                        Car            & 0.479              \\ \hline
-                        Truck          & 0.389             \\ \hline
-                        Bus            & 0.389               \\ \hline 
-                        Motorcycle     & 0.163              \\ \hline
-                        Bicycle        & 0.213              \\ \hline
-                        Traffic Sign   & 0.186              \\ \hline
-                        \textbf{Mean}  & 0.267  \\\hline
-                \end{tabular}
-            \end{table}
-        \end{columns}
-    \end{itemize}
+    \begin{table}[]
+        \centering
+        \caption{AP values of SSD300 model with different prior boxes}
+        \label{tab:my-table}
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{llllllllll}
+        \hline
+        \multirow{2}{*}{Prior boxes} & \multicolumn{9}{l}{\textbf{Agents}}                                   \\ \cline{2-10} 
+         &
+          \textbf{Pedestrian} &
+          \textbf{Rider} &
+          \textbf{Car} &
+          \textbf{Truck} &
+          \textbf{Bus} &
+          \textbf{Motorcycle} &
+          \textbf{Bicycle} &
+          \textbf{Traffic Sign} &
+          \multicolumn{1}{c}{\textbf{Mean}} \\ \hline
+        \textbf{vanilla}             & 0.006 & 0.004 & 0.095 & 0.083 & 0.15  & 0.045 & 0.092 & 0.001 & 0.059 \\ \hline
+        \textbf{tuned}               & 0.165 & 0.135 & 0.479 & 0.389 & 0.389 & 0.163 & 0.213 & 0.186 & 0.267 \\ \hline
+        \end{tabular}%
+        }
+        \end{table}
+    \begin{columns}
+        \column{0.45\linewidth}
+        \includegraphics[width=\columnwidth,height=3cm]{images/det_images/bdd_1.jpg}
+        \captionof{figure}{sample detection from BDD100K dataset}
+        \column{0.45\linewidth}
+        \includegraphics[width=\columnwidth,height=3cm]{images/det_images/idd_2.jpg}
+        \captionof{figure}{sample detection from IDD dataset}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{OOD Detection - MaxSoftmax}
     \begin{columns}
         \column{0.38\linewidth}
             \begin{itemize}
-                \item ROC score of 48 \%
+                \item AUROC score of 48 \%
                 \item poorer than un-biased random classifier
                 \item complex scenarios, class overlap
             \end{itemize}
@@ -346,7 +381,7 @@
         \begin{columns}
             \column{0.38\linewidth}
                 \begin{itemize}
-                    \item ROC score of 54 \%
+                    \item AUROC score of 54 \%
                     \item improvement over max-softmax method 
                     \item effect of perturbation is not observed in smaller objects
                 \end{itemize}
@@ -369,8 +404,7 @@
             \begin{itemize}
                 \item flattened penultimate layer of SSD is of shape (78588 × 1)
                 \item the covariance matrix is of shape (78588 × 78588)
-                \item calculating it is not possible with
-                available resources.
+                \item 25GB of RAM / GPU per image.
             \end{itemize}
         \column{0.5\linewidth}
             \begin{figure}[!ht]
@@ -397,46 +431,39 @@
             \end{figure}
     \end{columns}
     \pagebreak
-    \begin{itemize}
-        \begin{columns}
-            \column{0.5\linewidth}
-            \item Bayesian SSD model
-                \begin{table}
-                    \caption{AP values for various classes using tuned Prior boxes}
-                    \begin{tabular}{ll}
-                        \hline
-                            \textbf{Class} & \textbf{score} \\ \hline
-                            Pedestrian     & 0.172            \\ \hline
-                            Rider          & 0.149              \\ \hline
-                            Car            & 0.476              \\ \hline
-                            Truck          & 0.4              \\ \hline
-                            Bus            & 0.401               \\ \hline 
-                            Motorcycle     & 0.196              \\ \hline
-                            Bicycle        & 0.232              \\ \hline
-                            Traffic Sign   & 0.184              \\ \hline
-                            \textbf{Mean}  & 0.276  \\\hline
-                    \end{tabular}
-                \end{table}
-            \column{0.5\linewidth}
-            \item SubEnsemble SSD model
-            \begin{table}
-                \caption{AP values for various classes using tuned Prior boxes}
-                \begin{tabular}{ll}
-                    \hline
-                        \textbf{Class} & \textbf{score} \\ \hline
-                        Pedestrian     & 0.167          \\ \hline
-                        Rider          & 0.144              \\ \hline
-                        Car            & 0.47              \\ \hline
-                        Truck          & 0.393             \\ \hline
-                        Bus            & 0.396               \\ \hline 
-                        Motorcycle     & 0.181              \\ \hline
-                        Bicycle        & 0.211              \\ \hline
-                        Traffic Sign   & 0.171              \\ \hline
-                        \textbf{Mean}  & 0.267  \\\hline
-                \end{tabular}
-            \end{table}
-        \end{columns}
-    \end{itemize}
+    \begin{table}[]
+        \centering
+        \caption{AP values of various SSD300 models}
+        \label{tab:my-table}
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{llllllllll}
+        \hline
+        \multirow{2}{*}{\textbf{Models}}     & \multicolumn{9}{l}{\textbf{Agents}}                                                       \\ \cline{2-10} 
+         &
+          \textbf{Pedestrian} &
+          \textbf{Rider} &
+          \textbf{Car} &
+          \textbf{Truck} &
+          \textbf{Bus} &
+          \textbf{Motorcycle} &
+          \textbf{Bicycle} &
+          \textbf{Traffic Sign} &
+          \multicolumn{1}{c}{\textbf{Mean}} \\ \hline
+        \textbf{SSD300}             & 0.165 & 0.135 & 0.479 & 0.389 & 0.389 & 0.163 & 0.213 & 0.186 & 0.267                     \\ \hline
+        \textbf{Bayesian SSD300}    & 0.172 & 0.149 & 0.476 & 0.4   & 0.401 & 0.196 & 0.232 & 0.184 & 0.276                     \\ \hline
+        \textbf{SubEnsemble SSD300} & 0.167 & 0.144 & 0.47  & 0.393 & 0.396 & 0.181 & 0.211 & 0.171 & \multicolumn{1}{c}{0.267} \\ \hline
+        \end{tabular}%
+        }
+    \end{table}
+
+    \begin{columns}
+        \column{0.45\linewidth}
+        \includegraphics[width=\columnwidth,height=3cm]{images/det_images/bdd_subens_entropies_1.png}
+        \captionof{figure}{UQ on image from BDD100K dataset}
+        \column{0.45\linewidth}
+        \includegraphics[width=\columnwidth,height=3cm]{images/det_images/idd_subens_variances_0.png}
+        \captionof{figure}{UQ on image from IDD dataset}
+    \end{columns}
 
     \begin{figure}[H]
         \captionsetup[table]{skip=0pt}
@@ -458,7 +485,7 @@
            \begin{center}
                \begin{subfigure}[t]{0.275\textwidth}
                \includegraphics[width=\textwidth]{images/Slide4.jpg}
-               \caption{Colormap}
+               \caption{Entropy Colormap}
            \end{subfigure}
            \end{center}
            \caption{Inference of Bayesian-SSD300 model on a sample image from BDD}
@@ -578,7 +605,7 @@
         \centering
         \setlength\abovecaptionskip{-15pt}
         \setlength\belowcaptionskip{0pt}
-        \caption{Previous works on OOD detection}
+        \caption{AUROC scores for classifying BDD100K and IDD datasets using UQ metrics}
         \resizebox{\textwidth}{!}{%
         \begin{tabular}{lllllllllllc}
         \hline
@@ -675,7 +702,6 @@
         \begin{columns}
             \column{0.45\linewidth}
                 \begin{itemize}
-                    \item metrics struggled in classifying background class between ID and OOD data.
                     \item Box deviation performed well in detecting OOD.
                 \end{itemize}
             \column{0.45\linewidth}
@@ -802,15 +828,15 @@
             \item performance has deteriorated especially in the case of flood images.
             \item uncertainty quantification methods performed almost similar
             to an unbiased random classifier.
-            \item Results complies with the results reported by \citet{Ovadia2019}
+            \item Results complies with the results reported by \citep{Ovadia2019}
         \end{itemize}
 \end{columns}
 \end{frame}
 
-\section{Contributions}
+\section{Contributions, Observations, and Future-work}
 \begin{frame}[allowframebreaks]{Contributions}
     \begin{itemize}
-        \item A new benchmark dataset called Out-of-Distribution detection for Object Detection ($OD^2$) dataset
+        \item Proposed seminal benchmark dataset for Out-of-Distribution detection in Object Detection
         \item Max Softmax, ODIN, Mahalanobis distance, and uncertainty based OOD detector are modelled.
         \item SSD300 is trained on BDD100K dataset and tuned the prior boxes
         \item Entropy and box-deviation are used to quantify uncertainty 
@@ -819,7 +845,6 @@
     \end{itemize}
 \end{frame}
 
-\section{Observations}
 \begin{frame}[allowframebreaks]{Observations}
     \begin{itemize}
         \item Object Detector performance is dependent on the prior knowledge of the dataset. 
@@ -830,7 +855,6 @@
     \end{itemize}
 \end{frame}
 
-\section{Future-work}
 \begin{frame}[allowframebreaks]{Future-work}
     \begin{itemize}
         \item An object detector without the usage of background class would be useful for improved OOD performance.
@@ -853,7 +877,7 @@
     \begin{figure}[!ht]
         \centering
         \includegraphics[scale=0.45]{images/SSD.png}
-        \caption[SSD framework]{SSD framework proposed by \citet[p. 24]{Liu2016SSDSS}.}
+        \caption[SSD framework]{SSD framework proposed by \citep[p. 24]{Liu2016SSDSS}.}
         \label{fig:Fr-RCNN}
     \end{figure}
     \smallskip
